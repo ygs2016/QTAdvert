@@ -1,0 +1,13 @@
+release/main.o
+release/advert.o
+release/downloadtool.o
+release/labelpicture.o
+release/labelvideo.o
+release/networkrequest.o
+release/videoobject.o
+release/videoplayer.o
+release/mainwindow.o
+release/moc_downloadtool.o
+release/moc_networkrequest.o
+release/moc_videoplayer.o
+release/moc_mainwindow.o

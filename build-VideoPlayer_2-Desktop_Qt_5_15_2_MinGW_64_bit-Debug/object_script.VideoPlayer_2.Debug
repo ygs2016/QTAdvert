@@ -1,0 +1,13 @@
+debug/main.o
+debug/advert.o
+debug/downloadtool.o
+debug/labelpicture.o
+debug/labelvideo.o
+debug/networkrequest.o
+debug/videoobject.o
+debug/videoplayer.o
+debug/mainwindow.o
+debug/moc_downloadtool.o
+debug/moc_networkrequest.o
+debug/moc_videoplayer.o
+debug/moc_mainwindow.o
