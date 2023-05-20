@@ -27,13 +27,18 @@ NetworkRequest::~NetworkRequest()
     }
 }
 
-void NetworkRequest::init(){
+void NetworkRequest::run(){
+    //qDebug() << "NetworkReques is --> " <<QThread::currentThreadId() << QThread::currentThread();
+
     isRunning = true;
     manager = new QNetworkAccessManager;
     mTime = new QTimer;
-    connect(manager,SIGNAL(finished(QNetworkReply *)),this,SLOT(getBack(QNetworkReply *)));//通信完成后，自动执行getBack
-    connect(mTime,SIGNAL(timeout()),this,SLOT(slotTime()));
+    connect(manager,SIGNAL(finished(QNetworkReply *)),this,SLOT(getBack(QNetworkReply *)),Qt::DirectConnection);//通信完成后，自动执行getBack
+    connect(mTime,SIGNAL(timeout()),this,SLOT(slotTime()),Qt::DirectConnection);
     mTime->start(2000);
+    checkAndDownloadFiles();
+    exec();
+
 }
 
 void NetworkRequest::slotDownloadFinished(){
@@ -68,6 +73,7 @@ void NetworkRequest::slotDownloadFinished(){
 
 void NetworkRequest::slotTime()
 {
+    //qDebug() << "tiemr is --> " <<QThread::currentThreadId() << QThread::currentThread();
     if(isRunning){
         get();
     }
@@ -169,6 +175,8 @@ void NetworkRequest::Parse_Data_Json(QString jsonStr)
                         if(jsonDataDoc.isObject()){
                             curAd = jsonDataDoc.object();
                             checkAndDownloadFiles();
+                            //QThread::sleep(1);
+                            //qDebug() << "sleep is --> " <<QThread::currentThreadId() << QThread::currentThread();
                         }
                     }
                 }

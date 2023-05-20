@@ -10,7 +10,7 @@
 #include <QTimer>
 
 
-class NetworkRequest : public QObject
+class NetworkRequest : public QThread
 {
     Q_OBJECT
 
@@ -20,7 +20,7 @@ public:
 
     void stop();
     void get();
-    void init();
+    void run();
     bool checkAndDownloadFiles();
 private slots:
     void getBack(QNetworkReply * reply);

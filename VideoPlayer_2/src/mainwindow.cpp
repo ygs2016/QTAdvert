@@ -20,7 +20,6 @@ MainWindow::MainWindow(QWidget *parent) :
 
     connect(mRequest,SIGNAL(sig_GetNetworkReply(QString)),this,SLOT(slotGetNetworkReply(QString )));
     //mRequest->start();
-    mRequest->init();
 
     mPlayer = new VideoPlayer;
     connect(mPlayer,SIGNAL(sig_GetOneFrame(QImage)),this,SLOT(slotGetOneFrame(QImage)));
@@ -28,6 +27,8 @@ MainWindow::MainWindow(QWidget *parent) :
     mPlayer->setFileName("./test.mp4");
     mPlayer->init();
     mPlayer->play();
+qDebug() << "main is --> " <<QThread::currentThreadId() << QThread::currentThread();
+    mRequest->start();
 }
 
 
@@ -38,7 +39,9 @@ MainWindow::~MainWindow()
     delete mPlayer;
 }
 
-
+void MainWindow::showEvent(QShowEvent *event){
+    //mRequest->init();
+}
 
 void MainWindow::paintEvent(QPaintEvent *event)
 {

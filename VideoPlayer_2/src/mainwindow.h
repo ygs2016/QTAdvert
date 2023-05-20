@@ -29,6 +29,7 @@ public:
 
 protected:
     void paintEvent(QPaintEvent *event);
+    void showEvent(QShowEvent *event);
 
 private:
     Ui::MainWindow *ui;
