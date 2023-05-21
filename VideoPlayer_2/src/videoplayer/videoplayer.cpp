@@ -100,6 +100,8 @@ void VideoPlayer::run(){
         if(canPlay){
             init(curPath + "/video/" + vObj.videoName, width, heigh);
             decodec(x,y);
+        }else{
+            std::this_thread::sleep_for(std::chrono::seconds(1));
         }
     }
 }

@@ -551,6 +551,86 @@ debug/moc_videoplayer.cpp: ../VideoPlayer_2/src/videoplayer/videoplayer.h \
 		C:/Qt/5.15.2/mingw81_64/include/QtCore/qcontiguouscache.h \
 		C:/Qt/5.15.2/mingw81_64/include/QtCore/qsharedpointer.h \
 		C:/Qt/5.15.2/mingw81_64/include/QtCore/qsharedpointer_impl.h \
+		C:/Qt/5.15.2/mingw81_64/include/QtCore/QMutex \
+		C:/Qt/5.15.2/mingw81_64/include/QtGui/QPixmap \
+		C:/Qt/5.15.2/mingw81_64/include/QtGui/qpixmap.h \
+		../VideoPlayer_2/src/videoplayer/advert.h \
+		../VideoPlayer_2/src/videoplayer/labelpicture.h \
+		C:/Qt/5.15.2/mingw81_64/include/QtCore/QJsonObject \
+		C:/Qt/5.15.2/mingw81_64/include/QtCore/qjsonobject.h \
+		C:/Qt/5.15.2/mingw81_64/include/QtCore/qjsonvalue.h \
+		C:/Qt/5.15.2/mingw81_64/include/QtCore/qcborvalue.h \
+		C:/Qt/5.15.2/mingw81_64/include/QtCore/qdatetime.h \
+		C:/Qt/5.15.2/mingw81_64/include/QtCore/qcborcommon.h \
+		C:/Qt/5.15.2/mingw81_64/include/QtCore/qregularexpression.h \
+		C:/Qt/5.15.2/mingw81_64/include/QtCore/qurl.h \
+		C:/Qt/5.15.2/mingw81_64/include/QtCore/qurlquery.h \
+		C:/Qt/5.15.2/mingw81_64/include/QtCore/quuid.h \
+		C:/Qt/5.15.2/mingw81_64/include/QtCore/QString \
+		../VideoPlayer_2/src/videoplayer/labelvideo.h \
+		../VideoPlayer_2/src/videoplayer/videoobject.h \
+		C:/Qt/5.15.2/mingw81_64/include/QtCore/QList \
+		../VideoPlayer_2/src/videoplayer/networkrequest.h \
+		../VideoPlayer_2/src/videoplayer/DownloadTool.h \
+		C:/Qt/5.15.2/mingw81_64/include/QtCore/QObject \
+		C:/Qt/5.15.2/mingw81_64/include/QtCore/QUrl \
+		C:/Qt/5.15.2/mingw81_64/include/QtCore/QFile \
+		C:/Qt/5.15.2/mingw81_64/include/QtCore/qfile.h \
+		C:/Qt/5.15.2/mingw81_64/include/QtCore/qfiledevice.h \
+		C:/Qt/5.15.2/mingw81_64/include/QtCore/QDir \
+		C:/Qt/5.15.2/mingw81_64/include/QtCore/qdir.h \
+		C:/Qt/5.15.2/mingw81_64/include/QtCore/qfileinfo.h \
+		C:/Qt/5.15.2/mingw81_64/include/QtCore/QPointer \
+		C:/Qt/5.15.2/mingw81_64/include/QtCore/qpointer.h \
+		C:/Qt/5.15.2/mingw81_64/include/QtWidgets/QApplication \
+		C:/Qt/5.15.2/mingw81_64/include/QtWidgets/qapplication.h \
+		C:/Qt/5.15.2/mingw81_64/include/QtWidgets/qtwidgetsglobal.h \
+		C:/Qt/5.15.2/mingw81_64/include/QtWidgets/qtwidgets-config.h \
+		C:/Qt/5.15.2/mingw81_64/include/QtCore/qcoreapplication.h \
+		C:/Qt/5.15.2/mingw81_64/include/QtCore/qeventloop.h \
+		C:/Qt/5.15.2/mingw81_64/include/QtGui/qcursor.h \
+		C:/Qt/5.15.2/mingw81_64/include/QtWidgets/qdesktopwidget.h \
+		C:/Qt/5.15.2/mingw81_64/include/QtWidgets/qwidget.h \
+		C:/Qt/5.15.2/mingw81_64/include/QtGui/qpalette.h \
+		C:/Qt/5.15.2/mingw81_64/include/QtGui/qbrush.h \
+		C:/Qt/5.15.2/mingw81_64/include/QtGui/qfont.h \
+		C:/Qt/5.15.2/mingw81_64/include/QtGui/qfontmetrics.h \
+		C:/Qt/5.15.2/mingw81_64/include/QtGui/qfontinfo.h \
+		C:/Qt/5.15.2/mingw81_64/include/QtWidgets/qsizepolicy.h \
+		C:/Qt/5.15.2/mingw81_64/include/QtGui/qkeysequence.h \
+		C:/Qt/5.15.2/mingw81_64/include/QtGui/qevent.h \
+		C:/Qt/5.15.2/mingw81_64/include/QtGui/qvector2d.h \
+		C:/Qt/5.15.2/mingw81_64/include/QtGui/qtouchdevice.h \
+		C:/Qt/5.15.2/mingw81_64/include/QtGui/qguiapplication.h \
+		C:/Qt/5.15.2/mingw81_64/include/QtGui/qinputmethod.h \
+		C:/Qt/5.15.2/mingw81_64/include/QtNetwork/QNetworkReply \
+		C:/Qt/5.15.2/mingw81_64/include/QtNetwork/qnetworkreply.h \
+		C:/Qt/5.15.2/mingw81_64/include/QtNetwork/qtnetworkglobal.h \
+		C:/Qt/5.15.2/mingw81_64/include/QtNetwork/qtnetwork-config.h \
+		C:/Qt/5.15.2/mingw81_64/include/QtCore/QIODevice \
+		C:/Qt/5.15.2/mingw81_64/include/QtCore/QVariant \
+		C:/Qt/5.15.2/mingw81_64/include/QtNetwork/QNetworkRequest \
+		C:/Qt/5.15.2/mingw81_64/include/QtNetwork/qnetworkrequest.h \
+		C:/Qt/5.15.2/mingw81_64/include/QtCore/QSharedDataPointer \
+		C:/Qt/5.15.2/mingw81_64/include/QtNetwork/QNetworkAccessManager \
+		C:/Qt/5.15.2/mingw81_64/include/QtNetwork/qnetworkaccessmanager.h \
+		C:/Qt/5.15.2/mingw81_64/include/QtCore/QVector \
+		C:/Qt/5.15.2/mingw81_64/include/QtNetwork/QSslConfiguration \
+		C:/Qt/5.15.2/mingw81_64/include/QtNetwork/qsslconfiguration.h \
+		C:/Qt/5.15.2/mingw81_64/include/QtNetwork/qsslsocket.h \
+		C:/Qt/5.15.2/mingw81_64/include/QtNetwork/qtcpsocket.h \
+		C:/Qt/5.15.2/mingw81_64/include/QtNetwork/qabstractsocket.h \
+		C:/Qt/5.15.2/mingw81_64/include/QtNetwork/qsslerror.h \
+		C:/Qt/5.15.2/mingw81_64/include/QtNetwork/qsslcertificate.h \
+		C:/Qt/5.15.2/mingw81_64/include/QtCore/qcryptographichash.h \
+		C:/Qt/5.15.2/mingw81_64/include/QtNetwork/qssl.h \
+		C:/Qt/5.15.2/mingw81_64/include/QtCore/QFlags \
+		C:/Qt/5.15.2/mingw81_64/include/QtNetwork/QSslPreSharedKeyAuthenticator \
+		C:/Qt/5.15.2/mingw81_64/include/QtNetwork/qsslpresharedkeyauthenticator.h \
+		C:/Qt/5.15.2/mingw81_64/include/QtCore/QMetaType \
+		C:/Qt/5.15.2/mingw81_64/include/QtCore/QTimer \
+		C:/Qt/5.15.2/mingw81_64/include/QtCore/qtimer.h \
+		C:/Qt/5.15.2/mingw81_64/include/QtCore/qbasictimer.h \
 		../VideoPlayer_2/ffmpeg/include/libavcodec/avcodec.h \
 		../VideoPlayer_2/ffmpeg/include/libavutil/samplefmt.h \
 		../VideoPlayer_2/ffmpeg/include/libavutil/avutil.h \
@@ -769,6 +849,8 @@ debug/moc_mainwindow.cpp: ../VideoPlayer_2/src/mainwindow.h \
 		C:/Qt/5.15.2/mingw81_64/include/QtCore/qtimer.h \
 		C:/Qt/5.15.2/mingw81_64/include/QtCore/qbasictimer.h \
 		../VideoPlayer_2/src/videoplayer/videoplayer.h \
+		C:/Qt/5.15.2/mingw81_64/include/QtCore/QMutex \
+		C:/Qt/5.15.2/mingw81_64/include/QtGui/QPixmap \
 		../VideoPlayer_2/ffmpeg/include/libavcodec/avcodec.h \
 		../VideoPlayer_2/ffmpeg/include/libavutil/samplefmt.h \
 		../VideoPlayer_2/ffmpeg/include/libavutil/avutil.h \
@@ -1012,6 +1094,8 @@ debug/main.o: ../VideoPlayer_2/src/main.cpp C:/Qt/5.15.2/mingw81_64/include/QtWi
 		C:/Qt/5.15.2/mingw81_64/include/QtCore/qtimer.h \
 		C:/Qt/5.15.2/mingw81_64/include/QtCore/qbasictimer.h \
 		../VideoPlayer_2/src/videoplayer/videoplayer.h \
+		C:/Qt/5.15.2/mingw81_64/include/QtCore/QMutex \
+		C:/Qt/5.15.2/mingw81_64/include/QtGui/QPixmap \
 		../VideoPlayer_2/ffmpeg/include/libavcodec/avcodec.h \
 		../VideoPlayer_2/ffmpeg/include/libavutil/samplefmt.h \
 		../VideoPlayer_2/ffmpeg/include/libavutil/avutil.h \
@@ -1784,6 +1868,86 @@ debug/videoplayer.o: ../VideoPlayer_2/src/videoplayer/videoplayer.cpp ../VideoPl
 		C:/Qt/5.15.2/mingw81_64/include/QtCore/qcontiguouscache.h \
 		C:/Qt/5.15.2/mingw81_64/include/QtCore/qsharedpointer.h \
 		C:/Qt/5.15.2/mingw81_64/include/QtCore/qsharedpointer_impl.h \
+		C:/Qt/5.15.2/mingw81_64/include/QtCore/QMutex \
+		C:/Qt/5.15.2/mingw81_64/include/QtGui/QPixmap \
+		C:/Qt/5.15.2/mingw81_64/include/QtGui/qpixmap.h \
+		../VideoPlayer_2/src/videoplayer/advert.h \
+		../VideoPlayer_2/src/videoplayer/labelpicture.h \
+		C:/Qt/5.15.2/mingw81_64/include/QtCore/QJsonObject \
+		C:/Qt/5.15.2/mingw81_64/include/QtCore/qjsonobject.h \
+		C:/Qt/5.15.2/mingw81_64/include/QtCore/qjsonvalue.h \
+		C:/Qt/5.15.2/mingw81_64/include/QtCore/qcborvalue.h \
+		C:/Qt/5.15.2/mingw81_64/include/QtCore/qdatetime.h \
+		C:/Qt/5.15.2/mingw81_64/include/QtCore/qcborcommon.h \
+		C:/Qt/5.15.2/mingw81_64/include/QtCore/qregularexpression.h \
+		C:/Qt/5.15.2/mingw81_64/include/QtCore/qurl.h \
+		C:/Qt/5.15.2/mingw81_64/include/QtCore/qurlquery.h \
+		C:/Qt/5.15.2/mingw81_64/include/QtCore/quuid.h \
+		C:/Qt/5.15.2/mingw81_64/include/QtCore/QString \
+		../VideoPlayer_2/src/videoplayer/labelvideo.h \
+		../VideoPlayer_2/src/videoplayer/videoobject.h \
+		C:/Qt/5.15.2/mingw81_64/include/QtCore/QList \
+		../VideoPlayer_2/src/videoplayer/networkrequest.h \
+		../VideoPlayer_2/src/videoplayer/DownloadTool.h \
+		C:/Qt/5.15.2/mingw81_64/include/QtCore/QObject \
+		C:/Qt/5.15.2/mingw81_64/include/QtCore/QUrl \
+		C:/Qt/5.15.2/mingw81_64/include/QtCore/QFile \
+		C:/Qt/5.15.2/mingw81_64/include/QtCore/qfile.h \
+		C:/Qt/5.15.2/mingw81_64/include/QtCore/qfiledevice.h \
+		C:/Qt/5.15.2/mingw81_64/include/QtCore/QDir \
+		C:/Qt/5.15.2/mingw81_64/include/QtCore/qdir.h \
+		C:/Qt/5.15.2/mingw81_64/include/QtCore/qfileinfo.h \
+		C:/Qt/5.15.2/mingw81_64/include/QtCore/QPointer \
+		C:/Qt/5.15.2/mingw81_64/include/QtCore/qpointer.h \
+		C:/Qt/5.15.2/mingw81_64/include/QtWidgets/QApplication \
+		C:/Qt/5.15.2/mingw81_64/include/QtWidgets/qapplication.h \
+		C:/Qt/5.15.2/mingw81_64/include/QtWidgets/qtwidgetsglobal.h \
+		C:/Qt/5.15.2/mingw81_64/include/QtWidgets/qtwidgets-config.h \
+		C:/Qt/5.15.2/mingw81_64/include/QtCore/qcoreapplication.h \
+		C:/Qt/5.15.2/mingw81_64/include/QtCore/qeventloop.h \
+		C:/Qt/5.15.2/mingw81_64/include/QtGui/qcursor.h \
+		C:/Qt/5.15.2/mingw81_64/include/QtWidgets/qdesktopwidget.h \
+		C:/Qt/5.15.2/mingw81_64/include/QtWidgets/qwidget.h \
+		C:/Qt/5.15.2/mingw81_64/include/QtGui/qpalette.h \
+		C:/Qt/5.15.2/mingw81_64/include/QtGui/qbrush.h \
+		C:/Qt/5.15.2/mingw81_64/include/QtGui/qfont.h \
+		C:/Qt/5.15.2/mingw81_64/include/QtGui/qfontmetrics.h \
+		C:/Qt/5.15.2/mingw81_64/include/QtGui/qfontinfo.h \
+		C:/Qt/5.15.2/mingw81_64/include/QtWidgets/qsizepolicy.h \
+		C:/Qt/5.15.2/mingw81_64/include/QtGui/qkeysequence.h \
+		C:/Qt/5.15.2/mingw81_64/include/QtGui/qevent.h \
+		C:/Qt/5.15.2/mingw81_64/include/QtGui/qvector2d.h \
+		C:/Qt/5.15.2/mingw81_64/include/QtGui/qtouchdevice.h \
+		C:/Qt/5.15.2/mingw81_64/include/QtGui/qguiapplication.h \
+		C:/Qt/5.15.2/mingw81_64/include/QtGui/qinputmethod.h \
+		C:/Qt/5.15.2/mingw81_64/include/QtNetwork/QNetworkReply \
+		C:/Qt/5.15.2/mingw81_64/include/QtNetwork/qnetworkreply.h \
+		C:/Qt/5.15.2/mingw81_64/include/QtNetwork/qtnetworkglobal.h \
+		C:/Qt/5.15.2/mingw81_64/include/QtNetwork/qtnetwork-config.h \
+		C:/Qt/5.15.2/mingw81_64/include/QtCore/QIODevice \
+		C:/Qt/5.15.2/mingw81_64/include/QtCore/QVariant \
+		C:/Qt/5.15.2/mingw81_64/include/QtNetwork/QNetworkRequest \
+		C:/Qt/5.15.2/mingw81_64/include/QtNetwork/qnetworkrequest.h \
+		C:/Qt/5.15.2/mingw81_64/include/QtCore/QSharedDataPointer \
+		C:/Qt/5.15.2/mingw81_64/include/QtNetwork/QNetworkAccessManager \
+		C:/Qt/5.15.2/mingw81_64/include/QtNetwork/qnetworkaccessmanager.h \
+		C:/Qt/5.15.2/mingw81_64/include/QtCore/QVector \
+		C:/Qt/5.15.2/mingw81_64/include/QtNetwork/QSslConfiguration \
+		C:/Qt/5.15.2/mingw81_64/include/QtNetwork/qsslconfiguration.h \
+		C:/Qt/5.15.2/mingw81_64/include/QtNetwork/qsslsocket.h \
+		C:/Qt/5.15.2/mingw81_64/include/QtNetwork/qtcpsocket.h \
+		C:/Qt/5.15.2/mingw81_64/include/QtNetwork/qabstractsocket.h \
+		C:/Qt/5.15.2/mingw81_64/include/QtNetwork/qsslerror.h \
+		C:/Qt/5.15.2/mingw81_64/include/QtNetwork/qsslcertificate.h \
+		C:/Qt/5.15.2/mingw81_64/include/QtCore/qcryptographichash.h \
+		C:/Qt/5.15.2/mingw81_64/include/QtNetwork/qssl.h \
+		C:/Qt/5.15.2/mingw81_64/include/QtCore/QFlags \
+		C:/Qt/5.15.2/mingw81_64/include/QtNetwork/QSslPreSharedKeyAuthenticator \
+		C:/Qt/5.15.2/mingw81_64/include/QtNetwork/qsslpresharedkeyauthenticator.h \
+		C:/Qt/5.15.2/mingw81_64/include/QtCore/QMetaType \
+		C:/Qt/5.15.2/mingw81_64/include/QtCore/QTimer \
+		C:/Qt/5.15.2/mingw81_64/include/QtCore/qtimer.h \
+		C:/Qt/5.15.2/mingw81_64/include/QtCore/qbasictimer.h \
 		../VideoPlayer_2/ffmpeg/include/libavcodec/avcodec.h \
 		../VideoPlayer_2/ffmpeg/include/libavutil/samplefmt.h \
 		../VideoPlayer_2/ffmpeg/include/libavutil/avutil.h \
@@ -1820,7 +1984,9 @@ debug/videoplayer.o: ../VideoPlayer_2/src/videoplayer/videoplayer.cpp ../VideoPl
 		../VideoPlayer_2/ffmpeg/include/libavutil/pixdesc.h \
 		../VideoPlayer_2/ffmpeg/include/libavutil/opt.h \
 		../VideoPlayer_2/ffmpeg/include/libavutil/avassert.h \
-		../VideoPlayer_2/ffmpeg/include/libavutil/imgutils.h
+		../VideoPlayer_2/ffmpeg/include/libavutil/imgutils.h \
+		C:/Qt/5.15.2/mingw81_64/include/QtCore/QJsonDocument \
+		C:/Qt/5.15.2/mingw81_64/include/QtCore/qjsondocument.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o debug\videoplayer.o ..\VideoPlayer_2\src\videoplayer\videoplayer.cpp
 
 debug/mainwindow.o: ../VideoPlayer_2/src/mainwindow.cpp ../VideoPlayer_2/src/mainwindow.h \
@@ -2000,6 +2166,8 @@ debug/mainwindow.o: ../VideoPlayer_2/src/mainwindow.cpp ../VideoPlayer_2/src/mai
 		C:/Qt/5.15.2/mingw81_64/include/QtCore/qtimer.h \
 		C:/Qt/5.15.2/mingw81_64/include/QtCore/qbasictimer.h \
 		../VideoPlayer_2/src/videoplayer/videoplayer.h \
+		C:/Qt/5.15.2/mingw81_64/include/QtCore/QMutex \
+		C:/Qt/5.15.2/mingw81_64/include/QtGui/QPixmap \
 		../VideoPlayer_2/ffmpeg/include/libavcodec/avcodec.h \
 		../VideoPlayer_2/ffmpeg/include/libavutil/samplefmt.h \
 		../VideoPlayer_2/ffmpeg/include/libavutil/avutil.h \
