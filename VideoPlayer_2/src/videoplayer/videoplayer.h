@@ -10,6 +10,10 @@
 #include <QThread>
 #include <QImage>
 #include <QDebug>
+#include <QMutex>
+#include <QPixmap>>
+#include "advert.h"
+#include "videoplayer/networkrequest.h"
 
 extern "C"
 {
@@ -35,13 +39,21 @@ public:
     explicit VideoPlayer(QObject *parent = nullptr);
     ~VideoPlayer();
     void setFileName(QString path){mFileName = path;}
-    void init();
-    void play();
+    void init(QString myFileName, int myWidth, int myHeight);
+    //void play();
     void stop();
+    void run();
 signals:
-    void sig_GetOneFrame(QImage); //没获取到一帧图像 就发送此信号
+    void sig_GetOneFrame(int,int,QImage); //没获取到一帧图像 就发送此信号
+    void sig_GetOneImage(int,int, int, int,QPixmap); //没获取到一帧图像 就发送此信号
+private slots:
+        void slotGetNetworkReply(QString Path);
 
 private:
+    QString curPath;
+    QMutex mMutex;
+    Advert curAd;
+    NetworkRequest *mRequest;
     QString mFileName;
     std::thread m_decodecThread;
     AVFormatContext *pAVFormatCtx;
@@ -54,7 +66,7 @@ private:
     int iVideoIndex = -1;
     QImage m_image;
     bool isFinish  =false;
-    void decodec();
+    void decodec(int myX, int myY);
 };
 
  static void VideoCallbackFun (void *data, void *data2);

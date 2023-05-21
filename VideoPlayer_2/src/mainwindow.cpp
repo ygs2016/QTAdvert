@@ -7,7 +7,6 @@
 
 #include "mainwindow.h"
 #include "ui_mainwindow.h"
-
 #include <QPainter>
 
 MainWindow::MainWindow(QWidget *parent) :
@@ -16,26 +15,21 @@ MainWindow::MainWindow(QWidget *parent) :
 {
     ui->setupUi(this);
 
-    mRequest = new NetworkRequest;
 
-    connect(mRequest,SIGNAL(sig_GetNetworkReply(QString)),this,SLOT(slotGetNetworkReply(QString )));
     //mRequest->start();
 
     mPlayer = new VideoPlayer;
-    connect(mPlayer,SIGNAL(sig_GetOneFrame(QImage)),this,SLOT(slotGetOneFrame(QImage)));
-    //mPlayer->setFileName("/root/test.mp4");
-    mPlayer->setFileName("./test.mp4");
-    mPlayer->init();
-    mPlayer->play();
-qDebug() << "main is --> " <<QThread::currentThreadId() << QThread::currentThread();
-    mRequest->start();
+    connect(mPlayer,SIGNAL(sig_GetOneFrame(int, int ,QImage)),this,SLOT(slotGetOneFrame(int,int,QImage)));
+    connect(mPlayer,SIGNAL(sig_GetOneImage(int, int,int,int ,QPixmap)),this,SLOT(slotGetOneImage(int,int,int,int,QPixmap)));
+    mPlayer->start();
+    //qDebug() << "main is --> " <<QThread::currentThreadId() << QThread::currentThread();
+
 }
 
 
 MainWindow::~MainWindow()
 {
     delete ui;
-    delete mRequest;
     delete mPlayer;
 }
 
@@ -51,51 +45,53 @@ void MainWindow::paintEvent(QPaintEvent *event)
 
         if (mImage.size().width() <= 0) return;
 
-        int xVedio = 0;
-        int yVedio = 0;
-
-        int wVedio = 650;
-        int hVedio = 360;
+        //int wVedio = 650;
+        //int hVedio = 360;
 
         ///将图像按比例缩放成和窗口一样大小
         //QImage img = mImage.scaled(this->size(),Qt::KeepAspectRatio);
-        QImage img = mImage.scaled(wVedio,hVedio,Qt::IgnoreAspectRatio);
+        //QImage img = mImage.scaled(wVedio,hVedio,Qt::IgnoreAspectRatio);
 
-        int x = this->width() - img.width();
-        int y = this->height() - img.height();
+        //int x = this->width() - img.width();
+        //int y = this->height() - img.height();
 
-        x /= 2;
-        y /= 2;
+        //x /= 2;
+        //y /= 2;
 
         //videoPainter.drawImage(QPoint(x,y),img); //画出图像
-         videoPainter.drawImage(QPoint(xVedio,yVedio),img);
+         videoPainter.drawImage(QPoint(xVideo,yVideo),mImage);
 
 
         QPainter imgPainter(this);
         //QPixmap map = QPixmap("/root/test.jpg");
-        QPixmap map = QPixmap("./test.jpg");
-        int xImg = 0;
-        int yImg = 360;
-        int wImg = 650;
-        int hImg = 440;
-        map.scaled(wImg,hImg,Qt::IgnoreAspectRatio);
+//        QPixmap map = QPixmap("./test.jpg");
+//        int xImg = 0;
+//        int yImg = 360;
+//        int wImg = 650;
+//        int hImg = 440;
+//        map.scaled(wImg,hImg,Qt::IgnoreAspectRatio);
 
         // 启用抗锯齿(反走样)
-        imgPainter.setRenderHint(QPainter::Antialiasing, true);
+        //imgPainter.setRenderHint(QPainter::Antialiasing, true);
         // 指定要绘制的图片（将图片路径替换为有效的图片路径）
         //imgPainter.drawPixmap(rect(),map);
-        imgPainter.drawPixmap(xImg,yImg,map);
+        updateImage = false;
+        imgPainter.drawPixmap(xImage,yImage,map);
 }
 
-
-void MainWindow::slotGetNetworkReply(QString Path)
+void MainWindow::slotGetOneFrame(int x, int y,QImage img)
 {
-        qDebug() << Path;
-}
-
-void MainWindow::slotGetOneFrame(QImage img)
-{
-    updateVedio = true;
+    xVideo = x;
+    yVideo = y;
     mImage = img;
+    update(); //调用update将执行 paintEvent函数
+}
+
+
+void MainWindow::slotGetOneImage(int x, int y,int width,int heigh, QPixmap img)
+{
+    map = img;
+    xImage = x;
+    yImage = y;
     update(); //调用update将执行 paintEvent函数
 }

@@ -4,25 +4,111 @@
  * http://blog.yundiantech.com/
  */
 
-#include "videoplayer.h"
-
+#include "videoplayer/videoplayer.h"
+#include <QJsonDocument>
+#include <QFile>
 #include <stdio.h>
+#include <QPixmap>
 
 VideoPlayer::VideoPlayer(QObject *parent)
 {
+    mRequest = new NetworkRequest;
 
+    connect(mRequest,SIGNAL(sig_GetNetworkReply(QString)),this,SLOT(slotGetNetworkReply(QString )));
+    mRequest->start();
 }
 
 VideoPlayer::~VideoPlayer()
 {
-
+    if(mRequest != NULL){
+        delete mRequest;
+    }
 }
 
 
 
-void VideoPlayer::init()
+void VideoPlayer::slotGetNetworkReply(QString Path)
 {
-    QByteArray ba = mFileName.toLatin1();
+    qDebug() << Path;
+    Advert tmpAd;
+    QString jsonFile = Path + "/JsonRawData.txt";
+        qDebug() << jsonFile;
+    if(QFile().exists(jsonFile)){
+        QFile file(jsonFile);
+        bool bOpen = file.open(QIODevice::ReadOnly);
+        if (bOpen == false)
+        {
+            return;
+        }
+        QByteArray data = file.readAll();
+        file.close();
+
+        QJsonDocument doc = QJsonDocument::fromJson(data);
+        if (!doc.isObject())
+        {
+            return;
+        }
+
+        QJsonObject obj = doc.object();
+        tmpAd = obj;
+        mMutex.lock();
+        if(curAd.id.compare(tmpAd.id)){
+            QFile(curPath + "/JsonRawData.txt").remove();
+            curAd = obj;
+            curPath = Path;
+        }
+        mMutex.unlock();
+    }
+}
+
+void VideoPlayer::run(){
+    QString oldID;
+    QString fileName;
+    int x;
+    int y;
+    int width;
+    int heigh;
+    int index;
+    bool canPlay = false;
+    VideoObject vObj;
+    while(1){
+        mMutex.lock();
+        canPlay = false;
+        if(!curAd.id.isNull() && !curAd.id.isEmpty()){
+            canPlay = true;
+            if(curAd.id.compare(oldID)){
+                oldID = curAd.id;
+                x = curAd.labelVideo.x;
+                y = curAd.labelVideo.y;
+                heigh = curAd.labelVideo.height;
+                width = curAd.labelVideo.width;
+                index = 0;
+                QPixmap map = QPixmap(curPath + "/Picture/" + curAd.labelPicture.pictureName);
+                map.scaled(curAd.labelPicture.width,curAd.labelPicture.height,Qt::IgnoreAspectRatio);
+                emit sig_GetOneImage(curAd.labelPicture.x,curAd.labelPicture.y,curAd.labelPicture.width,curAd.labelPicture.height,map);
+            }
+
+            if(index >= curAd.labelVideo.VideoList.count()){
+                index = 0;
+            }
+            if(curAd.labelVideo.VideoList.count() > 0){
+                vObj = curAd.labelVideo.VideoList[index];
+            }
+            index++;
+        }
+        mMutex.unlock();
+        if(canPlay){
+            init(curPath + "/video/" + vObj.videoName, width, heigh);
+            decodec(x,y);
+        }
+    }
+}
+
+
+void VideoPlayer::init(QString myFileName, int myWidth, int myHeight)
+{
+    qDebug()<< "init file name " << myFileName;
+    QByteArray ba = myFileName.toLatin1();
     const char * filename = ba.data();
 
     pAVFormatCtx = avformat_alloc_context();
@@ -98,10 +184,10 @@ void VideoPlayer::init()
     pAVFrameRGB = av_frame_alloc();
     //用于视频图像的转换,将源数据转换为RGB32的目标数据
     pSwsCtx = sws_getContext(pAVCodecCtx->width, pAVCodecCtx->height, pAVCodecCtx->pix_fmt,
-                             pAVCodecCtx->width, pAVCodecCtx->height, AV_PIX_FMT_RGB32,
+                             myWidth, myHeight, AV_PIX_FMT_RGB32,
                              SWS_BICUBIC, NULL, NULL, NULL);
 
-    int  m_size = av_image_get_buffer_size(AVPixelFormat(AV_PIX_FMT_RGB32), pAVCodecCtx->width, pAVCodecCtx->height, 1);
+    int  m_size = av_image_get_buffer_size(AVPixelFormat(AV_PIX_FMT_RGB32), pAVCodecCtx->width,  pAVCodecCtx->height, 1);
     pRgbBuffer = (uint8_t *)(av_malloc(m_size));
     //为已经分配的空间的结构体AVPicture挂上一段用于保存数据的空间
     avpicture_fill((AVPicture *)pAVFrameRGB, pRgbBuffer, AV_PIX_FMT_BGR32, pAVCodecCtx->width, pAVCodecCtx->height);
@@ -110,16 +196,16 @@ void VideoPlayer::init()
     av_new_packet(&packet, pAVCodecCtx->width * pAVCodecCtx->height);
 }
 
-void VideoPlayer::play()
-{
-    m_decodecThread = std::thread([this]()
-                                  {
-                                      decodec();
-                                  });
-    m_decodecThread.detach();
-}
+//void VideoPlayer::play()
+//{
+//    m_decodecThread = std::thread([this]()
+//                                  {
+//                                      decodec();
+//                                  });
+//    m_decodecThread.detach();
+//}
 
-void VideoPlayer::decodec()
+void VideoPlayer::decodec(int myX, int myY)
 {
     //读取码流中视频帧
     while (true)
@@ -152,7 +238,7 @@ void VideoPlayer::decodec()
             QImage img(pRgbBuffer, pAVCodecCtx->width, pAVCodecCtx->height, QImage::Format_RGB32);
             //qDebug()<<"decode img";
             m_image = img;
-            emit sig_GetOneFrame(m_image);
+            emit sig_GetOneFrame(myX,myY,m_image);
         }else {
            qDebug()<<"decode error";
         }
