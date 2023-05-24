@@ -1,5 +1,5 @@
 #include "networkrequest.h"
-#include "videoplayer/DownloadTool.h"
+#include "videoplayer/downloadtool.h"
 #include "videoplayer/advert.h"
 #include<QDebug>
 #include <QJsonDocument>

@@ -3,7 +3,7 @@
 #include "videoplayer/advert.h"
 #include <QThread>
 #include <QDebug>
-#include "videoplayer/DownloadTool.h"
+#include "videoplayer/downloadtool.h"
 #include<QtNetwork/QNetworkRequest>
 #include<QtNetwork/QNetworkReply>
 #include<QtNetwork/QNetworkAccessManager>

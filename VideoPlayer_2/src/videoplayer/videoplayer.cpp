@@ -98,7 +98,7 @@ void VideoPlayer::run(){
         }
         mMutex.unlock();
         if(canPlay){
-            init(curPath + "/video/" + vObj.videoName, width, heigh);
+            init(curPath + "/Video/" + vObj.videoName, width, heigh);
             decodec(x,y);
         }else{
             std::this_thread::sleep_for(std::chrono::seconds(1));
@@ -246,7 +246,7 @@ void VideoPlayer::decodec(int myX, int myY)
         }
 
         av_packet_unref(&packet);
-        std::this_thread::sleep_for(std::chrono::milliseconds(25));
+        std::this_thread::sleep_for(std::chrono::milliseconds(1));
     }
     //资源回收
     av_free(pAVFrame);

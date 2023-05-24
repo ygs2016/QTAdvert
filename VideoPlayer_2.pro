@@ -15,6 +15,7 @@ TEMPLATE = app
 
 SOURCES += src/main.cpp \
     src/videoplayer/advert.cpp \
+    src/videoplayer/downloadtool.cpp \
     src/videoplayer/labelpicture.cpp \
     src/videoplayer/labelvideo.cpp \
     src/videoplayer/networkrequest.cpp \
@@ -24,6 +25,7 @@ SOURCES += src/main.cpp \
 
 HEADERS  += \
     src/videoplayer/advert.h \
+    src/videoplayer/downloadtool.h \
     src/videoplayer/labelpicture.h \
     src/videoplayer/labelvideo.h \
     src/videoplayer/networkrequest.h \
