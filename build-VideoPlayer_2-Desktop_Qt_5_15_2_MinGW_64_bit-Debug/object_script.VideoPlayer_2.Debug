@@ -1,4 +1,15 @@
 debug/main.o
+debug/audio.o
+debug/blitutil.o
+debug/demux.o
+debug/frame.o
+debug/hwplayer.o
+debug/interface.o
+debug/mainentry.o
+debug/packet.o
+debug/player.o
+debug/sd20xpanel.o
+debug/video.o
 debug/advert.o
 debug/downloadtool.o
 debug/labelpicture.o
@@ -7,6 +18,7 @@ debug/networkrequest.o
 debug/videoobject.o
 debug/videoplayer.o
 debug/mainwindow.o
+debug/moc_hwplayer.o
 debug/moc_downloadtool.o
 debug/moc_networkrequest.o
 debug/moc_videoplayer.o

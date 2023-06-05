@@ -1,4 +1,15 @@
 release/main.o
+release/audio.o
+release/blitutil.o
+release/demux.o
+release/frame.o
+release/hwplayer.o
+release/interface.o
+release/mainentry.o
+release/packet.o
+release/player.o
+release/sd20xpanel.o
+release/video.o
 release/advert.o
 release/downloadtool.o
 release/labelpicture.o
@@ -7,6 +18,7 @@ release/networkrequest.o
 release/videoobject.o
 release/videoplayer.o
 release/mainwindow.o
+release/moc_hwplayer.o
 release/moc_downloadtool.o
 release/moc_networkrequest.o
 release/moc_videoplayer.o

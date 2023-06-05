@@ -13,7 +13,8 @@
 #include <QPaintEvent>
 
 #include <videoplayer/networkrequest.h>
-#include "videoplayer/videoplayer.h"
+#include "hwplayer/hwplayer.h"
+//#include "videoplayer/videoplayerhw.h"
 
 namespace Ui {
 class MainWindow;
@@ -35,17 +36,19 @@ private:
     Ui::MainWindow *ui;
     int xVideo = 0;
     int yVideo = 0;
+    int widthVideo = 0;
+    int heighVideo = 0;
     QPixmap map;
     int xImage = 0;
     int yImage = 0;
-    VideoPlayer *mPlayer; //播放线程
+    hwplayer *mPlayer; //播放线程
     QLabel mLabel;
     QImage mImage; //记录当前的图像
     bool updateImage = false;
     bool updateVedio = false;
 
 private slots:
-    void slotGetOneFrame(int x, int y,QImage img);
+    void slotGetOneFrame(int x, int y,int width, int heigh);
     void slotGetOneImage(int x, int y, int width, int heigh, QPixmap img);
 
 };
