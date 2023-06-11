@@ -51,94 +51,46 @@ OBJECTS_DIR   = release
 ####### Files
 
 SOURCES       = ..\VideoPlayer_2\src\main.cpp \
-		..\VideoPlayer_2\src\hwplayer\audio.c \
-		..\VideoPlayer_2\src\hwplayer\blitutil.c \
-		..\VideoPlayer_2\src\hwplayer\demux.c \
-		..\VideoPlayer_2\src\hwplayer\frame.c \
 		..\VideoPlayer_2\src\hwplayer\hwplayer.cpp \
-		..\VideoPlayer_2\src\hwplayer\interface.c \
-		..\VideoPlayer_2\src\hwplayer\mainentry.c \
-		..\VideoPlayer_2\src\hwplayer\packet.c \
-		..\VideoPlayer_2\src\hwplayer\player.c \
-		..\VideoPlayer_2\src\hwplayer\sd20xpanel.c \
-		..\VideoPlayer_2\src\hwplayer\video.c \
 		..\VideoPlayer_2\src\videoplayer\advert.cpp \
 		..\VideoPlayer_2\src\videoplayer\downloadtool.cpp \
 		..\VideoPlayer_2\src\videoplayer\labelpicture.cpp \
 		..\VideoPlayer_2\src\videoplayer\labelvideo.cpp \
 		..\VideoPlayer_2\src\videoplayer\networkrequest.cpp \
 		..\VideoPlayer_2\src\videoplayer\videoobject.cpp \
-		..\VideoPlayer_2\src\videoplayer\videoplayer.cpp \
 		..\VideoPlayer_2\src\mainwindow.cpp release\moc_hwplayer.cpp \
 		release\moc_downloadtool.cpp \
 		release\moc_networkrequest.cpp \
-		release\moc_videoplayer.cpp \
 		release\moc_mainwindow.cpp
 OBJECTS       = release/main.o \
-		release/audio.o \
-		release/blitutil.o \
-		release/demux.o \
-		release/frame.o \
 		release/hwplayer.o \
-		release/interface.o \
-		release/mainentry.o \
-		release/packet.o \
-		release/player.o \
-		release/sd20xpanel.o \
-		release/video.o \
 		release/advert.o \
 		release/downloadtool.o \
 		release/labelpicture.o \
 		release/labelvideo.o \
 		release/networkrequest.o \
 		release/videoobject.o \
-		release/videoplayer.o \
 		release/mainwindow.o \
 		release/moc_hwplayer.o \
 		release/moc_downloadtool.o \
 		release/moc_networkrequest.o \
-		release/moc_videoplayer.o \
 		release/moc_mainwindow.o
 
-DIST          =  ..\VideoPlayer_2\src\hwplayer\CC0702I50R_1024x600.h \
-		..\VideoPlayer_2\src\hwplayer\audio.h \
-		..\VideoPlayer_2\src\hwplayer\blitutil.h \
-		..\VideoPlayer_2\src\hwplayer\demux.h \
-		..\VideoPlayer_2\src\hwplayer\frame.h \
-		..\VideoPlayer_2\src\hwplayer\hwplayer.h \
-		..\VideoPlayer_2\src\hwplayer\interface.h \
-		..\VideoPlayer_2\src\hwplayer\mainentry.h \
-		..\VideoPlayer_2\src\hwplayer\mi_vdec_extra.h \
-		..\VideoPlayer_2\src\hwplayer\packet.h \
-		..\VideoPlayer_2\src\hwplayer\player.h \
-		..\VideoPlayer_2\src\hwplayer\sd20xpanel.h \
-		..\VideoPlayer_2\src\hwplayer\video.h \
+DIST          =  ..\VideoPlayer_2\src\hwplayer\hwplayer.h \
 		..\VideoPlayer_2\src\videoplayer\advert.h \
 		..\VideoPlayer_2\src\videoplayer\downloadtool.h \
 		..\VideoPlayer_2\src\videoplayer\labelpicture.h \
 		..\VideoPlayer_2\src\videoplayer\labelvideo.h \
 		..\VideoPlayer_2\src\videoplayer\networkrequest.h \
 		..\VideoPlayer_2\src\videoplayer\videoobject.h \
-		..\VideoPlayer_2\src\videoplayer\videoplayer.h \
 		..\VideoPlayer_2\src\mainwindow.h ..\VideoPlayer_2\src\main.cpp \
-		..\VideoPlayer_2\src\hwplayer\audio.c \
-		..\VideoPlayer_2\src\hwplayer\blitutil.c \
-		..\VideoPlayer_2\src\hwplayer\demux.c \
-		..\VideoPlayer_2\src\hwplayer\frame.c \
 		..\VideoPlayer_2\src\hwplayer\hwplayer.cpp \
-		..\VideoPlayer_2\src\hwplayer\interface.c \
-		..\VideoPlayer_2\src\hwplayer\mainentry.c \
-		..\VideoPlayer_2\src\hwplayer\packet.c \
-		..\VideoPlayer_2\src\hwplayer\player.c \
-		..\VideoPlayer_2\src\hwplayer\sd20xpanel.c \
-		..\VideoPlayer_2\src\hwplayer\video.c \
 		..\VideoPlayer_2\src\videoplayer\advert.cpp \
 		..\VideoPlayer_2\src\videoplayer\downloadtool.cpp \
 		..\VideoPlayer_2\src\videoplayer\labelpicture.cpp \
 		..\VideoPlayer_2\src\videoplayer\labelvideo.cpp \
 		..\VideoPlayer_2\src\videoplayer\networkrequest.cpp \
 		..\VideoPlayer_2\src\videoplayer\videoobject.cpp \
-		..\VideoPlayer_2\src\videoplayer\videoplayer.cpp \
 		..\VideoPlayer_2\src\mainwindow.cpp
 QMAKE_TARGET  = VideoPlayer_2
 DESTDIR        = release\ #avoid trailing-slash linebreak
@@ -159,10 +111,10 @@ qmake: FORCE
 qmake_all: FORCE
 
 dist:
-	$(ZIP) VideoPlayer_2.zip $(SOURCES) $(DIST) ..\VideoPlayer_2\VideoPlayer_2.pro C:\Qt\5.15.2\mingw81_64\mkspecs\features\spec_pre.prf C:\Qt\5.15.2\mingw81_64\mkspecs\qdevice.pri C:\Qt\5.15.2\mingw81_64\mkspecs\features\device_config.prf C:\Qt\5.15.2\mingw81_64\mkspecs\common\sanitize.conf C:\Qt\5.15.2\mingw81_64\mkspecs\common\gcc-base.conf C:\Qt\5.15.2\mingw81_64\mkspecs\common\g++-base.conf C:\Qt\5.15.2\mingw81_64\mkspecs\common\angle.conf C:\Qt\5.15.2\mingw81_64\mkspecs\features\win32\windows_vulkan_sdk.prf C:\Qt\5.15.2\mingw81_64\mkspecs\common\windows-vulkan.conf C:\Qt\5.15.2\mingw81_64\mkspecs\common\g++-win32.conf C:\Qt\5.15.2\mingw81_64\mkspecs\common\windows-desktop.conf C:\Qt\5.15.2\mingw81_64\mkspecs\qconfig.pri C:\Qt\5.15.2\mingw81_64\mkspecs\modules\qt_lib_3danimation.pri C:\Qt\5.15.2\mingw81_64\mkspecs\modules\qt_lib_3danimation_private.pri C:\Qt\5.15.2\mingw81_64\mkspecs\modules\qt_lib_3dcore.pri C:\Qt\5.15.2\mingw81_64\mkspecs\modules\qt_lib_3dcore_private.pri C:\Qt\5.15.2\mingw81_64\mkspecs\modules\qt_lib_3dextras.pri C:\Qt\5.15.2\mingw81_64\mkspecs\modules\qt_lib_3dextras_private.pri C:\Qt\5.15.2\mingw81_64\mkspecs\modules\qt_lib_3dinput.pri C:\Qt\5.15.2\mingw81_64\mkspecs\modules\qt_lib_3dinput_private.pri C:\Qt\5.15.2\mingw81_64\mkspecs\modules\qt_lib_3dlogic.pri C:\Qt\5.15.2\mingw81_64\mkspecs\modules\qt_lib_3dlogic_private.pri C:\Qt\5.15.2\mingw81_64\mkspecs\modules\qt_lib_3dquick.pri C:\Qt\5.15.2\mingw81_64\mkspecs\modules\qt_lib_3dquick_private.pri C:\Qt\5.15.2\mingw81_64\mkspecs\modules\qt_lib_3dquickanimation.pri C:\Qt\5.15.2\mingw81_64\mkspecs\modules\qt_lib_3dquickanimation_private.pri C:\Qt\5.15.2\mingw81_64\mkspecs\modules\qt_lib_3dquickextras.pri C:\Qt\5.15.2\mingw81_64\mkspecs\modules\qt_lib_3dquickextras_private.pri C:\Qt\5.15.2\mingw81_64\mkspecs\modules\qt_lib_3dquickinput.pri C:\Qt\5.15.2\mingw81_64\mkspecs\modules\qt_lib_3dquickinput_private.pri C:\Qt\5.15.2\mingw81_64\mkspecs\modules\qt_lib_3dquickrender.pri C:\Qt\5.15.2\mingw81_64\mkspecs\modules\qt_lib_3dquickrender_private.pri C:\Qt\5.15.2\mingw81_64\mkspecs\modules\qt_lib_3dquickscene2d.pri C:\Qt\5.15.2\mingw81_64\mkspecs\modules\qt_lib_3dquickscene2d_private.pri C:\Qt\5.15.2\mingw81_64\mkspecs\modules\qt_lib_3drender.pri C:\Qt\5.15.2\mingw81_64\mkspecs\modules\qt_lib_3drender_private.pri C:\Qt\5.15.2\mingw81_64\mkspecs\modules\qt_lib_accessibility_support_private.pri C:\Qt\5.15.2\mingw81_64\mkspecs\modules\qt_lib_axbase.pri C:\Qt\5.15.2\mingw81_64\mkspecs\modules\qt_lib_axbase_private.pri C:\Qt\5.15.2\mingw81_64\mkspecs\modules\qt_lib_axcontainer.pri C:\Qt\5.15.2\mingw81_64\mkspecs\modules\qt_lib_axcontainer_private.pri C:\Qt\5.15.2\mingw81_64\mkspecs\modules\qt_lib_axserver.pri C:\Qt\5.15.2\mingw81_64\mkspecs\modules\qt_lib_axserver_private.pri C:\Qt\5.15.2\mingw81_64\mkspecs\modules\qt_lib_bluetooth.pri C:\Qt\5.15.2\mingw81_64\mkspecs\modules\qt_lib_bluetooth_private.pri C:\Qt\5.15.2\mingw81_64\mkspecs\modules\qt_lib_bodymovin_private.pri C:\Qt\5.15.2\mingw81_64\mkspecs\modules\qt_lib_bootstrap_private.pri C:\Qt\5.15.2\mingw81_64\mkspecs\modules\qt_lib_concurrent.pri C:\Qt\5.15.2\mingw81_64\mkspecs\modules\qt_lib_concurrent_private.pri C:\Qt\5.15.2\mingw81_64\mkspecs\modules\qt_lib_core.pri C:\Qt\5.15.2\mingw81_64\mkspecs\modules\qt_lib_core_private.pri C:\Qt\5.15.2\mingw81_64\mkspecs\modules\qt_lib_datavisualization.pri C:\Qt\5.15.2\mingw81_64\mkspecs\modules\qt_lib_datavisualization_private.pri C:\Qt\5.15.2\mingw81_64\mkspecs\modules\qt_lib_dbus.pri C:\Qt\5.15.2\mingw81_64\mkspecs\modules\qt_lib_dbus_private.pri C:\Qt\5.15.2\mingw81_64\mkspecs\modules\qt_lib_designer.pri C:\Qt\5.15.2\mingw81_64\mkspecs\modules\qt_lib_designer_private.pri C:\Qt\5.15.2\mingw81_64\mkspecs\modules\qt_lib_designercomponents_private.pri C:\Qt\5.15.2\mingw81_64\mkspecs\modules\qt_lib_devicediscovery_support_private.pri C:\Qt\5.15.2\mingw81_64\mkspecs\modules\qt_lib_edid_support_private.pri C:\Qt\5.15.2\mingw81_64\mkspecs\modules\qt_lib_egl_support_private.pri C:\Qt\5.15.2\mingw81_64\mkspecs\modules\qt_lib_eventdispatcher_support_private.pri C:\Qt\5.15.2\mingw81_64\mkspecs\modules\qt_lib_fb_support_private.pri C:\Qt\5.15.2\mingw81_64\mkspecs\modules\qt_lib_fontdatabase_support_private.pri C:\Qt\5.15.2\mingw81_64\mkspecs\modules\qt_lib_gamepad.pri C:\Qt\5.15.2\mingw81_64\mkspecs\modules\qt_lib_gamepad_private.pri C:\Qt\5.15.2\mingw81_64\mkspecs\modules\qt_lib_gui.pri C:\Qt\5.15.2\mingw81_64\mkspecs\modules\qt_lib_gui_private.pri C:\Qt\5.15.2\mingw81_64\mkspecs\modules\qt_lib_help.pri C:\Qt\5.15.2\mingw81_64\mkspecs\modules\qt_lib_help_private.pri C:\Qt\5.15.2\mingw81_64\mkspecs\modules\qt_lib_location.pri C:\Qt\5.15.2\mingw81_64\mkspecs\modules\qt_lib_location_private.pri C:\Qt\5.15.2\mingw81_64\mkspecs\modules\qt_lib_multimedia.pri C:\Qt\5.15.2\mingw81_64\mkspecs\modules\qt_lib_multimedia_private.pri C:\Qt\5.15.2\mingw81_64\mkspecs\modules\qt_lib_multimediawidgets.pri C:\Qt\5.15.2\mingw81_64\mkspecs\modules\qt_lib_multimediawidgets_private.pri C:\Qt\5.15.2\mingw81_64\mkspecs\modules\qt_lib_network.pri C:\Qt\5.15.2\mingw81_64\mkspecs\modules\qt_lib_network_private.pri C:\Qt\5.15.2\mingw81_64\mkspecs\modules\qt_lib_networkauth.pri C:\Qt\5.15.2\mingw81_64\mkspecs\modules\qt_lib_networkauth_private.pri C:\Qt\5.15.2\mingw81_64\mkspecs\modules\qt_lib_nfc.pri C:\Qt\5.15.2\mingw81_64\mkspecs\modules\qt_lib_nfc_private.pri C:\Qt\5.15.2\mingw81_64\mkspecs\modules\qt_lib_opengl.pri C:\Qt\5.15.2\mingw81_64\mkspecs\modules\qt_lib_opengl_private.pri C:\Qt\5.15.2\mingw81_64\mkspecs\modules\qt_lib_openglextensions.pri C:\Qt\5.15.2\mingw81_64\mkspecs\modules\qt_lib_openglextensions_private.pri C:\Qt\5.15.2\mingw81_64\mkspecs\modules\qt_lib_packetprotocol_private.pri C:\Qt\5.15.2\mingw81_64\mkspecs\modules\qt_lib_platformcompositor_support_private.pri C:\Qt\5.15.2\mingw81_64\mkspecs\modules\qt_lib_positioning.pri C:\Qt\5.15.2\mingw81_64\mkspecs\modules\qt_lib_positioning_private.pri C:\Qt\5.15.2\mingw81_64\mkspecs\modules\qt_lib_positioningquick.pri C:\Qt\5.15.2\mingw81_64\mkspecs\modules\qt_lib_positioningquick_private.pri C:\Qt\5.15.2\mingw81_64\mkspecs\modules\qt_lib_printsupport.pri C:\Qt\5.15.2\mingw81_64\mkspecs\modules\qt_lib_printsupport_private.pri C:\Qt\5.15.2\mingw81_64\mkspecs\modules\qt_lib_purchasing.pri C:\Qt\5.15.2\mingw81_64\mkspecs\modules\qt_lib_purchasing_private.pri C:\Qt\5.15.2\mingw81_64\mkspecs\modules\qt_lib_qml.pri C:\Qt\5.15.2\mingw81_64\mkspecs\modules\qt_lib_qml_private.pri C:\Qt\5.15.2\mingw81_64\mkspecs\modules\qt_lib_qmldebug_private.pri C:\Qt\5.15.2\mingw81_64\mkspecs\modules\qt_lib_qmldevtools_private.pri C:\Qt\5.15.2\mingw81_64\mkspecs\modules\qt_lib_qmlmodels.pri C:\Qt\5.15.2\mingw81_64\mkspecs\modules\qt_lib_qmlmodels_private.pri C:\Qt\5.15.2\mingw81_64\mkspecs\modules\qt_lib_qmltest.pri C:\Qt\5.15.2\mingw81_64\mkspecs\modules\qt_lib_qmltest_private.pri C:\Qt\5.15.2\mingw81_64\mkspecs\modules\qt_lib_qmlworkerscript.pri C:\Qt\5.15.2\mingw81_64\mkspecs\modules\qt_lib_qmlworkerscript_private.pri C:\Qt\5.15.2\mingw81_64\mkspecs\modules\qt_lib_qtmultimediaquicktools_private.pri C:\Qt\5.15.2\mingw81_64\mkspecs\modules\qt_lib_quick.pri C:\Qt\5.15.2\mingw81_64\mkspecs\modules\qt_lib_quick_private.pri C:\Qt\5.15.2\mingw81_64\mkspecs\modules\qt_lib_quickcontrols2.pri C:\Qt\5.15.2\mingw81_64\mkspecs\modules\qt_lib_quickcontrols2_private.pri C:\Qt\5.15.2\mingw81_64\mkspecs\modules\qt_lib_quickparticles_private.pri C:\Qt\5.15.2\mingw81_64\mkspecs\modules\qt_lib_quickshapes_private.pri C:\Qt\5.15.2\mingw81_64\mkspecs\modules\qt_lib_quicktemplates2.pri C:\Qt\5.15.2\mingw81_64\mkspecs\modules\qt_lib_quicktemplates2_private.pri C:\Qt\5.15.2\mingw81_64\mkspecs\modules\qt_lib_quickwidgets.pri C:\Qt\5.15.2\mingw81_64\mkspecs\modules\qt_lib_quickwidgets_private.pri C:\Qt\5.15.2\mingw81_64\mkspecs\modules\qt_lib_remoteobjects.pri C:\Qt\5.15.2\mingw81_64\mkspecs\modules\qt_lib_remoteobjects_private.pri C:\Qt\5.15.2\mingw81_64\mkspecs\modules\qt_lib_repparser.pri C:\Qt\5.15.2\mingw81_64\mkspecs\modules\qt_lib_repparser_private.pri C:\Qt\5.15.2\mingw81_64\mkspecs\modules\qt_lib_script.pri C:\Qt\5.15.2\mingw81_64\mkspecs\modules\qt_lib_script_private.pri C:\Qt\5.15.2\mingw81_64\mkspecs\modules\qt_lib_scripttools.pri C:\Qt\5.15.2\mingw81_64\mkspecs\modules\qt_lib_scripttools_private.pri C:\Qt\5.15.2\mingw81_64\mkspecs\modules\qt_lib_scxml.pri C:\Qt\5.15.2\mingw81_64\mkspecs\modules\qt_lib_scxml_private.pri C:\Qt\5.15.2\mingw81_64\mkspecs\modules\qt_lib_sensors.pri C:\Qt\5.15.2\mingw81_64\mkspecs\modules\qt_lib_sensors_private.pri C:\Qt\5.15.2\mingw81_64\mkspecs\modules\qt_lib_serialbus.pri C:\Qt\5.15.2\mingw81_64\mkspecs\modules\qt_lib_serialbus_private.pri C:\Qt\5.15.2\mingw81_64\mkspecs\modules\qt_lib_serialport.pri C:\Qt\5.15.2\mingw81_64\mkspecs\modules\qt_lib_serialport_private.pri C:\Qt\5.15.2\mingw81_64\mkspecs\modules\qt_lib_sql.pri C:\Qt\5.15.2\mingw81_64\mkspecs\modules\qt_lib_sql_private.pri C:\Qt\5.15.2\mingw81_64\mkspecs\modules\qt_lib_svg.pri C:\Qt\5.15.2\mingw81_64\mkspecs\modules\qt_lib_svg_private.pri C:\Qt\5.15.2\mingw81_64\mkspecs\modules\qt_lib_testlib.pri C:\Qt\5.15.2\mingw81_64\mkspecs\modules\qt_lib_testlib_private.pri C:\Qt\5.15.2\mingw81_64\mkspecs\modules\qt_lib_texttospeech.pri C:\Qt\5.15.2\mingw81_64\mkspecs\modules\qt_lib_texttospeech_private.pri C:\Qt\5.15.2\mingw81_64\mkspecs\modules\qt_lib_theme_support_private.pri C:\Qt\5.15.2\mingw81_64\mkspecs\modules\qt_lib_uiplugin.pri C:\Qt\5.15.2\mingw81_64\mkspecs\modules\qt_lib_uitools.pri C:\Qt\5.15.2\mingw81_64\mkspecs\modules\qt_lib_uitools_private.pri C:\Qt\5.15.2\mingw81_64\mkspecs\modules\qt_lib_virtualkeyboard.pri C:\Qt\5.15.2\mingw81_64\mkspecs\modules\qt_lib_virtualkeyboard_private.pri C:\Qt\5.15.2\mingw81_64\mkspecs\modules\qt_lib_vulkan_support_private.pri C:\Qt\5.15.2\mingw81_64\mkspecs\modules\qt_lib_webchannel.pri C:\Qt\5.15.2\mingw81_64\mkspecs\modules\qt_lib_webchannel_private.pri C:\Qt\5.15.2\mingw81_64\mkspecs\modules\qt_lib_websockets.pri C:\Qt\5.15.2\mingw81_64\mkspecs\modules\qt_lib_websockets_private.pri C:\Qt\5.15.2\mingw81_64\mkspecs\modules\qt_lib_widgets.pri C:\Qt\5.15.2\mingw81_64\mkspecs\modules\qt_lib_widgets_private.pri C:\Qt\5.15.2\mingw81_64\mkspecs\modules\qt_lib_windowsuiautomation_support_private.pri C:\Qt\5.15.2\mingw81_64\mkspecs\modules\qt_lib_winextras.pri C:\Qt\5.15.2\mingw81_64\mkspecs\modules\qt_lib_winextras_private.pri C:\Qt\5.15.2\mingw81_64\mkspecs\modules\qt_lib_xml.pri C:\Qt\5.15.2\mingw81_64\mkspecs\modules\qt_lib_xml_private.pri C:\Qt\5.15.2\mingw81_64\mkspecs\modules\qt_lib_xmlpatterns.pri C:\Qt\5.15.2\mingw81_64\mkspecs\modules\qt_lib_xmlpatterns_private.pri C:\Qt\5.15.2\mingw81_64\mkspecs\modules\qt_lib_zlib_private.pri C:\Qt\5.15.2\mingw81_64\mkspecs\features\qt_functions.prf C:\Qt\5.15.2\mingw81_64\mkspecs\features\qt_config.prf C:\Qt\5.15.2\mingw81_64\mkspecs\win32-g++\qmake.conf C:\Qt\5.15.2\mingw81_64\mkspecs\features\spec_post.prf .qmake.stash C:\Qt\5.15.2\mingw81_64\mkspecs\features\exclusive_builds.prf C:\Qt\5.15.2\mingw81_64\mkspecs\features\toolchain.prf C:\Qt\5.15.2\mingw81_64\mkspecs\features\default_pre.prf C:\Qt\5.15.2\mingw81_64\mkspecs\features\win32\default_pre.prf C:\Qt\5.15.2\mingw81_64\mkspecs\features\resolve_config.prf C:\Qt\5.15.2\mingw81_64\mkspecs\features\exclusive_builds_post.prf C:\Qt\5.15.2\mingw81_64\mkspecs\features\default_post.prf C:\Qt\5.15.2\mingw81_64\mkspecs\features\build_pass.prf C:\Qt\5.15.2\mingw81_64\mkspecs\features\qml_debug.prf C:\Qt\5.15.2\mingw81_64\mkspecs\features\precompile_header.prf C:\Qt\5.15.2\mingw81_64\mkspecs\features\warn_on.prf C:\Qt\5.15.2\mingw81_64\mkspecs\features\qt.prf C:\Qt\5.15.2\mingw81_64\mkspecs\features\resources_functions.prf C:\Qt\5.15.2\mingw81_64\mkspecs\features\resources.prf C:\Qt\5.15.2\mingw81_64\mkspecs\features\moc.prf C:\Qt\5.15.2\mingw81_64\mkspecs\features\win32\opengl.prf C:\Qt\5.15.2\mingw81_64\mkspecs\features\uic.prf C:\Qt\5.15.2\mingw81_64\mkspecs\features\qmake_use.prf C:\Qt\5.15.2\mingw81_64\mkspecs\features\file_copies.prf C:\Qt\5.15.2\mingw81_64\mkspecs\features\win32\windows.prf C:\Qt\5.15.2\mingw81_64\mkspecs\features\testcase_targets.prf C:\Qt\5.15.2\mingw81_64\mkspecs\features\exceptions.prf C:\Qt\5.15.2\mingw81_64\mkspecs\features\yacc.prf C:\Qt\5.15.2\mingw81_64\mkspecs\features\lex.prf ..\VideoPlayer_2\VideoPlayer_2.pro C:\Qt\5.15.2\mingw81_64\lib\Qt5Widgets.prl C:\Qt\5.15.2\mingw81_64\lib\Qt5Gui.prl C:\Qt\5.15.2\mingw81_64\lib\Qt5Network.prl C:\Qt\5.15.2\mingw81_64\lib\Qt5Core.prl C:\Qt\5.15.2\mingw81_64\lib\qtmain.prl    C:\Qt\5.15.2\mingw81_64\mkspecs\features\data\dummy.cpp ..\VideoPlayer_2\src\hwplayer\CC0702I50R_1024x600.h ..\VideoPlayer_2\src\hwplayer\audio.h ..\VideoPlayer_2\src\hwplayer\blitutil.h ..\VideoPlayer_2\src\hwplayer\demux.h ..\VideoPlayer_2\src\hwplayer\frame.h ..\VideoPlayer_2\src\hwplayer\hwplayer.h ..\VideoPlayer_2\src\hwplayer\interface.h ..\VideoPlayer_2\src\hwplayer\mainentry.h ..\VideoPlayer_2\src\hwplayer\mi_vdec_extra.h ..\VideoPlayer_2\src\hwplayer\packet.h ..\VideoPlayer_2\src\hwplayer\player.h ..\VideoPlayer_2\src\hwplayer\sd20xpanel.h ..\VideoPlayer_2\src\hwplayer\video.h ..\VideoPlayer_2\src\videoplayer\advert.h ..\VideoPlayer_2\src\videoplayer\downloadtool.h ..\VideoPlayer_2\src\videoplayer\labelpicture.h ..\VideoPlayer_2\src\videoplayer\labelvideo.h ..\VideoPlayer_2\src\videoplayer\networkrequest.h ..\VideoPlayer_2\src\videoplayer\videoobject.h ..\VideoPlayer_2\src\videoplayer\videoplayer.h ..\VideoPlayer_2\src\mainwindow.h  ..\VideoPlayer_2\src\main.cpp ..\VideoPlayer_2\src\hwplayer\audio.c ..\VideoPlayer_2\src\hwplayer\blitutil.c ..\VideoPlayer_2\src\hwplayer\demux.c ..\VideoPlayer_2\src\hwplayer\frame.c ..\VideoPlayer_2\src\hwplayer\hwplayer.cpp ..\VideoPlayer_2\src\hwplayer\interface.c ..\VideoPlayer_2\src\hwplayer\mainentry.c ..\VideoPlayer_2\src\hwplayer\packet.c ..\VideoPlayer_2\src\hwplayer\player.c ..\VideoPlayer_2\src\hwplayer\sd20xpanel.c ..\VideoPlayer_2\src\hwplayer\video.c ..\VideoPlayer_2\src\videoplayer\advert.cpp ..\VideoPlayer_2\src\videoplayer\downloadtool.cpp ..\VideoPlayer_2\src\videoplayer\labelpicture.cpp ..\VideoPlayer_2\src\videoplayer\labelvideo.cpp ..\VideoPlayer_2\src\videoplayer\networkrequest.cpp ..\VideoPlayer_2\src\videoplayer\videoobject.cpp ..\VideoPlayer_2\src\videoplayer\videoplayer.cpp ..\VideoPlayer_2\src\mainwindow.cpp ..\VideoPlayer_2\src\mainwindow.ui    
+	$(ZIP) VideoPlayer_2.zip $(SOURCES) $(DIST) ..\VideoPlayer_2\VideoPlayer_2.pro C:\Qt\5.15.2\mingw81_64\mkspecs\features\spec_pre.prf C:\Qt\5.15.2\mingw81_64\mkspecs\qdevice.pri C:\Qt\5.15.2\mingw81_64\mkspecs\features\device_config.prf C:\Qt\5.15.2\mingw81_64\mkspecs\common\sanitize.conf C:\Qt\5.15.2\mingw81_64\mkspecs\common\gcc-base.conf C:\Qt\5.15.2\mingw81_64\mkspecs\common\g++-base.conf C:\Qt\5.15.2\mingw81_64\mkspecs\common\angle.conf C:\Qt\5.15.2\mingw81_64\mkspecs\features\win32\windows_vulkan_sdk.prf C:\Qt\5.15.2\mingw81_64\mkspecs\common\windows-vulkan.conf C:\Qt\5.15.2\mingw81_64\mkspecs\common\g++-win32.conf C:\Qt\5.15.2\mingw81_64\mkspecs\common\windows-desktop.conf C:\Qt\5.15.2\mingw81_64\mkspecs\qconfig.pri C:\Qt\5.15.2\mingw81_64\mkspecs\modules\qt_lib_3danimation.pri C:\Qt\5.15.2\mingw81_64\mkspecs\modules\qt_lib_3danimation_private.pri C:\Qt\5.15.2\mingw81_64\mkspecs\modules\qt_lib_3dcore.pri C:\Qt\5.15.2\mingw81_64\mkspecs\modules\qt_lib_3dcore_private.pri C:\Qt\5.15.2\mingw81_64\mkspecs\modules\qt_lib_3dextras.pri C:\Qt\5.15.2\mingw81_64\mkspecs\modules\qt_lib_3dextras_private.pri C:\Qt\5.15.2\mingw81_64\mkspecs\modules\qt_lib_3dinput.pri C:\Qt\5.15.2\mingw81_64\mkspecs\modules\qt_lib_3dinput_private.pri C:\Qt\5.15.2\mingw81_64\mkspecs\modules\qt_lib_3dlogic.pri C:\Qt\5.15.2\mingw81_64\mkspecs\modules\qt_lib_3dlogic_private.pri C:\Qt\5.15.2\mingw81_64\mkspecs\modules\qt_lib_3dquick.pri C:\Qt\5.15.2\mingw81_64\mkspecs\modules\qt_lib_3dquick_private.pri C:\Qt\5.15.2\mingw81_64\mkspecs\modules\qt_lib_3dquickanimation.pri C:\Qt\5.15.2\mingw81_64\mkspecs\modules\qt_lib_3dquickanimation_private.pri C:\Qt\5.15.2\mingw81_64\mkspecs\modules\qt_lib_3dquickextras.pri C:\Qt\5.15.2\mingw81_64\mkspecs\modules\qt_lib_3dquickextras_private.pri C:\Qt\5.15.2\mingw81_64\mkspecs\modules\qt_lib_3dquickinput.pri C:\Qt\5.15.2\mingw81_64\mkspecs\modules\qt_lib_3dquickinput_private.pri C:\Qt\5.15.2\mingw81_64\mkspecs\modules\qt_lib_3dquickrender.pri C:\Qt\5.15.2\mingw81_64\mkspecs\modules\qt_lib_3dquickrender_private.pri C:\Qt\5.15.2\mingw81_64\mkspecs\modules\qt_lib_3dquickscene2d.pri C:\Qt\5.15.2\mingw81_64\mkspecs\modules\qt_lib_3dquickscene2d_private.pri C:\Qt\5.15.2\mingw81_64\mkspecs\modules\qt_lib_3drender.pri C:\Qt\5.15.2\mingw81_64\mkspecs\modules\qt_lib_3drender_private.pri C:\Qt\5.15.2\mingw81_64\mkspecs\modules\qt_lib_accessibility_support_private.pri C:\Qt\5.15.2\mingw81_64\mkspecs\modules\qt_lib_axbase.pri C:\Qt\5.15.2\mingw81_64\mkspecs\modules\qt_lib_axbase_private.pri C:\Qt\5.15.2\mingw81_64\mkspecs\modules\qt_lib_axcontainer.pri C:\Qt\5.15.2\mingw81_64\mkspecs\modules\qt_lib_axcontainer_private.pri C:\Qt\5.15.2\mingw81_64\mkspecs\modules\qt_lib_axserver.pri C:\Qt\5.15.2\mingw81_64\mkspecs\modules\qt_lib_axserver_private.pri C:\Qt\5.15.2\mingw81_64\mkspecs\modules\qt_lib_bluetooth.pri C:\Qt\5.15.2\mingw81_64\mkspecs\modules\qt_lib_bluetooth_private.pri C:\Qt\5.15.2\mingw81_64\mkspecs\modules\qt_lib_bodymovin_private.pri C:\Qt\5.15.2\mingw81_64\mkspecs\modules\qt_lib_bootstrap_private.pri C:\Qt\5.15.2\mingw81_64\mkspecs\modules\qt_lib_concurrent.pri C:\Qt\5.15.2\mingw81_64\mkspecs\modules\qt_lib_concurrent_private.pri C:\Qt\5.15.2\mingw81_64\mkspecs\modules\qt_lib_core.pri C:\Qt\5.15.2\mingw81_64\mkspecs\modules\qt_lib_core_private.pri C:\Qt\5.15.2\mingw81_64\mkspecs\modules\qt_lib_datavisualization.pri C:\Qt\5.15.2\mingw81_64\mkspecs\modules\qt_lib_datavisualization_private.pri C:\Qt\5.15.2\mingw81_64\mkspecs\modules\qt_lib_dbus.pri C:\Qt\5.15.2\mingw81_64\mkspecs\modules\qt_lib_dbus_private.pri C:\Qt\5.15.2\mingw81_64\mkspecs\modules\qt_lib_designer.pri C:\Qt\5.15.2\mingw81_64\mkspecs\modules\qt_lib_designer_private.pri C:\Qt\5.15.2\mingw81_64\mkspecs\modules\qt_lib_designercomponents_private.pri C:\Qt\5.15.2\mingw81_64\mkspecs\modules\qt_lib_devicediscovery_support_private.pri C:\Qt\5.15.2\mingw81_64\mkspecs\modules\qt_lib_edid_support_private.pri C:\Qt\5.15.2\mingw81_64\mkspecs\modules\qt_lib_egl_support_private.pri C:\Qt\5.15.2\mingw81_64\mkspecs\modules\qt_lib_eventdispatcher_support_private.pri C:\Qt\5.15.2\mingw81_64\mkspecs\modules\qt_lib_fb_support_private.pri C:\Qt\5.15.2\mingw81_64\mkspecs\modules\qt_lib_fontdatabase_support_private.pri C:\Qt\5.15.2\mingw81_64\mkspecs\modules\qt_lib_gamepad.pri C:\Qt\5.15.2\mingw81_64\mkspecs\modules\qt_lib_gamepad_private.pri C:\Qt\5.15.2\mingw81_64\mkspecs\modules\qt_lib_gui.pri C:\Qt\5.15.2\mingw81_64\mkspecs\modules\qt_lib_gui_private.pri C:\Qt\5.15.2\mingw81_64\mkspecs\modules\qt_lib_help.pri C:\Qt\5.15.2\mingw81_64\mkspecs\modules\qt_lib_help_private.pri C:\Qt\5.15.2\mingw81_64\mkspecs\modules\qt_lib_location.pri C:\Qt\5.15.2\mingw81_64\mkspecs\modules\qt_lib_location_private.pri C:\Qt\5.15.2\mingw81_64\mkspecs\modules\qt_lib_multimedia.pri C:\Qt\5.15.2\mingw81_64\mkspecs\modules\qt_lib_multimedia_private.pri C:\Qt\5.15.2\mingw81_64\mkspecs\modules\qt_lib_multimediawidgets.pri C:\Qt\5.15.2\mingw81_64\mkspecs\modules\qt_lib_multimediawidgets_private.pri C:\Qt\5.15.2\mingw81_64\mkspecs\modules\qt_lib_network.pri C:\Qt\5.15.2\mingw81_64\mkspecs\modules\qt_lib_network_private.pri C:\Qt\5.15.2\mingw81_64\mkspecs\modules\qt_lib_networkauth.pri C:\Qt\5.15.2\mingw81_64\mkspecs\modules\qt_lib_networkauth_private.pri C:\Qt\5.15.2\mingw81_64\mkspecs\modules\qt_lib_nfc.pri C:\Qt\5.15.2\mingw81_64\mkspecs\modules\qt_lib_nfc_private.pri C:\Qt\5.15.2\mingw81_64\mkspecs\modules\qt_lib_opengl.pri C:\Qt\5.15.2\mingw81_64\mkspecs\modules\qt_lib_opengl_private.pri C:\Qt\5.15.2\mingw81_64\mkspecs\modules\qt_lib_openglextensions.pri C:\Qt\5.15.2\mingw81_64\mkspecs\modules\qt_lib_openglextensions_private.pri C:\Qt\5.15.2\mingw81_64\mkspecs\modules\qt_lib_packetprotocol_private.pri C:\Qt\5.15.2\mingw81_64\mkspecs\modules\qt_lib_platformcompositor_support_private.pri C:\Qt\5.15.2\mingw81_64\mkspecs\modules\qt_lib_positioning.pri C:\Qt\5.15.2\mingw81_64\mkspecs\modules\qt_lib_positioning_private.pri C:\Qt\5.15.2\mingw81_64\mkspecs\modules\qt_lib_positioningquick.pri C:\Qt\5.15.2\mingw81_64\mkspecs\modules\qt_lib_positioningquick_private.pri C:\Qt\5.15.2\mingw81_64\mkspecs\modules\qt_lib_printsupport.pri C:\Qt\5.15.2\mingw81_64\mkspecs\modules\qt_lib_printsupport_private.pri C:\Qt\5.15.2\mingw81_64\mkspecs\modules\qt_lib_purchasing.pri C:\Qt\5.15.2\mingw81_64\mkspecs\modules\qt_lib_purchasing_private.pri C:\Qt\5.15.2\mingw81_64\mkspecs\modules\qt_lib_qml.pri C:\Qt\5.15.2\mingw81_64\mkspecs\modules\qt_lib_qml_private.pri C:\Qt\5.15.2\mingw81_64\mkspecs\modules\qt_lib_qmldebug_private.pri C:\Qt\5.15.2\mingw81_64\mkspecs\modules\qt_lib_qmldevtools_private.pri C:\Qt\5.15.2\mingw81_64\mkspecs\modules\qt_lib_qmlmodels.pri C:\Qt\5.15.2\mingw81_64\mkspecs\modules\qt_lib_qmlmodels_private.pri C:\Qt\5.15.2\mingw81_64\mkspecs\modules\qt_lib_qmltest.pri C:\Qt\5.15.2\mingw81_64\mkspecs\modules\qt_lib_qmltest_private.pri C:\Qt\5.15.2\mingw81_64\mkspecs\modules\qt_lib_qmlworkerscript.pri C:\Qt\5.15.2\mingw81_64\mkspecs\modules\qt_lib_qmlworkerscript_private.pri C:\Qt\5.15.2\mingw81_64\mkspecs\modules\qt_lib_qtmultimediaquicktools_private.pri C:\Qt\5.15.2\mingw81_64\mkspecs\modules\qt_lib_quick.pri C:\Qt\5.15.2\mingw81_64\mkspecs\modules\qt_lib_quick_private.pri C:\Qt\5.15.2\mingw81_64\mkspecs\modules\qt_lib_quickcontrols2.pri C:\Qt\5.15.2\mingw81_64\mkspecs\modules\qt_lib_quickcontrols2_private.pri C:\Qt\5.15.2\mingw81_64\mkspecs\modules\qt_lib_quickparticles_private.pri C:\Qt\5.15.2\mingw81_64\mkspecs\modules\qt_lib_quickshapes_private.pri C:\Qt\5.15.2\mingw81_64\mkspecs\modules\qt_lib_quicktemplates2.pri C:\Qt\5.15.2\mingw81_64\mkspecs\modules\qt_lib_quicktemplates2_private.pri C:\Qt\5.15.2\mingw81_64\mkspecs\modules\qt_lib_quickwidgets.pri C:\Qt\5.15.2\mingw81_64\mkspecs\modules\qt_lib_quickwidgets_private.pri C:\Qt\5.15.2\mingw81_64\mkspecs\modules\qt_lib_remoteobjects.pri C:\Qt\5.15.2\mingw81_64\mkspecs\modules\qt_lib_remoteobjects_private.pri C:\Qt\5.15.2\mingw81_64\mkspecs\modules\qt_lib_repparser.pri C:\Qt\5.15.2\mingw81_64\mkspecs\modules\qt_lib_repparser_private.pri C:\Qt\5.15.2\mingw81_64\mkspecs\modules\qt_lib_script.pri C:\Qt\5.15.2\mingw81_64\mkspecs\modules\qt_lib_script_private.pri C:\Qt\5.15.2\mingw81_64\mkspecs\modules\qt_lib_scripttools.pri C:\Qt\5.15.2\mingw81_64\mkspecs\modules\qt_lib_scripttools_private.pri C:\Qt\5.15.2\mingw81_64\mkspecs\modules\qt_lib_scxml.pri C:\Qt\5.15.2\mingw81_64\mkspecs\modules\qt_lib_scxml_private.pri C:\Qt\5.15.2\mingw81_64\mkspecs\modules\qt_lib_sensors.pri C:\Qt\5.15.2\mingw81_64\mkspecs\modules\qt_lib_sensors_private.pri C:\Qt\5.15.2\mingw81_64\mkspecs\modules\qt_lib_serialbus.pri C:\Qt\5.15.2\mingw81_64\mkspecs\modules\qt_lib_serialbus_private.pri C:\Qt\5.15.2\mingw81_64\mkspecs\modules\qt_lib_serialport.pri C:\Qt\5.15.2\mingw81_64\mkspecs\modules\qt_lib_serialport_private.pri C:\Qt\5.15.2\mingw81_64\mkspecs\modules\qt_lib_sql.pri C:\Qt\5.15.2\mingw81_64\mkspecs\modules\qt_lib_sql_private.pri C:\Qt\5.15.2\mingw81_64\mkspecs\modules\qt_lib_svg.pri C:\Qt\5.15.2\mingw81_64\mkspecs\modules\qt_lib_svg_private.pri C:\Qt\5.15.2\mingw81_64\mkspecs\modules\qt_lib_testlib.pri C:\Qt\5.15.2\mingw81_64\mkspecs\modules\qt_lib_testlib_private.pri C:\Qt\5.15.2\mingw81_64\mkspecs\modules\qt_lib_texttospeech.pri C:\Qt\5.15.2\mingw81_64\mkspecs\modules\qt_lib_texttospeech_private.pri C:\Qt\5.15.2\mingw81_64\mkspecs\modules\qt_lib_theme_support_private.pri C:\Qt\5.15.2\mingw81_64\mkspecs\modules\qt_lib_uiplugin.pri C:\Qt\5.15.2\mingw81_64\mkspecs\modules\qt_lib_uitools.pri C:\Qt\5.15.2\mingw81_64\mkspecs\modules\qt_lib_uitools_private.pri C:\Qt\5.15.2\mingw81_64\mkspecs\modules\qt_lib_virtualkeyboard.pri C:\Qt\5.15.2\mingw81_64\mkspecs\modules\qt_lib_virtualkeyboard_private.pri C:\Qt\5.15.2\mingw81_64\mkspecs\modules\qt_lib_vulkan_support_private.pri C:\Qt\5.15.2\mingw81_64\mkspecs\modules\qt_lib_webchannel.pri C:\Qt\5.15.2\mingw81_64\mkspecs\modules\qt_lib_webchannel_private.pri C:\Qt\5.15.2\mingw81_64\mkspecs\modules\qt_lib_websockets.pri C:\Qt\5.15.2\mingw81_64\mkspecs\modules\qt_lib_websockets_private.pri C:\Qt\5.15.2\mingw81_64\mkspecs\modules\qt_lib_widgets.pri C:\Qt\5.15.2\mingw81_64\mkspecs\modules\qt_lib_widgets_private.pri C:\Qt\5.15.2\mingw81_64\mkspecs\modules\qt_lib_windowsuiautomation_support_private.pri C:\Qt\5.15.2\mingw81_64\mkspecs\modules\qt_lib_winextras.pri C:\Qt\5.15.2\mingw81_64\mkspecs\modules\qt_lib_winextras_private.pri C:\Qt\5.15.2\mingw81_64\mkspecs\modules\qt_lib_xml.pri C:\Qt\5.15.2\mingw81_64\mkspecs\modules\qt_lib_xml_private.pri C:\Qt\5.15.2\mingw81_64\mkspecs\modules\qt_lib_xmlpatterns.pri C:\Qt\5.15.2\mingw81_64\mkspecs\modules\qt_lib_xmlpatterns_private.pri C:\Qt\5.15.2\mingw81_64\mkspecs\modules\qt_lib_zlib_private.pri C:\Qt\5.15.2\mingw81_64\mkspecs\features\qt_functions.prf C:\Qt\5.15.2\mingw81_64\mkspecs\features\qt_config.prf C:\Qt\5.15.2\mingw81_64\mkspecs\win32-g++\qmake.conf C:\Qt\5.15.2\mingw81_64\mkspecs\features\spec_post.prf .qmake.stash C:\Qt\5.15.2\mingw81_64\mkspecs\features\exclusive_builds.prf C:\Qt\5.15.2\mingw81_64\mkspecs\features\toolchain.prf C:\Qt\5.15.2\mingw81_64\mkspecs\features\default_pre.prf C:\Qt\5.15.2\mingw81_64\mkspecs\features\win32\default_pre.prf C:\Qt\5.15.2\mingw81_64\mkspecs\features\resolve_config.prf C:\Qt\5.15.2\mingw81_64\mkspecs\features\exclusive_builds_post.prf C:\Qt\5.15.2\mingw81_64\mkspecs\features\default_post.prf C:\Qt\5.15.2\mingw81_64\mkspecs\features\build_pass.prf C:\Qt\5.15.2\mingw81_64\mkspecs\features\qml_debug.prf C:\Qt\5.15.2\mingw81_64\mkspecs\features\precompile_header.prf C:\Qt\5.15.2\mingw81_64\mkspecs\features\warn_on.prf C:\Qt\5.15.2\mingw81_64\mkspecs\features\qt.prf C:\Qt\5.15.2\mingw81_64\mkspecs\features\resources_functions.prf C:\Qt\5.15.2\mingw81_64\mkspecs\features\resources.prf C:\Qt\5.15.2\mingw81_64\mkspecs\features\moc.prf C:\Qt\5.15.2\mingw81_64\mkspecs\features\win32\opengl.prf C:\Qt\5.15.2\mingw81_64\mkspecs\features\uic.prf C:\Qt\5.15.2\mingw81_64\mkspecs\features\qmake_use.prf C:\Qt\5.15.2\mingw81_64\mkspecs\features\file_copies.prf C:\Qt\5.15.2\mingw81_64\mkspecs\features\win32\windows.prf C:\Qt\5.15.2\mingw81_64\mkspecs\features\testcase_targets.prf C:\Qt\5.15.2\mingw81_64\mkspecs\features\exceptions.prf C:\Qt\5.15.2\mingw81_64\mkspecs\features\yacc.prf C:\Qt\5.15.2\mingw81_64\mkspecs\features\lex.prf ..\VideoPlayer_2\VideoPlayer_2.pro C:\Qt\5.15.2\mingw81_64\lib\Qt5Widgets.prl C:\Qt\5.15.2\mingw81_64\lib\Qt5Gui.prl C:\Qt\5.15.2\mingw81_64\lib\Qt5Network.prl C:\Qt\5.15.2\mingw81_64\lib\Qt5Core.prl C:\Qt\5.15.2\mingw81_64\lib\qtmain.prl    C:\Qt\5.15.2\mingw81_64\mkspecs\features\data\dummy.cpp ..\VideoPlayer_2\src\hwplayer\hwplayer.h ..\VideoPlayer_2\src\videoplayer\advert.h ..\VideoPlayer_2\src\videoplayer\downloadtool.h ..\VideoPlayer_2\src\videoplayer\labelpicture.h ..\VideoPlayer_2\src\videoplayer\labelvideo.h ..\VideoPlayer_2\src\videoplayer\networkrequest.h ..\VideoPlayer_2\src\videoplayer\videoobject.h ..\VideoPlayer_2\src\mainwindow.h  ..\VideoPlayer_2\src\main.cpp ..\VideoPlayer_2\src\hwplayer\hwplayer.cpp ..\VideoPlayer_2\src\videoplayer\advert.cpp ..\VideoPlayer_2\src\videoplayer\downloadtool.cpp ..\VideoPlayer_2\src\videoplayer\labelpicture.cpp ..\VideoPlayer_2\src\videoplayer\labelvideo.cpp ..\VideoPlayer_2\src\videoplayer\networkrequest.cpp ..\VideoPlayer_2\src\videoplayer\videoobject.cpp ..\VideoPlayer_2\src\mainwindow.cpp ..\VideoPlayer_2\src\mainwindow.ui    
 
 clean: compiler_clean 
-	-$(DEL_FILE) release\main.o release\audio.o release\blitutil.o release\demux.o release\frame.o release\hwplayer.o release\interface.o release\mainentry.o release\packet.o release\player.o release\sd20xpanel.o release\video.o release\advert.o release\downloadtool.o release\labelpicture.o release\labelvideo.o release\networkrequest.o release\videoobject.o release\videoplayer.o release\mainwindow.o release\moc_hwplayer.o release\moc_downloadtool.o release\moc_networkrequest.o release\moc_videoplayer.o release\moc_mainwindow.o
+	-$(DEL_FILE) release\main.o release\hwplayer.o release\advert.o release\downloadtool.o release\labelpicture.o release\labelvideo.o release\networkrequest.o release\videoobject.o release\mainwindow.o release\moc_hwplayer.o release\moc_downloadtool.o release\moc_networkrequest.o release\moc_mainwindow.o
 
 distclean: clean 
 	-$(DEL_FILE) .qmake.stash
@@ -187,9 +139,9 @@ compiler_moc_predefs_clean:
 release/moc_predefs.h: C:/Qt/5.15.2/mingw81_64/mkspecs/features/data/dummy.cpp
 	g++ -fno-keep-inline-dllexport -O2 -Wall -Wextra -Wextra -dM -E -o release\moc_predefs.h C:\Qt\5.15.2\mingw81_64\mkspecs\features\data\dummy.cpp
 
-compiler_moc_header_make_all: release/moc_hwplayer.cpp release/moc_downloadtool.cpp release/moc_networkrequest.cpp release/moc_videoplayer.cpp release/moc_mainwindow.cpp
+compiler_moc_header_make_all: release/moc_hwplayer.cpp release/moc_downloadtool.cpp release/moc_networkrequest.cpp release/moc_mainwindow.cpp
 compiler_moc_header_clean:
-	-$(DEL_FILE) release\moc_hwplayer.cpp release\moc_downloadtool.cpp release\moc_networkrequest.cpp release\moc_videoplayer.cpp release\moc_mainwindow.cpp
+	-$(DEL_FILE) release\moc_hwplayer.cpp release\moc_downloadtool.cpp release\moc_networkrequest.cpp release\moc_mainwindow.cpp
 release/moc_hwplayer.cpp: ../VideoPlayer_2/src/hwplayer/hwplayer.h \
 		C:/Qt/5.15.2/mingw81_64/include/QtCore/QThread \
 		C:/Qt/5.15.2/mingw81_64/include/QtCore/qthread.h \
@@ -720,217 +672,6 @@ release/moc_networkrequest.cpp: ../VideoPlayer_2/src/videoplayer/networkrequest.
 		C:/Qt/5.15.2/mingw81_64/bin/moc.exe
 	C:\Qt\5.15.2\mingw81_64\bin\moc.exe $(DEFINES) --include C:/Users/DELL/Desktop/qttest/build-VideoPlayer_2-Desktop_Qt_5_15_2_MinGW_64_bit-Debug/release/moc_predefs.h -IC:/Qt/5.15.2/mingw81_64/mkspecs/win32-g++ -IC:/Users/DELL/Desktop/qttest/VideoPlayer_2 -IC:/Users/DELL/Desktop/qttest/VideoPlayer_2/ffmpeg/include -IC:/Users/DELL/Desktop/qttest/VideoPlayer_2/src -IC:/Qt/5.15.2/mingw81_64/include -IC:/Qt/5.15.2/mingw81_64/include/QtWidgets -IC:/Qt/5.15.2/mingw81_64/include/QtGui -IC:/Qt/5.15.2/mingw81_64/include/QtANGLE -IC:/Qt/5.15.2/mingw81_64/include/QtNetwork -IC:/Qt/5.15.2/mingw81_64/include/QtCore -I. -IC:/Qt/Tools/mingw810_64/lib/gcc/x86_64-w64-mingw32/8.1.0/include/c++ -IC:/Qt/Tools/mingw810_64/lib/gcc/x86_64-w64-mingw32/8.1.0/include/c++/x86_64-w64-mingw32 -IC:/Qt/Tools/mingw810_64/lib/gcc/x86_64-w64-mingw32/8.1.0/include/c++/backward -IC:/Qt/Tools/mingw810_64/lib/gcc/x86_64-w64-mingw32/8.1.0/include -IC:/Qt/Tools/mingw810_64/lib/gcc/x86_64-w64-mingw32/8.1.0/include-fixed -IC:/Qt/Tools/mingw810_64/x86_64-w64-mingw32/include ..\VideoPlayer_2\src\videoplayer\networkrequest.h -o release\moc_networkrequest.cpp
 
-release/moc_videoplayer.cpp: ../VideoPlayer_2/src/videoplayer/videoplayer.h \
-		C:/Qt/5.15.2/mingw81_64/include/QtCore/QThread \
-		C:/Qt/5.15.2/mingw81_64/include/QtCore/qthread.h \
-		C:/Qt/5.15.2/mingw81_64/include/QtCore/qobject.h \
-		C:/Qt/5.15.2/mingw81_64/include/QtCore/qobjectdefs.h \
-		C:/Qt/5.15.2/mingw81_64/include/QtCore/qnamespace.h \
-		C:/Qt/5.15.2/mingw81_64/include/QtCore/qglobal.h \
-		C:/Qt/5.15.2/mingw81_64/include/QtCore/qconfig-bootstrapped.h \
-		C:/Qt/5.15.2/mingw81_64/include/QtCore/qconfig.h \
-		C:/Qt/5.15.2/mingw81_64/include/QtCore/qtcore-config.h \
-		C:/Qt/5.15.2/mingw81_64/include/QtCore/qsystemdetection.h \
-		C:/Qt/5.15.2/mingw81_64/include/QtCore/qprocessordetection.h \
-		C:/Qt/5.15.2/mingw81_64/include/QtCore/qcompilerdetection.h \
-		C:/Qt/5.15.2/mingw81_64/include/QtCore/qtypeinfo.h \
-		C:/Qt/5.15.2/mingw81_64/include/QtCore/qsysinfo.h \
-		C:/Qt/5.15.2/mingw81_64/include/QtCore/qlogging.h \
-		C:/Qt/5.15.2/mingw81_64/include/QtCore/qflags.h \
-		C:/Qt/5.15.2/mingw81_64/include/QtCore/qatomic.h \
-		C:/Qt/5.15.2/mingw81_64/include/QtCore/qbasicatomic.h \
-		C:/Qt/5.15.2/mingw81_64/include/QtCore/qatomic_bootstrap.h \
-		C:/Qt/5.15.2/mingw81_64/include/QtCore/qgenericatomic.h \
-		C:/Qt/5.15.2/mingw81_64/include/QtCore/qatomic_cxx11.h \
-		C:/Qt/5.15.2/mingw81_64/include/QtCore/qatomic_msvc.h \
-		C:/Qt/5.15.2/mingw81_64/include/QtCore/qglobalstatic.h \
-		C:/Qt/5.15.2/mingw81_64/include/QtCore/qmutex.h \
-		C:/Qt/5.15.2/mingw81_64/include/QtCore/qnumeric.h \
-		C:/Qt/5.15.2/mingw81_64/include/QtCore/qversiontagging.h \
-		C:/Qt/5.15.2/mingw81_64/include/QtCore/qobjectdefs_impl.h \
-		C:/Qt/5.15.2/mingw81_64/include/QtCore/qstring.h \
-		C:/Qt/5.15.2/mingw81_64/include/QtCore/qchar.h \
-		C:/Qt/5.15.2/mingw81_64/include/QtCore/qbytearray.h \
-		C:/Qt/5.15.2/mingw81_64/include/QtCore/qrefcount.h \
-		C:/Qt/5.15.2/mingw81_64/include/QtCore/qarraydata.h \
-		C:/Qt/5.15.2/mingw81_64/include/QtCore/qstringliteral.h \
-		C:/Qt/5.15.2/mingw81_64/include/QtCore/qstringalgorithms.h \
-		C:/Qt/5.15.2/mingw81_64/include/QtCore/qstringview.h \
-		C:/Qt/5.15.2/mingw81_64/include/QtCore/qstringbuilder.h \
-		C:/Qt/5.15.2/mingw81_64/include/QtCore/qlist.h \
-		C:/Qt/5.15.2/mingw81_64/include/QtCore/qalgorithms.h \
-		C:/Qt/5.15.2/mingw81_64/include/QtCore/qiterator.h \
-		C:/Qt/5.15.2/mingw81_64/include/QtCore/qhashfunctions.h \
-		C:/Qt/5.15.2/mingw81_64/include/QtCore/qpair.h \
-		C:/Qt/5.15.2/mingw81_64/include/QtCore/qvector.h \
-		C:/Qt/5.15.2/mingw81_64/include/QtCore/qcontainertools_impl.h \
-		C:/Qt/5.15.2/mingw81_64/include/QtCore/qpoint.h \
-		C:/Qt/5.15.2/mingw81_64/include/QtCore/qbytearraylist.h \
-		C:/Qt/5.15.2/mingw81_64/include/QtCore/qstringlist.h \
-		C:/Qt/5.15.2/mingw81_64/include/QtCore/qregexp.h \
-		C:/Qt/5.15.2/mingw81_64/include/QtCore/qstringmatcher.h \
-		C:/Qt/5.15.2/mingw81_64/include/QtCore/qcoreevent.h \
-		C:/Qt/5.15.2/mingw81_64/include/QtCore/qscopedpointer.h \
-		C:/Qt/5.15.2/mingw81_64/include/QtCore/qmetatype.h \
-		C:/Qt/5.15.2/mingw81_64/include/QtCore/qvarlengtharray.h \
-		C:/Qt/5.15.2/mingw81_64/include/QtCore/qcontainerfwd.h \
-		C:/Qt/5.15.2/mingw81_64/include/QtCore/qobject_impl.h \
-		C:/Qt/5.15.2/mingw81_64/include/QtCore/qdeadlinetimer.h \
-		C:/Qt/5.15.2/mingw81_64/include/QtCore/qelapsedtimer.h \
-		C:/Qt/5.15.2/mingw81_64/include/QtGui/QImage \
-		C:/Qt/5.15.2/mingw81_64/include/QtGui/qimage.h \
-		C:/Qt/5.15.2/mingw81_64/include/QtGui/qtguiglobal.h \
-		C:/Qt/5.15.2/mingw81_64/include/QtGui/qtgui-config.h \
-		C:/Qt/5.15.2/mingw81_64/include/QtGui/qcolor.h \
-		C:/Qt/5.15.2/mingw81_64/include/QtGui/qrgb.h \
-		C:/Qt/5.15.2/mingw81_64/include/QtGui/qrgba64.h \
-		C:/Qt/5.15.2/mingw81_64/include/QtGui/qpaintdevice.h \
-		C:/Qt/5.15.2/mingw81_64/include/QtGui/qwindowdefs.h \
-		C:/Qt/5.15.2/mingw81_64/include/QtGui/qwindowdefs_win.h \
-		C:/Qt/5.15.2/mingw81_64/include/QtCore/qrect.h \
-		C:/Qt/5.15.2/mingw81_64/include/QtCore/qmargins.h \
-		C:/Qt/5.15.2/mingw81_64/include/QtCore/qsize.h \
-		C:/Qt/5.15.2/mingw81_64/include/QtGui/qpixelformat.h \
-		C:/Qt/5.15.2/mingw81_64/include/QtGui/qtransform.h \
-		C:/Qt/5.15.2/mingw81_64/include/QtGui/qmatrix.h \
-		C:/Qt/5.15.2/mingw81_64/include/QtGui/qpolygon.h \
-		C:/Qt/5.15.2/mingw81_64/include/QtGui/qregion.h \
-		C:/Qt/5.15.2/mingw81_64/include/QtCore/qdatastream.h \
-		C:/Qt/5.15.2/mingw81_64/include/QtCore/qiodevice.h \
-		C:/Qt/5.15.2/mingw81_64/include/QtCore/qline.h \
-		C:/Qt/5.15.2/mingw81_64/include/QtCore/QDebug \
-		C:/Qt/5.15.2/mingw81_64/include/QtCore/qdebug.h \
-		C:/Qt/5.15.2/mingw81_64/include/QtCore/qhash.h \
-		C:/Qt/5.15.2/mingw81_64/include/QtCore/qmap.h \
-		C:/Qt/5.15.2/mingw81_64/include/QtCore/qtextstream.h \
-		C:/Qt/5.15.2/mingw81_64/include/QtCore/qlocale.h \
-		C:/Qt/5.15.2/mingw81_64/include/QtCore/qvariant.h \
-		C:/Qt/5.15.2/mingw81_64/include/QtCore/qshareddata.h \
-		C:/Qt/5.15.2/mingw81_64/include/QtCore/qset.h \
-		C:/Qt/5.15.2/mingw81_64/include/QtCore/qcontiguouscache.h \
-		C:/Qt/5.15.2/mingw81_64/include/QtCore/qsharedpointer.h \
-		C:/Qt/5.15.2/mingw81_64/include/QtCore/qsharedpointer_impl.h \
-		C:/Qt/5.15.2/mingw81_64/include/QtCore/QMutex \
-		C:/Qt/5.15.2/mingw81_64/include/QtGui/QPixmap \
-		C:/Qt/5.15.2/mingw81_64/include/QtGui/qpixmap.h \
-		../VideoPlayer_2/src/videoplayer/advert.h \
-		../VideoPlayer_2/src/videoplayer/labelpicture.h \
-		C:/Qt/5.15.2/mingw81_64/include/QtCore/QJsonObject \
-		C:/Qt/5.15.2/mingw81_64/include/QtCore/qjsonobject.h \
-		C:/Qt/5.15.2/mingw81_64/include/QtCore/qjsonvalue.h \
-		C:/Qt/5.15.2/mingw81_64/include/QtCore/qcborvalue.h \
-		C:/Qt/5.15.2/mingw81_64/include/QtCore/qdatetime.h \
-		C:/Qt/5.15.2/mingw81_64/include/QtCore/qcborcommon.h \
-		C:/Qt/5.15.2/mingw81_64/include/QtCore/qregularexpression.h \
-		C:/Qt/5.15.2/mingw81_64/include/QtCore/qurl.h \
-		C:/Qt/5.15.2/mingw81_64/include/QtCore/qurlquery.h \
-		C:/Qt/5.15.2/mingw81_64/include/QtCore/quuid.h \
-		C:/Qt/5.15.2/mingw81_64/include/QtCore/QString \
-		../VideoPlayer_2/src/videoplayer/labelvideo.h \
-		../VideoPlayer_2/src/videoplayer/videoobject.h \
-		C:/Qt/5.15.2/mingw81_64/include/QtCore/QList \
-		../VideoPlayer_2/src/videoplayer/networkrequest.h \
-		../VideoPlayer_2/src/videoplayer/downloadtool.h \
-		C:/Qt/5.15.2/mingw81_64/include/QtCore/QObject \
-		C:/Qt/5.15.2/mingw81_64/include/QtCore/QUrl \
-		C:/Qt/5.15.2/mingw81_64/include/QtCore/QFile \
-		C:/Qt/5.15.2/mingw81_64/include/QtCore/qfile.h \
-		C:/Qt/5.15.2/mingw81_64/include/QtCore/qfiledevice.h \
-		C:/Qt/5.15.2/mingw81_64/include/QtCore/QDir \
-		C:/Qt/5.15.2/mingw81_64/include/QtCore/qdir.h \
-		C:/Qt/5.15.2/mingw81_64/include/QtCore/qfileinfo.h \
-		C:/Qt/5.15.2/mingw81_64/include/QtCore/QPointer \
-		C:/Qt/5.15.2/mingw81_64/include/QtCore/qpointer.h \
-		C:/Qt/5.15.2/mingw81_64/include/QtWidgets/QApplication \
-		C:/Qt/5.15.2/mingw81_64/include/QtWidgets/qapplication.h \
-		C:/Qt/5.15.2/mingw81_64/include/QtWidgets/qtwidgetsglobal.h \
-		C:/Qt/5.15.2/mingw81_64/include/QtWidgets/qtwidgets-config.h \
-		C:/Qt/5.15.2/mingw81_64/include/QtCore/qcoreapplication.h \
-		C:/Qt/5.15.2/mingw81_64/include/QtCore/qeventloop.h \
-		C:/Qt/5.15.2/mingw81_64/include/QtGui/qcursor.h \
-		C:/Qt/5.15.2/mingw81_64/include/QtWidgets/qdesktopwidget.h \
-		C:/Qt/5.15.2/mingw81_64/include/QtWidgets/qwidget.h \
-		C:/Qt/5.15.2/mingw81_64/include/QtGui/qpalette.h \
-		C:/Qt/5.15.2/mingw81_64/include/QtGui/qbrush.h \
-		C:/Qt/5.15.2/mingw81_64/include/QtGui/qfont.h \
-		C:/Qt/5.15.2/mingw81_64/include/QtGui/qfontmetrics.h \
-		C:/Qt/5.15.2/mingw81_64/include/QtGui/qfontinfo.h \
-		C:/Qt/5.15.2/mingw81_64/include/QtWidgets/qsizepolicy.h \
-		C:/Qt/5.15.2/mingw81_64/include/QtGui/qkeysequence.h \
-		C:/Qt/5.15.2/mingw81_64/include/QtGui/qevent.h \
-		C:/Qt/5.15.2/mingw81_64/include/QtGui/qvector2d.h \
-		C:/Qt/5.15.2/mingw81_64/include/QtGui/qtouchdevice.h \
-		C:/Qt/5.15.2/mingw81_64/include/QtGui/qguiapplication.h \
-		C:/Qt/5.15.2/mingw81_64/include/QtGui/qinputmethod.h \
-		C:/Qt/5.15.2/mingw81_64/include/QtNetwork/QNetworkReply \
-		C:/Qt/5.15.2/mingw81_64/include/QtNetwork/qnetworkreply.h \
-		C:/Qt/5.15.2/mingw81_64/include/QtNetwork/qtnetworkglobal.h \
-		C:/Qt/5.15.2/mingw81_64/include/QtNetwork/qtnetwork-config.h \
-		C:/Qt/5.15.2/mingw81_64/include/QtCore/QIODevice \
-		C:/Qt/5.15.2/mingw81_64/include/QtCore/QVariant \
-		C:/Qt/5.15.2/mingw81_64/include/QtNetwork/QNetworkRequest \
-		C:/Qt/5.15.2/mingw81_64/include/QtNetwork/qnetworkrequest.h \
-		C:/Qt/5.15.2/mingw81_64/include/QtCore/QSharedDataPointer \
-		C:/Qt/5.15.2/mingw81_64/include/QtNetwork/QNetworkAccessManager \
-		C:/Qt/5.15.2/mingw81_64/include/QtNetwork/qnetworkaccessmanager.h \
-		C:/Qt/5.15.2/mingw81_64/include/QtCore/QVector \
-		C:/Qt/5.15.2/mingw81_64/include/QtNetwork/QSslConfiguration \
-		C:/Qt/5.15.2/mingw81_64/include/QtNetwork/qsslconfiguration.h \
-		C:/Qt/5.15.2/mingw81_64/include/QtNetwork/qsslsocket.h \
-		C:/Qt/5.15.2/mingw81_64/include/QtNetwork/qtcpsocket.h \
-		C:/Qt/5.15.2/mingw81_64/include/QtNetwork/qabstractsocket.h \
-		C:/Qt/5.15.2/mingw81_64/include/QtNetwork/qsslerror.h \
-		C:/Qt/5.15.2/mingw81_64/include/QtNetwork/qsslcertificate.h \
-		C:/Qt/5.15.2/mingw81_64/include/QtCore/qcryptographichash.h \
-		C:/Qt/5.15.2/mingw81_64/include/QtNetwork/qssl.h \
-		C:/Qt/5.15.2/mingw81_64/include/QtCore/QFlags \
-		C:/Qt/5.15.2/mingw81_64/include/QtNetwork/QSslPreSharedKeyAuthenticator \
-		C:/Qt/5.15.2/mingw81_64/include/QtNetwork/qsslpresharedkeyauthenticator.h \
-		C:/Qt/5.15.2/mingw81_64/include/QtCore/QMetaType \
-		C:/Qt/5.15.2/mingw81_64/include/QtCore/QTimer \
-		C:/Qt/5.15.2/mingw81_64/include/QtCore/qtimer.h \
-		C:/Qt/5.15.2/mingw81_64/include/QtCore/qbasictimer.h \
-		../VideoPlayer_2/ffmpeg/include/libavcodec/avcodec.h \
-		../VideoPlayer_2/ffmpeg/include/libavutil/samplefmt.h \
-		../VideoPlayer_2/ffmpeg/include/libavutil/avutil.h \
-		../VideoPlayer_2/ffmpeg/include/libavutil/common.h \
-		../VideoPlayer_2/ffmpeg/include/libavutil/attributes.h \
-		../VideoPlayer_2/ffmpeg/include/libavutil/macros.h \
-		../VideoPlayer_2/ffmpeg/include/libavutil/version.h \
-		../VideoPlayer_2/ffmpeg/include/libavutil/avconfig.h \
-		../VideoPlayer_2/ffmpeg/include/libavutil/mem.h \
-		../VideoPlayer_2/ffmpeg/include/libavutil/error.h \
-		../VideoPlayer_2/ffmpeg/include/libavutil/rational.h \
-		../VideoPlayer_2/ffmpeg/include/libavutil/mathematics.h \
-		../VideoPlayer_2/ffmpeg/include/libavutil/intfloat.h \
-		../VideoPlayer_2/ffmpeg/include/libavutil/log.h \
-		../VideoPlayer_2/ffmpeg/include/libavutil/pixfmt.h \
-		../VideoPlayer_2/ffmpeg/include/libavutil/buffer.h \
-		../VideoPlayer_2/ffmpeg/include/libavutil/cpu.h \
-		../VideoPlayer_2/ffmpeg/include/libavutil/channel_layout.h \
-		../VideoPlayer_2/ffmpeg/include/libavutil/dict.h \
-		../VideoPlayer_2/ffmpeg/include/libavutil/frame.h \
-		../VideoPlayer_2/ffmpeg/include/libavutil/hwcontext.h \
-		../VideoPlayer_2/ffmpeg/include/libavcodec/bsf.h \
-		../VideoPlayer_2/ffmpeg/include/libavcodec/codec_id.h \
-		../VideoPlayer_2/ffmpeg/include/libavcodec/codec_par.h \
-		../VideoPlayer_2/ffmpeg/include/libavcodec/packet.h \
-		../VideoPlayer_2/ffmpeg/include/libavcodec/version.h \
-		../VideoPlayer_2/ffmpeg/include/libavcodec/codec.h \
-		../VideoPlayer_2/ffmpeg/include/libavcodec/codec_desc.h \
-		../VideoPlayer_2/ffmpeg/include/libavformat/avformat.h \
-		../VideoPlayer_2/ffmpeg/include/libavformat/avio.h \
-		../VideoPlayer_2/ffmpeg/include/libavformat/version.h \
-		../VideoPlayer_2/ffmpeg/include/libswscale/swscale.h \
-		../VideoPlayer_2/ffmpeg/include/libswscale/version.h \
-		../VideoPlayer_2/ffmpeg/include/libavutil/pixdesc.h \
-		../VideoPlayer_2/ffmpeg/include/libavutil/opt.h \
-		../VideoPlayer_2/ffmpeg/include/libavutil/avassert.h \
-		../VideoPlayer_2/ffmpeg/include/libavutil/imgutils.h \
-		release/moc_predefs.h \
-		C:/Qt/5.15.2/mingw81_64/bin/moc.exe
-	C:\Qt\5.15.2\mingw81_64\bin\moc.exe $(DEFINES) --include C:/Users/DELL/Desktop/qttest/build-VideoPlayer_2-Desktop_Qt_5_15_2_MinGW_64_bit-Debug/release/moc_predefs.h -IC:/Qt/5.15.2/mingw81_64/mkspecs/win32-g++ -IC:/Users/DELL/Desktop/qttest/VideoPlayer_2 -IC:/Users/DELL/Desktop/qttest/VideoPlayer_2/ffmpeg/include -IC:/Users/DELL/Desktop/qttest/VideoPlayer_2/src -IC:/Qt/5.15.2/mingw81_64/include -IC:/Qt/5.15.2/mingw81_64/include/QtWidgets -IC:/Qt/5.15.2/mingw81_64/include/QtGui -IC:/Qt/5.15.2/mingw81_64/include/QtANGLE -IC:/Qt/5.15.2/mingw81_64/include/QtNetwork -IC:/Qt/5.15.2/mingw81_64/include/QtCore -I. -IC:/Qt/Tools/mingw810_64/lib/gcc/x86_64-w64-mingw32/8.1.0/include/c++ -IC:/Qt/Tools/mingw810_64/lib/gcc/x86_64-w64-mingw32/8.1.0/include/c++/x86_64-w64-mingw32 -IC:/Qt/Tools/mingw810_64/lib/gcc/x86_64-w64-mingw32/8.1.0/include/c++/backward -IC:/Qt/Tools/mingw810_64/lib/gcc/x86_64-w64-mingw32/8.1.0/include -IC:/Qt/Tools/mingw810_64/lib/gcc/x86_64-w64-mingw32/8.1.0/include-fixed -IC:/Qt/Tools/mingw810_64/x86_64-w64-mingw32/include ..\VideoPlayer_2\src\videoplayer\videoplayer.h -o release\moc_videoplayer.cpp
-
 release/moc_mainwindow.cpp: ../VideoPlayer_2/src/mainwindow.h \
 		C:/Qt/5.15.2/mingw81_64/include/QtWidgets/QMainWindow \
 		C:/Qt/5.15.2/mingw81_64/include/QtWidgets/qmainwindow.h \
@@ -1107,7 +848,7 @@ release/moc_mainwindow.cpp: ../VideoPlayer_2/src/mainwindow.h \
 		C:/Qt/5.15.2/mingw81_64/include/QtCore/QTimer \
 		C:/Qt/5.15.2/mingw81_64/include/QtCore/qtimer.h \
 		C:/Qt/5.15.2/mingw81_64/include/QtCore/qbasictimer.h \
-		../VideoPlayer_2/src/videoplayer/videoplayer.h \
+		../VideoPlayer_2/src/hwplayer/hwplayer.h \
 		C:/Qt/5.15.2/mingw81_64/include/QtCore/QMutex \
 		C:/Qt/5.15.2/mingw81_64/include/QtGui/QPixmap \
 		../VideoPlayer_2/ffmpeg/include/libavcodec/avcodec.h \
@@ -1352,7 +1093,7 @@ release/main.o: ../VideoPlayer_2/src/main.cpp C:/Qt/5.15.2/mingw81_64/include/Qt
 		C:/Qt/5.15.2/mingw81_64/include/QtCore/QTimer \
 		C:/Qt/5.15.2/mingw81_64/include/QtCore/qtimer.h \
 		C:/Qt/5.15.2/mingw81_64/include/QtCore/qbasictimer.h \
-		../VideoPlayer_2/src/videoplayer/videoplayer.h \
+		../VideoPlayer_2/src/hwplayer/hwplayer.h \
 		C:/Qt/5.15.2/mingw81_64/include/QtCore/QMutex \
 		C:/Qt/5.15.2/mingw81_64/include/QtGui/QPixmap \
 		../VideoPlayer_2/ffmpeg/include/libavcodec/avcodec.h \
@@ -1393,145 +1134,6 @@ release/main.o: ../VideoPlayer_2/src/main.cpp C:/Qt/5.15.2/mingw81_64/include/Qt
 		../VideoPlayer_2/ffmpeg/include/libavutil/avassert.h \
 		../VideoPlayer_2/ffmpeg/include/libavutil/imgutils.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o release\main.o ..\VideoPlayer_2\src\main.cpp
-
-release/audio.o: ../VideoPlayer_2/src/hwplayer/audio.c ../VideoPlayer_2/src/hwplayer/player.h \
-		../VideoPlayer_2/ffmpeg/include/libavcodec/avcodec.h \
-		../VideoPlayer_2/ffmpeg/include/libavutil/samplefmt.h \
-		../VideoPlayer_2/ffmpeg/include/libavutil/avutil.h \
-		../VideoPlayer_2/ffmpeg/include/libavutil/common.h \
-		../VideoPlayer_2/ffmpeg/include/libavutil/attributes.h \
-		../VideoPlayer_2/ffmpeg/include/libavutil/macros.h \
-		../VideoPlayer_2/ffmpeg/include/libavutil/version.h \
-		../VideoPlayer_2/ffmpeg/include/libavutil/avconfig.h \
-		../VideoPlayer_2/ffmpeg/include/libavutil/mem.h \
-		../VideoPlayer_2/ffmpeg/include/libavutil/error.h \
-		../VideoPlayer_2/ffmpeg/include/libavutil/rational.h \
-		../VideoPlayer_2/ffmpeg/include/libavutil/mathematics.h \
-		../VideoPlayer_2/ffmpeg/include/libavutil/intfloat.h \
-		../VideoPlayer_2/ffmpeg/include/libavutil/log.h \
-		../VideoPlayer_2/ffmpeg/include/libavutil/pixfmt.h \
-		../VideoPlayer_2/ffmpeg/include/libavutil/buffer.h \
-		../VideoPlayer_2/ffmpeg/include/libavutil/cpu.h \
-		../VideoPlayer_2/ffmpeg/include/libavutil/channel_layout.h \
-		../VideoPlayer_2/ffmpeg/include/libavutil/dict.h \
-		../VideoPlayer_2/ffmpeg/include/libavutil/frame.h \
-		../VideoPlayer_2/ffmpeg/include/libavutil/hwcontext.h \
-		../VideoPlayer_2/ffmpeg/include/libavcodec/bsf.h \
-		../VideoPlayer_2/ffmpeg/include/libavcodec/codec_id.h \
-		../VideoPlayer_2/ffmpeg/include/libavcodec/codec_par.h \
-		../VideoPlayer_2/ffmpeg/include/libavcodec/packet.h \
-		../VideoPlayer_2/ffmpeg/include/libavcodec/version.h \
-		../VideoPlayer_2/ffmpeg/include/libavcodec/codec.h \
-		../VideoPlayer_2/ffmpeg/include/libavcodec/codec_desc.h \
-		../VideoPlayer_2/ffmpeg/include/libavformat/avformat.h \
-		../VideoPlayer_2/ffmpeg/include/libavformat/avio.h \
-		../VideoPlayer_2/ffmpeg/include/libavformat/version.h \
-		../VideoPlayer_2/ffmpeg/include/libswscale/swscale.h \
-		../VideoPlayer_2/ffmpeg/include/libswscale/version.h \
-		../VideoPlayer_2/ffmpeg/include/libswresample/swresample.h \
-		../VideoPlayer_2/ffmpeg/include/libswresample/version.h \
-		../VideoPlayer_2/ffmpeg/include/libavutil/time.h \
-		../VideoPlayer_2/ffmpeg/include/libavutil/imgutils.h \
-		../VideoPlayer_2/ffmpeg/include/libavutil/pixdesc.h \
-		../VideoPlayer_2/ffmpeg/include/libavutil/avassert.h \
-		../VideoPlayer_2/ffmpeg/include/libavutil/opt.h \
-		../VideoPlayer_2/src/hwplayer/packet.h \
-		../VideoPlayer_2/src/hwplayer/frame.h \
-		../VideoPlayer_2/src/hwplayer/audio.h
-	$(CC) -c $(CFLAGS) $(INCPATH) -o release\audio.o ..\VideoPlayer_2\src\hwplayer\audio.c
-
-release/blitutil.o: ../VideoPlayer_2/src/hwplayer/blitutil.c ../VideoPlayer_2/src/hwplayer/blitutil.h
-	$(CC) -c $(CFLAGS) $(INCPATH) -o release\blitutil.o ..\VideoPlayer_2\src\hwplayer\blitutil.c
-
-release/demux.o: ../VideoPlayer_2/src/hwplayer/demux.c ../VideoPlayer_2/src/hwplayer/demux.h \
-		../VideoPlayer_2/src/hwplayer/player.h \
-		../VideoPlayer_2/ffmpeg/include/libavcodec/avcodec.h \
-		../VideoPlayer_2/ffmpeg/include/libavutil/samplefmt.h \
-		../VideoPlayer_2/ffmpeg/include/libavutil/avutil.h \
-		../VideoPlayer_2/ffmpeg/include/libavutil/common.h \
-		../VideoPlayer_2/ffmpeg/include/libavutil/attributes.h \
-		../VideoPlayer_2/ffmpeg/include/libavutil/macros.h \
-		../VideoPlayer_2/ffmpeg/include/libavutil/version.h \
-		../VideoPlayer_2/ffmpeg/include/libavutil/avconfig.h \
-		../VideoPlayer_2/ffmpeg/include/libavutil/mem.h \
-		../VideoPlayer_2/ffmpeg/include/libavutil/error.h \
-		../VideoPlayer_2/ffmpeg/include/libavutil/rational.h \
-		../VideoPlayer_2/ffmpeg/include/libavutil/mathematics.h \
-		../VideoPlayer_2/ffmpeg/include/libavutil/intfloat.h \
-		../VideoPlayer_2/ffmpeg/include/libavutil/log.h \
-		../VideoPlayer_2/ffmpeg/include/libavutil/pixfmt.h \
-		../VideoPlayer_2/ffmpeg/include/libavutil/buffer.h \
-		../VideoPlayer_2/ffmpeg/include/libavutil/cpu.h \
-		../VideoPlayer_2/ffmpeg/include/libavutil/channel_layout.h \
-		../VideoPlayer_2/ffmpeg/include/libavutil/dict.h \
-		../VideoPlayer_2/ffmpeg/include/libavutil/frame.h \
-		../VideoPlayer_2/ffmpeg/include/libavutil/hwcontext.h \
-		../VideoPlayer_2/ffmpeg/include/libavcodec/bsf.h \
-		../VideoPlayer_2/ffmpeg/include/libavcodec/codec_id.h \
-		../VideoPlayer_2/ffmpeg/include/libavcodec/codec_par.h \
-		../VideoPlayer_2/ffmpeg/include/libavcodec/packet.h \
-		../VideoPlayer_2/ffmpeg/include/libavcodec/version.h \
-		../VideoPlayer_2/ffmpeg/include/libavcodec/codec.h \
-		../VideoPlayer_2/ffmpeg/include/libavcodec/codec_desc.h \
-		../VideoPlayer_2/ffmpeg/include/libavformat/avformat.h \
-		../VideoPlayer_2/ffmpeg/include/libavformat/avio.h \
-		../VideoPlayer_2/ffmpeg/include/libavformat/version.h \
-		../VideoPlayer_2/ffmpeg/include/libswscale/swscale.h \
-		../VideoPlayer_2/ffmpeg/include/libswscale/version.h \
-		../VideoPlayer_2/ffmpeg/include/libswresample/swresample.h \
-		../VideoPlayer_2/ffmpeg/include/libswresample/version.h \
-		../VideoPlayer_2/ffmpeg/include/libavutil/time.h \
-		../VideoPlayer_2/ffmpeg/include/libavutil/imgutils.h \
-		../VideoPlayer_2/ffmpeg/include/libavutil/pixdesc.h \
-		../VideoPlayer_2/ffmpeg/include/libavutil/avassert.h \
-		../VideoPlayer_2/ffmpeg/include/libavutil/opt.h \
-		../VideoPlayer_2/src/hwplayer/packet.h \
-		../VideoPlayer_2/src/hwplayer/frame.h
-	$(CC) -c $(CFLAGS) $(INCPATH) -o release\demux.o ..\VideoPlayer_2\src\hwplayer\demux.c
-
-release/frame.o: ../VideoPlayer_2/src/hwplayer/frame.c ../VideoPlayer_2/src/hwplayer/frame.h \
-		../VideoPlayer_2/src/hwplayer/player.h \
-		../VideoPlayer_2/ffmpeg/include/libavcodec/avcodec.h \
-		../VideoPlayer_2/ffmpeg/include/libavutil/samplefmt.h \
-		../VideoPlayer_2/ffmpeg/include/libavutil/avutil.h \
-		../VideoPlayer_2/ffmpeg/include/libavutil/common.h \
-		../VideoPlayer_2/ffmpeg/include/libavutil/attributes.h \
-		../VideoPlayer_2/ffmpeg/include/libavutil/macros.h \
-		../VideoPlayer_2/ffmpeg/include/libavutil/version.h \
-		../VideoPlayer_2/ffmpeg/include/libavutil/avconfig.h \
-		../VideoPlayer_2/ffmpeg/include/libavutil/mem.h \
-		../VideoPlayer_2/ffmpeg/include/libavutil/error.h \
-		../VideoPlayer_2/ffmpeg/include/libavutil/rational.h \
-		../VideoPlayer_2/ffmpeg/include/libavutil/mathematics.h \
-		../VideoPlayer_2/ffmpeg/include/libavutil/intfloat.h \
-		../VideoPlayer_2/ffmpeg/include/libavutil/log.h \
-		../VideoPlayer_2/ffmpeg/include/libavutil/pixfmt.h \
-		../VideoPlayer_2/ffmpeg/include/libavutil/buffer.h \
-		../VideoPlayer_2/ffmpeg/include/libavutil/cpu.h \
-		../VideoPlayer_2/ffmpeg/include/libavutil/channel_layout.h \
-		../VideoPlayer_2/ffmpeg/include/libavutil/dict.h \
-		../VideoPlayer_2/ffmpeg/include/libavutil/frame.h \
-		../VideoPlayer_2/ffmpeg/include/libavutil/hwcontext.h \
-		../VideoPlayer_2/ffmpeg/include/libavcodec/bsf.h \
-		../VideoPlayer_2/ffmpeg/include/libavcodec/codec_id.h \
-		../VideoPlayer_2/ffmpeg/include/libavcodec/codec_par.h \
-		../VideoPlayer_2/ffmpeg/include/libavcodec/packet.h \
-		../VideoPlayer_2/ffmpeg/include/libavcodec/version.h \
-		../VideoPlayer_2/ffmpeg/include/libavcodec/codec.h \
-		../VideoPlayer_2/ffmpeg/include/libavcodec/codec_desc.h \
-		../VideoPlayer_2/ffmpeg/include/libavformat/avformat.h \
-		../VideoPlayer_2/ffmpeg/include/libavformat/avio.h \
-		../VideoPlayer_2/ffmpeg/include/libavformat/version.h \
-		../VideoPlayer_2/ffmpeg/include/libswscale/swscale.h \
-		../VideoPlayer_2/ffmpeg/include/libswscale/version.h \
-		../VideoPlayer_2/ffmpeg/include/libswresample/swresample.h \
-		../VideoPlayer_2/ffmpeg/include/libswresample/version.h \
-		../VideoPlayer_2/ffmpeg/include/libavutil/time.h \
-		../VideoPlayer_2/ffmpeg/include/libavutil/imgutils.h \
-		../VideoPlayer_2/ffmpeg/include/libavutil/pixdesc.h \
-		../VideoPlayer_2/ffmpeg/include/libavutil/avassert.h \
-		../VideoPlayer_2/ffmpeg/include/libavutil/opt.h
-	$(CC) -c $(CFLAGS) $(INCPATH) -o release\frame.o ..\VideoPlayer_2\src\hwplayer\frame.c
 
 release/hwplayer.o: ../VideoPlayer_2/src/hwplayer/hwplayer.cpp ../VideoPlayer_2/src/hwplayer/hwplayer.h \
 		C:/Qt/5.15.2/mingw81_64/include/QtCore/QThread \
@@ -1744,243 +1346,6 @@ release/hwplayer.o: ../VideoPlayer_2/src/hwplayer/hwplayer.cpp ../VideoPlayer_2/
 		C:/Qt/5.15.2/mingw81_64/include/QtCore/qjsondocument.h \
 		../VideoPlayer_2/src/hwplayer/mainentry.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o release\hwplayer.o ..\VideoPlayer_2\src\hwplayer\hwplayer.cpp
-
-release/interface.o: ../VideoPlayer_2/src/hwplayer/interface.c ../VideoPlayer_2/src/hwplayer/audio.h \
-		../VideoPlayer_2/src/hwplayer/player.h \
-		../VideoPlayer_2/ffmpeg/include/libavcodec/avcodec.h \
-		../VideoPlayer_2/ffmpeg/include/libavutil/samplefmt.h \
-		../VideoPlayer_2/ffmpeg/include/libavutil/avutil.h \
-		../VideoPlayer_2/ffmpeg/include/libavutil/common.h \
-		../VideoPlayer_2/ffmpeg/include/libavutil/attributes.h \
-		../VideoPlayer_2/ffmpeg/include/libavutil/macros.h \
-		../VideoPlayer_2/ffmpeg/include/libavutil/version.h \
-		../VideoPlayer_2/ffmpeg/include/libavutil/avconfig.h \
-		../VideoPlayer_2/ffmpeg/include/libavutil/mem.h \
-		../VideoPlayer_2/ffmpeg/include/libavutil/error.h \
-		../VideoPlayer_2/ffmpeg/include/libavutil/rational.h \
-		../VideoPlayer_2/ffmpeg/include/libavutil/mathematics.h \
-		../VideoPlayer_2/ffmpeg/include/libavutil/intfloat.h \
-		../VideoPlayer_2/ffmpeg/include/libavutil/log.h \
-		../VideoPlayer_2/ffmpeg/include/libavutil/pixfmt.h \
-		../VideoPlayer_2/ffmpeg/include/libavutil/buffer.h \
-		../VideoPlayer_2/ffmpeg/include/libavutil/cpu.h \
-		../VideoPlayer_2/ffmpeg/include/libavutil/channel_layout.h \
-		../VideoPlayer_2/ffmpeg/include/libavutil/dict.h \
-		../VideoPlayer_2/ffmpeg/include/libavutil/frame.h \
-		../VideoPlayer_2/ffmpeg/include/libavutil/hwcontext.h \
-		../VideoPlayer_2/ffmpeg/include/libavcodec/bsf.h \
-		../VideoPlayer_2/ffmpeg/include/libavcodec/codec_id.h \
-		../VideoPlayer_2/ffmpeg/include/libavcodec/codec_par.h \
-		../VideoPlayer_2/ffmpeg/include/libavcodec/packet.h \
-		../VideoPlayer_2/ffmpeg/include/libavcodec/version.h \
-		../VideoPlayer_2/ffmpeg/include/libavcodec/codec.h \
-		../VideoPlayer_2/ffmpeg/include/libavcodec/codec_desc.h \
-		../VideoPlayer_2/ffmpeg/include/libavformat/avformat.h \
-		../VideoPlayer_2/ffmpeg/include/libavformat/avio.h \
-		../VideoPlayer_2/ffmpeg/include/libavformat/version.h \
-		../VideoPlayer_2/ffmpeg/include/libswscale/swscale.h \
-		../VideoPlayer_2/ffmpeg/include/libswscale/version.h \
-		../VideoPlayer_2/ffmpeg/include/libswresample/swresample.h \
-		../VideoPlayer_2/ffmpeg/include/libswresample/version.h \
-		../VideoPlayer_2/ffmpeg/include/libavutil/time.h \
-		../VideoPlayer_2/ffmpeg/include/libavutil/imgutils.h \
-		../VideoPlayer_2/ffmpeg/include/libavutil/pixdesc.h \
-		../VideoPlayer_2/ffmpeg/include/libavutil/avassert.h \
-		../VideoPlayer_2/ffmpeg/include/libavutil/opt.h \
-		../VideoPlayer_2/src/hwplayer/video.h \
-		../VideoPlayer_2/src/hwplayer/demux.h \
-		../VideoPlayer_2/src/hwplayer/frame.h \
-		../VideoPlayer_2/src/hwplayer/blitutil.h \
-		../VideoPlayer_2/src/hwplayer/interface.h \
-		../VideoPlayer_2/src/hwplayer/mi_vdec_extra.h
-	$(CC) -c $(CFLAGS) $(INCPATH) -o release\interface.o ..\VideoPlayer_2\src\hwplayer\interface.c
-
-release/mainentry.o: ../VideoPlayer_2/src/hwplayer/mainentry.c ../VideoPlayer_2/src/hwplayer/sd20xpanel.h \
-		../VideoPlayer_2/src/hwplayer/player.h \
-		../VideoPlayer_2/ffmpeg/include/libavcodec/avcodec.h \
-		../VideoPlayer_2/ffmpeg/include/libavutil/samplefmt.h \
-		../VideoPlayer_2/ffmpeg/include/libavutil/avutil.h \
-		../VideoPlayer_2/ffmpeg/include/libavutil/common.h \
-		../VideoPlayer_2/ffmpeg/include/libavutil/attributes.h \
-		../VideoPlayer_2/ffmpeg/include/libavutil/macros.h \
-		../VideoPlayer_2/ffmpeg/include/libavutil/version.h \
-		../VideoPlayer_2/ffmpeg/include/libavutil/avconfig.h \
-		../VideoPlayer_2/ffmpeg/include/libavutil/mem.h \
-		../VideoPlayer_2/ffmpeg/include/libavutil/error.h \
-		../VideoPlayer_2/ffmpeg/include/libavutil/rational.h \
-		../VideoPlayer_2/ffmpeg/include/libavutil/mathematics.h \
-		../VideoPlayer_2/ffmpeg/include/libavutil/intfloat.h \
-		../VideoPlayer_2/ffmpeg/include/libavutil/log.h \
-		../VideoPlayer_2/ffmpeg/include/libavutil/pixfmt.h \
-		../VideoPlayer_2/ffmpeg/include/libavutil/buffer.h \
-		../VideoPlayer_2/ffmpeg/include/libavutil/cpu.h \
-		../VideoPlayer_2/ffmpeg/include/libavutil/channel_layout.h \
-		../VideoPlayer_2/ffmpeg/include/libavutil/dict.h \
-		../VideoPlayer_2/ffmpeg/include/libavutil/frame.h \
-		../VideoPlayer_2/ffmpeg/include/libavutil/hwcontext.h \
-		../VideoPlayer_2/ffmpeg/include/libavcodec/bsf.h \
-		../VideoPlayer_2/ffmpeg/include/libavcodec/codec_id.h \
-		../VideoPlayer_2/ffmpeg/include/libavcodec/codec_par.h \
-		../VideoPlayer_2/ffmpeg/include/libavcodec/packet.h \
-		../VideoPlayer_2/ffmpeg/include/libavcodec/version.h \
-		../VideoPlayer_2/ffmpeg/include/libavcodec/codec.h \
-		../VideoPlayer_2/ffmpeg/include/libavcodec/codec_desc.h \
-		../VideoPlayer_2/ffmpeg/include/libavformat/avformat.h \
-		../VideoPlayer_2/ffmpeg/include/libavformat/avio.h \
-		../VideoPlayer_2/ffmpeg/include/libavformat/version.h \
-		../VideoPlayer_2/ffmpeg/include/libswscale/swscale.h \
-		../VideoPlayer_2/ffmpeg/include/libswscale/version.h \
-		../VideoPlayer_2/ffmpeg/include/libswresample/swresample.h \
-		../VideoPlayer_2/ffmpeg/include/libswresample/version.h \
-		../VideoPlayer_2/ffmpeg/include/libavutil/time.h \
-		../VideoPlayer_2/ffmpeg/include/libavutil/imgutils.h \
-		../VideoPlayer_2/ffmpeg/include/libavutil/pixdesc.h \
-		../VideoPlayer_2/ffmpeg/include/libavutil/avassert.h \
-		../VideoPlayer_2/ffmpeg/include/libavutil/opt.h \
-		../VideoPlayer_2/src/hwplayer/interface.h
-	$(CC) -c $(CFLAGS) $(INCPATH) -o release\mainentry.o ..\VideoPlayer_2\src\hwplayer\mainentry.c
-
-release/packet.o: ../VideoPlayer_2/src/hwplayer/packet.c ../VideoPlayer_2/src/hwplayer/packet.h \
-		../VideoPlayer_2/src/hwplayer/player.h \
-		../VideoPlayer_2/ffmpeg/include/libavcodec/avcodec.h \
-		../VideoPlayer_2/ffmpeg/include/libavutil/samplefmt.h \
-		../VideoPlayer_2/ffmpeg/include/libavutil/avutil.h \
-		../VideoPlayer_2/ffmpeg/include/libavutil/common.h \
-		../VideoPlayer_2/ffmpeg/include/libavutil/attributes.h \
-		../VideoPlayer_2/ffmpeg/include/libavutil/macros.h \
-		../VideoPlayer_2/ffmpeg/include/libavutil/version.h \
-		../VideoPlayer_2/ffmpeg/include/libavutil/avconfig.h \
-		../VideoPlayer_2/ffmpeg/include/libavutil/mem.h \
-		../VideoPlayer_2/ffmpeg/include/libavutil/error.h \
-		../VideoPlayer_2/ffmpeg/include/libavutil/rational.h \
-		../VideoPlayer_2/ffmpeg/include/libavutil/mathematics.h \
-		../VideoPlayer_2/ffmpeg/include/libavutil/intfloat.h \
-		../VideoPlayer_2/ffmpeg/include/libavutil/log.h \
-		../VideoPlayer_2/ffmpeg/include/libavutil/pixfmt.h \
-		../VideoPlayer_2/ffmpeg/include/libavutil/buffer.h \
-		../VideoPlayer_2/ffmpeg/include/libavutil/cpu.h \
-		../VideoPlayer_2/ffmpeg/include/libavutil/channel_layout.h \
-		../VideoPlayer_2/ffmpeg/include/libavutil/dict.h \
-		../VideoPlayer_2/ffmpeg/include/libavutil/frame.h \
-		../VideoPlayer_2/ffmpeg/include/libavutil/hwcontext.h \
-		../VideoPlayer_2/ffmpeg/include/libavcodec/bsf.h \
-		../VideoPlayer_2/ffmpeg/include/libavcodec/codec_id.h \
-		../VideoPlayer_2/ffmpeg/include/libavcodec/codec_par.h \
-		../VideoPlayer_2/ffmpeg/include/libavcodec/packet.h \
-		../VideoPlayer_2/ffmpeg/include/libavcodec/version.h \
-		../VideoPlayer_2/ffmpeg/include/libavcodec/codec.h \
-		../VideoPlayer_2/ffmpeg/include/libavcodec/codec_desc.h \
-		../VideoPlayer_2/ffmpeg/include/libavformat/avformat.h \
-		../VideoPlayer_2/ffmpeg/include/libavformat/avio.h \
-		../VideoPlayer_2/ffmpeg/include/libavformat/version.h \
-		../VideoPlayer_2/ffmpeg/include/libswscale/swscale.h \
-		../VideoPlayer_2/ffmpeg/include/libswscale/version.h \
-		../VideoPlayer_2/ffmpeg/include/libswresample/swresample.h \
-		../VideoPlayer_2/ffmpeg/include/libswresample/version.h \
-		../VideoPlayer_2/ffmpeg/include/libavutil/time.h \
-		../VideoPlayer_2/ffmpeg/include/libavutil/imgutils.h \
-		../VideoPlayer_2/ffmpeg/include/libavutil/pixdesc.h \
-		../VideoPlayer_2/ffmpeg/include/libavutil/avassert.h \
-		../VideoPlayer_2/ffmpeg/include/libavutil/opt.h
-	$(CC) -c $(CFLAGS) $(INCPATH) -o release\packet.o ..\VideoPlayer_2\src\hwplayer\packet.c
-
-release/player.o: ../VideoPlayer_2/src/hwplayer/player.c ../VideoPlayer_2/src/hwplayer/player.h \
-		../VideoPlayer_2/ffmpeg/include/libavcodec/avcodec.h \
-		../VideoPlayer_2/ffmpeg/include/libavutil/samplefmt.h \
-		../VideoPlayer_2/ffmpeg/include/libavutil/avutil.h \
-		../VideoPlayer_2/ffmpeg/include/libavutil/common.h \
-		../VideoPlayer_2/ffmpeg/include/libavutil/attributes.h \
-		../VideoPlayer_2/ffmpeg/include/libavutil/macros.h \
-		../VideoPlayer_2/ffmpeg/include/libavutil/version.h \
-		../VideoPlayer_2/ffmpeg/include/libavutil/avconfig.h \
-		../VideoPlayer_2/ffmpeg/include/libavutil/mem.h \
-		../VideoPlayer_2/ffmpeg/include/libavutil/error.h \
-		../VideoPlayer_2/ffmpeg/include/libavutil/rational.h \
-		../VideoPlayer_2/ffmpeg/include/libavutil/mathematics.h \
-		../VideoPlayer_2/ffmpeg/include/libavutil/intfloat.h \
-		../VideoPlayer_2/ffmpeg/include/libavutil/log.h \
-		../VideoPlayer_2/ffmpeg/include/libavutil/pixfmt.h \
-		../VideoPlayer_2/ffmpeg/include/libavutil/buffer.h \
-		../VideoPlayer_2/ffmpeg/include/libavutil/cpu.h \
-		../VideoPlayer_2/ffmpeg/include/libavutil/channel_layout.h \
-		../VideoPlayer_2/ffmpeg/include/libavutil/dict.h \
-		../VideoPlayer_2/ffmpeg/include/libavutil/frame.h \
-		../VideoPlayer_2/ffmpeg/include/libavutil/hwcontext.h \
-		../VideoPlayer_2/ffmpeg/include/libavcodec/bsf.h \
-		../VideoPlayer_2/ffmpeg/include/libavcodec/codec_id.h \
-		../VideoPlayer_2/ffmpeg/include/libavcodec/codec_par.h \
-		../VideoPlayer_2/ffmpeg/include/libavcodec/packet.h \
-		../VideoPlayer_2/ffmpeg/include/libavcodec/version.h \
-		../VideoPlayer_2/ffmpeg/include/libavcodec/codec.h \
-		../VideoPlayer_2/ffmpeg/include/libavcodec/codec_desc.h \
-		../VideoPlayer_2/ffmpeg/include/libavformat/avformat.h \
-		../VideoPlayer_2/ffmpeg/include/libavformat/avio.h \
-		../VideoPlayer_2/ffmpeg/include/libavformat/version.h \
-		../VideoPlayer_2/ffmpeg/include/libswscale/swscale.h \
-		../VideoPlayer_2/ffmpeg/include/libswscale/version.h \
-		../VideoPlayer_2/ffmpeg/include/libswresample/swresample.h \
-		../VideoPlayer_2/ffmpeg/include/libswresample/version.h \
-		../VideoPlayer_2/ffmpeg/include/libavutil/time.h \
-		../VideoPlayer_2/ffmpeg/include/libavutil/imgutils.h \
-		../VideoPlayer_2/ffmpeg/include/libavutil/pixdesc.h \
-		../VideoPlayer_2/ffmpeg/include/libavutil/avassert.h \
-		../VideoPlayer_2/ffmpeg/include/libavutil/opt.h \
-		../VideoPlayer_2/src/hwplayer/frame.h \
-		../VideoPlayer_2/src/hwplayer/packet.h \
-		../VideoPlayer_2/src/hwplayer/demux.h \
-		../VideoPlayer_2/src/hwplayer/video.h \
-		../VideoPlayer_2/src/hwplayer/audio.h
-	$(CC) -c $(CFLAGS) $(INCPATH) -o release\player.o ..\VideoPlayer_2\src\hwplayer\player.c
-
-release/sd20xpanel.o: ../VideoPlayer_2/src/hwplayer/sd20xpanel.c ../VideoPlayer_2/src/hwplayer/sd20xpanel.h \
-		../VideoPlayer_2/src/hwplayer/CC0702I50R_1024x600.h
-	$(CC) -c $(CFLAGS) $(INCPATH) -o release\sd20xpanel.o ..\VideoPlayer_2\src\hwplayer\sd20xpanel.c
-
-release/video.o: ../VideoPlayer_2/src/hwplayer/video.c ../VideoPlayer_2/src/hwplayer/video.h \
-		../VideoPlayer_2/src/hwplayer/player.h \
-		../VideoPlayer_2/ffmpeg/include/libavcodec/avcodec.h \
-		../VideoPlayer_2/ffmpeg/include/libavutil/samplefmt.h \
-		../VideoPlayer_2/ffmpeg/include/libavutil/avutil.h \
-		../VideoPlayer_2/ffmpeg/include/libavutil/common.h \
-		../VideoPlayer_2/ffmpeg/include/libavutil/attributes.h \
-		../VideoPlayer_2/ffmpeg/include/libavutil/macros.h \
-		../VideoPlayer_2/ffmpeg/include/libavutil/version.h \
-		../VideoPlayer_2/ffmpeg/include/libavutil/avconfig.h \
-		../VideoPlayer_2/ffmpeg/include/libavutil/mem.h \
-		../VideoPlayer_2/ffmpeg/include/libavutil/error.h \
-		../VideoPlayer_2/ffmpeg/include/libavutil/rational.h \
-		../VideoPlayer_2/ffmpeg/include/libavutil/mathematics.h \
-		../VideoPlayer_2/ffmpeg/include/libavutil/intfloat.h \
-		../VideoPlayer_2/ffmpeg/include/libavutil/log.h \
-		../VideoPlayer_2/ffmpeg/include/libavutil/pixfmt.h \
-		../VideoPlayer_2/ffmpeg/include/libavutil/buffer.h \
-		../VideoPlayer_2/ffmpeg/include/libavutil/cpu.h \
-		../VideoPlayer_2/ffmpeg/include/libavutil/channel_layout.h \
-		../VideoPlayer_2/ffmpeg/include/libavutil/dict.h \
-		../VideoPlayer_2/ffmpeg/include/libavutil/frame.h \
-		../VideoPlayer_2/ffmpeg/include/libavutil/hwcontext.h \
-		../VideoPlayer_2/ffmpeg/include/libavcodec/bsf.h \
-		../VideoPlayer_2/ffmpeg/include/libavcodec/codec_id.h \
-		../VideoPlayer_2/ffmpeg/include/libavcodec/codec_par.h \
-		../VideoPlayer_2/ffmpeg/include/libavcodec/packet.h \
-		../VideoPlayer_2/ffmpeg/include/libavcodec/version.h \
-		../VideoPlayer_2/ffmpeg/include/libavcodec/codec.h \
-		../VideoPlayer_2/ffmpeg/include/libavcodec/codec_desc.h \
-		../VideoPlayer_2/ffmpeg/include/libavformat/avformat.h \
-		../VideoPlayer_2/ffmpeg/include/libavformat/avio.h \
-		../VideoPlayer_2/ffmpeg/include/libavformat/version.h \
-		../VideoPlayer_2/ffmpeg/include/libswscale/swscale.h \
-		../VideoPlayer_2/ffmpeg/include/libswscale/version.h \
-		../VideoPlayer_2/ffmpeg/include/libswresample/swresample.h \
-		../VideoPlayer_2/ffmpeg/include/libswresample/version.h \
-		../VideoPlayer_2/ffmpeg/include/libavutil/time.h \
-		../VideoPlayer_2/ffmpeg/include/libavutil/imgutils.h \
-		../VideoPlayer_2/ffmpeg/include/libavutil/pixdesc.h \
-		../VideoPlayer_2/ffmpeg/include/libavutil/avassert.h \
-		../VideoPlayer_2/ffmpeg/include/libavutil/opt.h \
-		../VideoPlayer_2/src/hwplayer/packet.h \
-		../VideoPlayer_2/src/hwplayer/frame.h
-	$(CC) -c $(CFLAGS) $(INCPATH) -o release\video.o ..\VideoPlayer_2\src\hwplayer\video.c
 
 release/advert.o: ../VideoPlayer_2/src/videoplayer/advert.cpp ../VideoPlayer_2/src/videoplayer/advert.h \
 		../VideoPlayer_2/src/videoplayer/labelpicture.h \
@@ -2625,217 +1990,6 @@ release/videoobject.o: ../VideoPlayer_2/src/videoplayer/videoobject.cpp ../Video
 		C:/Qt/5.15.2/mingw81_64/include/QtCore/QString
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o release\videoobject.o ..\VideoPlayer_2\src\videoplayer\videoobject.cpp
 
-release/videoplayer.o: ../VideoPlayer_2/src/videoplayer/videoplayer.cpp ../VideoPlayer_2/src/videoplayer/videoplayer.h \
-		C:/Qt/5.15.2/mingw81_64/include/QtCore/QThread \
-		C:/Qt/5.15.2/mingw81_64/include/QtCore/qthread.h \
-		C:/Qt/5.15.2/mingw81_64/include/QtCore/qobject.h \
-		C:/Qt/5.15.2/mingw81_64/include/QtCore/qobjectdefs.h \
-		C:/Qt/5.15.2/mingw81_64/include/QtCore/qnamespace.h \
-		C:/Qt/5.15.2/mingw81_64/include/QtCore/qglobal.h \
-		C:/Qt/5.15.2/mingw81_64/include/QtCore/qconfig-bootstrapped.h \
-		C:/Qt/5.15.2/mingw81_64/include/QtCore/qconfig.h \
-		C:/Qt/5.15.2/mingw81_64/include/QtCore/qtcore-config.h \
-		C:/Qt/5.15.2/mingw81_64/include/QtCore/qsystemdetection.h \
-		C:/Qt/5.15.2/mingw81_64/include/QtCore/qprocessordetection.h \
-		C:/Qt/5.15.2/mingw81_64/include/QtCore/qcompilerdetection.h \
-		C:/Qt/5.15.2/mingw81_64/include/QtCore/qtypeinfo.h \
-		C:/Qt/5.15.2/mingw81_64/include/QtCore/qsysinfo.h \
-		C:/Qt/5.15.2/mingw81_64/include/QtCore/qlogging.h \
-		C:/Qt/5.15.2/mingw81_64/include/QtCore/qflags.h \
-		C:/Qt/5.15.2/mingw81_64/include/QtCore/qatomic.h \
-		C:/Qt/5.15.2/mingw81_64/include/QtCore/qbasicatomic.h \
-		C:/Qt/5.15.2/mingw81_64/include/QtCore/qatomic_bootstrap.h \
-		C:/Qt/5.15.2/mingw81_64/include/QtCore/qgenericatomic.h \
-		C:/Qt/5.15.2/mingw81_64/include/QtCore/qatomic_cxx11.h \
-		C:/Qt/5.15.2/mingw81_64/include/QtCore/qatomic_msvc.h \
-		C:/Qt/5.15.2/mingw81_64/include/QtCore/qglobalstatic.h \
-		C:/Qt/5.15.2/mingw81_64/include/QtCore/qmutex.h \
-		C:/Qt/5.15.2/mingw81_64/include/QtCore/qnumeric.h \
-		C:/Qt/5.15.2/mingw81_64/include/QtCore/qversiontagging.h \
-		C:/Qt/5.15.2/mingw81_64/include/QtCore/qobjectdefs_impl.h \
-		C:/Qt/5.15.2/mingw81_64/include/QtCore/qstring.h \
-		C:/Qt/5.15.2/mingw81_64/include/QtCore/qchar.h \
-		C:/Qt/5.15.2/mingw81_64/include/QtCore/qbytearray.h \
-		C:/Qt/5.15.2/mingw81_64/include/QtCore/qrefcount.h \
-		C:/Qt/5.15.2/mingw81_64/include/QtCore/qarraydata.h \
-		C:/Qt/5.15.2/mingw81_64/include/QtCore/qstringliteral.h \
-		C:/Qt/5.15.2/mingw81_64/include/QtCore/qstringalgorithms.h \
-		C:/Qt/5.15.2/mingw81_64/include/QtCore/qstringview.h \
-		C:/Qt/5.15.2/mingw81_64/include/QtCore/qstringbuilder.h \
-		C:/Qt/5.15.2/mingw81_64/include/QtCore/qlist.h \
-		C:/Qt/5.15.2/mingw81_64/include/QtCore/qalgorithms.h \
-		C:/Qt/5.15.2/mingw81_64/include/QtCore/qiterator.h \
-		C:/Qt/5.15.2/mingw81_64/include/QtCore/qhashfunctions.h \
-		C:/Qt/5.15.2/mingw81_64/include/QtCore/qpair.h \
-		C:/Qt/5.15.2/mingw81_64/include/QtCore/qvector.h \
-		C:/Qt/5.15.2/mingw81_64/include/QtCore/qcontainertools_impl.h \
-		C:/Qt/5.15.2/mingw81_64/include/QtCore/qpoint.h \
-		C:/Qt/5.15.2/mingw81_64/include/QtCore/qbytearraylist.h \
-		C:/Qt/5.15.2/mingw81_64/include/QtCore/qstringlist.h \
-		C:/Qt/5.15.2/mingw81_64/include/QtCore/qregexp.h \
-		C:/Qt/5.15.2/mingw81_64/include/QtCore/qstringmatcher.h \
-		C:/Qt/5.15.2/mingw81_64/include/QtCore/qcoreevent.h \
-		C:/Qt/5.15.2/mingw81_64/include/QtCore/qscopedpointer.h \
-		C:/Qt/5.15.2/mingw81_64/include/QtCore/qmetatype.h \
-		C:/Qt/5.15.2/mingw81_64/include/QtCore/qvarlengtharray.h \
-		C:/Qt/5.15.2/mingw81_64/include/QtCore/qcontainerfwd.h \
-		C:/Qt/5.15.2/mingw81_64/include/QtCore/qobject_impl.h \
-		C:/Qt/5.15.2/mingw81_64/include/QtCore/qdeadlinetimer.h \
-		C:/Qt/5.15.2/mingw81_64/include/QtCore/qelapsedtimer.h \
-		C:/Qt/5.15.2/mingw81_64/include/QtGui/QImage \
-		C:/Qt/5.15.2/mingw81_64/include/QtGui/qimage.h \
-		C:/Qt/5.15.2/mingw81_64/include/QtGui/qtguiglobal.h \
-		C:/Qt/5.15.2/mingw81_64/include/QtGui/qtgui-config.h \
-		C:/Qt/5.15.2/mingw81_64/include/QtGui/qcolor.h \
-		C:/Qt/5.15.2/mingw81_64/include/QtGui/qrgb.h \
-		C:/Qt/5.15.2/mingw81_64/include/QtGui/qrgba64.h \
-		C:/Qt/5.15.2/mingw81_64/include/QtGui/qpaintdevice.h \
-		C:/Qt/5.15.2/mingw81_64/include/QtGui/qwindowdefs.h \
-		C:/Qt/5.15.2/mingw81_64/include/QtGui/qwindowdefs_win.h \
-		C:/Qt/5.15.2/mingw81_64/include/QtCore/qrect.h \
-		C:/Qt/5.15.2/mingw81_64/include/QtCore/qmargins.h \
-		C:/Qt/5.15.2/mingw81_64/include/QtCore/qsize.h \
-		C:/Qt/5.15.2/mingw81_64/include/QtGui/qpixelformat.h \
-		C:/Qt/5.15.2/mingw81_64/include/QtGui/qtransform.h \
-		C:/Qt/5.15.2/mingw81_64/include/QtGui/qmatrix.h \
-		C:/Qt/5.15.2/mingw81_64/include/QtGui/qpolygon.h \
-		C:/Qt/5.15.2/mingw81_64/include/QtGui/qregion.h \
-		C:/Qt/5.15.2/mingw81_64/include/QtCore/qdatastream.h \
-		C:/Qt/5.15.2/mingw81_64/include/QtCore/qiodevice.h \
-		C:/Qt/5.15.2/mingw81_64/include/QtCore/qline.h \
-		C:/Qt/5.15.2/mingw81_64/include/QtCore/QDebug \
-		C:/Qt/5.15.2/mingw81_64/include/QtCore/qdebug.h \
-		C:/Qt/5.15.2/mingw81_64/include/QtCore/qhash.h \
-		C:/Qt/5.15.2/mingw81_64/include/QtCore/qmap.h \
-		C:/Qt/5.15.2/mingw81_64/include/QtCore/qtextstream.h \
-		C:/Qt/5.15.2/mingw81_64/include/QtCore/qlocale.h \
-		C:/Qt/5.15.2/mingw81_64/include/QtCore/qvariant.h \
-		C:/Qt/5.15.2/mingw81_64/include/QtCore/qshareddata.h \
-		C:/Qt/5.15.2/mingw81_64/include/QtCore/qset.h \
-		C:/Qt/5.15.2/mingw81_64/include/QtCore/qcontiguouscache.h \
-		C:/Qt/5.15.2/mingw81_64/include/QtCore/qsharedpointer.h \
-		C:/Qt/5.15.2/mingw81_64/include/QtCore/qsharedpointer_impl.h \
-		C:/Qt/5.15.2/mingw81_64/include/QtCore/QMutex \
-		C:/Qt/5.15.2/mingw81_64/include/QtGui/QPixmap \
-		C:/Qt/5.15.2/mingw81_64/include/QtGui/qpixmap.h \
-		../VideoPlayer_2/src/videoplayer/advert.h \
-		../VideoPlayer_2/src/videoplayer/labelpicture.h \
-		C:/Qt/5.15.2/mingw81_64/include/QtCore/QJsonObject \
-		C:/Qt/5.15.2/mingw81_64/include/QtCore/qjsonobject.h \
-		C:/Qt/5.15.2/mingw81_64/include/QtCore/qjsonvalue.h \
-		C:/Qt/5.15.2/mingw81_64/include/QtCore/qcborvalue.h \
-		C:/Qt/5.15.2/mingw81_64/include/QtCore/qdatetime.h \
-		C:/Qt/5.15.2/mingw81_64/include/QtCore/qcborcommon.h \
-		C:/Qt/5.15.2/mingw81_64/include/QtCore/qregularexpression.h \
-		C:/Qt/5.15.2/mingw81_64/include/QtCore/qurl.h \
-		C:/Qt/5.15.2/mingw81_64/include/QtCore/qurlquery.h \
-		C:/Qt/5.15.2/mingw81_64/include/QtCore/quuid.h \
-		C:/Qt/5.15.2/mingw81_64/include/QtCore/QString \
-		../VideoPlayer_2/src/videoplayer/labelvideo.h \
-		../VideoPlayer_2/src/videoplayer/videoobject.h \
-		C:/Qt/5.15.2/mingw81_64/include/QtCore/QList \
-		../VideoPlayer_2/src/videoplayer/networkrequest.h \
-		../VideoPlayer_2/src/videoplayer/downloadtool.h \
-		C:/Qt/5.15.2/mingw81_64/include/QtCore/QObject \
-		C:/Qt/5.15.2/mingw81_64/include/QtCore/QUrl \
-		C:/Qt/5.15.2/mingw81_64/include/QtCore/QFile \
-		C:/Qt/5.15.2/mingw81_64/include/QtCore/qfile.h \
-		C:/Qt/5.15.2/mingw81_64/include/QtCore/qfiledevice.h \
-		C:/Qt/5.15.2/mingw81_64/include/QtCore/QDir \
-		C:/Qt/5.15.2/mingw81_64/include/QtCore/qdir.h \
-		C:/Qt/5.15.2/mingw81_64/include/QtCore/qfileinfo.h \
-		C:/Qt/5.15.2/mingw81_64/include/QtCore/QPointer \
-		C:/Qt/5.15.2/mingw81_64/include/QtCore/qpointer.h \
-		C:/Qt/5.15.2/mingw81_64/include/QtWidgets/QApplication \
-		C:/Qt/5.15.2/mingw81_64/include/QtWidgets/qapplication.h \
-		C:/Qt/5.15.2/mingw81_64/include/QtWidgets/qtwidgetsglobal.h \
-		C:/Qt/5.15.2/mingw81_64/include/QtWidgets/qtwidgets-config.h \
-		C:/Qt/5.15.2/mingw81_64/include/QtCore/qcoreapplication.h \
-		C:/Qt/5.15.2/mingw81_64/include/QtCore/qeventloop.h \
-		C:/Qt/5.15.2/mingw81_64/include/QtGui/qcursor.h \
-		C:/Qt/5.15.2/mingw81_64/include/QtWidgets/qdesktopwidget.h \
-		C:/Qt/5.15.2/mingw81_64/include/QtWidgets/qwidget.h \
-		C:/Qt/5.15.2/mingw81_64/include/QtGui/qpalette.h \
-		C:/Qt/5.15.2/mingw81_64/include/QtGui/qbrush.h \
-		C:/Qt/5.15.2/mingw81_64/include/QtGui/qfont.h \
-		C:/Qt/5.15.2/mingw81_64/include/QtGui/qfontmetrics.h \
-		C:/Qt/5.15.2/mingw81_64/include/QtGui/qfontinfo.h \
-		C:/Qt/5.15.2/mingw81_64/include/QtWidgets/qsizepolicy.h \
-		C:/Qt/5.15.2/mingw81_64/include/QtGui/qkeysequence.h \
-		C:/Qt/5.15.2/mingw81_64/include/QtGui/qevent.h \
-		C:/Qt/5.15.2/mingw81_64/include/QtGui/qvector2d.h \
-		C:/Qt/5.15.2/mingw81_64/include/QtGui/qtouchdevice.h \
-		C:/Qt/5.15.2/mingw81_64/include/QtGui/qguiapplication.h \
-		C:/Qt/5.15.2/mingw81_64/include/QtGui/qinputmethod.h \
-		C:/Qt/5.15.2/mingw81_64/include/QtNetwork/QNetworkReply \
-		C:/Qt/5.15.2/mingw81_64/include/QtNetwork/qnetworkreply.h \
-		C:/Qt/5.15.2/mingw81_64/include/QtNetwork/qtnetworkglobal.h \
-		C:/Qt/5.15.2/mingw81_64/include/QtNetwork/qtnetwork-config.h \
-		C:/Qt/5.15.2/mingw81_64/include/QtCore/QIODevice \
-		C:/Qt/5.15.2/mingw81_64/include/QtCore/QVariant \
-		C:/Qt/5.15.2/mingw81_64/include/QtNetwork/QNetworkRequest \
-		C:/Qt/5.15.2/mingw81_64/include/QtNetwork/qnetworkrequest.h \
-		C:/Qt/5.15.2/mingw81_64/include/QtCore/QSharedDataPointer \
-		C:/Qt/5.15.2/mingw81_64/include/QtNetwork/QNetworkAccessManager \
-		C:/Qt/5.15.2/mingw81_64/include/QtNetwork/qnetworkaccessmanager.h \
-		C:/Qt/5.15.2/mingw81_64/include/QtCore/QVector \
-		C:/Qt/5.15.2/mingw81_64/include/QtNetwork/QSslConfiguration \
-		C:/Qt/5.15.2/mingw81_64/include/QtNetwork/qsslconfiguration.h \
-		C:/Qt/5.15.2/mingw81_64/include/QtNetwork/qsslsocket.h \
-		C:/Qt/5.15.2/mingw81_64/include/QtNetwork/qtcpsocket.h \
-		C:/Qt/5.15.2/mingw81_64/include/QtNetwork/qabstractsocket.h \
-		C:/Qt/5.15.2/mingw81_64/include/QtNetwork/qsslerror.h \
-		C:/Qt/5.15.2/mingw81_64/include/QtNetwork/qsslcertificate.h \
-		C:/Qt/5.15.2/mingw81_64/include/QtCore/qcryptographichash.h \
-		C:/Qt/5.15.2/mingw81_64/include/QtNetwork/qssl.h \
-		C:/Qt/5.15.2/mingw81_64/include/QtCore/QFlags \
-		C:/Qt/5.15.2/mingw81_64/include/QtNetwork/QSslPreSharedKeyAuthenticator \
-		C:/Qt/5.15.2/mingw81_64/include/QtNetwork/qsslpresharedkeyauthenticator.h \
-		C:/Qt/5.15.2/mingw81_64/include/QtCore/QMetaType \
-		C:/Qt/5.15.2/mingw81_64/include/QtCore/QTimer \
-		C:/Qt/5.15.2/mingw81_64/include/QtCore/qtimer.h \
-		C:/Qt/5.15.2/mingw81_64/include/QtCore/qbasictimer.h \
-		../VideoPlayer_2/ffmpeg/include/libavcodec/avcodec.h \
-		../VideoPlayer_2/ffmpeg/include/libavutil/samplefmt.h \
-		../VideoPlayer_2/ffmpeg/include/libavutil/avutil.h \
-		../VideoPlayer_2/ffmpeg/include/libavutil/common.h \
-		../VideoPlayer_2/ffmpeg/include/libavutil/attributes.h \
-		../VideoPlayer_2/ffmpeg/include/libavutil/macros.h \
-		../VideoPlayer_2/ffmpeg/include/libavutil/version.h \
-		../VideoPlayer_2/ffmpeg/include/libavutil/avconfig.h \
-		../VideoPlayer_2/ffmpeg/include/libavutil/mem.h \
-		../VideoPlayer_2/ffmpeg/include/libavutil/error.h \
-		../VideoPlayer_2/ffmpeg/include/libavutil/rational.h \
-		../VideoPlayer_2/ffmpeg/include/libavutil/mathematics.h \
-		../VideoPlayer_2/ffmpeg/include/libavutil/intfloat.h \
-		../VideoPlayer_2/ffmpeg/include/libavutil/log.h \
-		../VideoPlayer_2/ffmpeg/include/libavutil/pixfmt.h \
-		../VideoPlayer_2/ffmpeg/include/libavutil/buffer.h \
-		../VideoPlayer_2/ffmpeg/include/libavutil/cpu.h \
-		../VideoPlayer_2/ffmpeg/include/libavutil/channel_layout.h \
-		../VideoPlayer_2/ffmpeg/include/libavutil/dict.h \
-		../VideoPlayer_2/ffmpeg/include/libavutil/frame.h \
-		../VideoPlayer_2/ffmpeg/include/libavutil/hwcontext.h \
-		../VideoPlayer_2/ffmpeg/include/libavcodec/bsf.h \
-		../VideoPlayer_2/ffmpeg/include/libavcodec/codec_id.h \
-		../VideoPlayer_2/ffmpeg/include/libavcodec/codec_par.h \
-		../VideoPlayer_2/ffmpeg/include/libavcodec/packet.h \
-		../VideoPlayer_2/ffmpeg/include/libavcodec/version.h \
-		../VideoPlayer_2/ffmpeg/include/libavcodec/codec.h \
-		../VideoPlayer_2/ffmpeg/include/libavcodec/codec_desc.h \
-		../VideoPlayer_2/ffmpeg/include/libavformat/avformat.h \
-		../VideoPlayer_2/ffmpeg/include/libavformat/avio.h \
-		../VideoPlayer_2/ffmpeg/include/libavformat/version.h \
-		../VideoPlayer_2/ffmpeg/include/libswscale/swscale.h \
-		../VideoPlayer_2/ffmpeg/include/libswscale/version.h \
-		../VideoPlayer_2/ffmpeg/include/libavutil/pixdesc.h \
-		../VideoPlayer_2/ffmpeg/include/libavutil/opt.h \
-		../VideoPlayer_2/ffmpeg/include/libavutil/avassert.h \
-		../VideoPlayer_2/ffmpeg/include/libavutil/imgutils.h \
-		C:/Qt/5.15.2/mingw81_64/include/QtCore/QJsonDocument \
-		C:/Qt/5.15.2/mingw81_64/include/QtCore/qjsondocument.h
-	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o release\videoplayer.o ..\VideoPlayer_2\src\videoplayer\videoplayer.cpp
-
 release/mainwindow.o: ../VideoPlayer_2/src/mainwindow.cpp ../VideoPlayer_2/src/mainwindow.h \
 		C:/Qt/5.15.2/mingw81_64/include/QtWidgets/QMainWindow \
 		C:/Qt/5.15.2/mingw81_64/include/QtWidgets/qmainwindow.h \
@@ -3012,7 +2166,7 @@ release/mainwindow.o: ../VideoPlayer_2/src/mainwindow.cpp ../VideoPlayer_2/src/m
 		C:/Qt/5.15.2/mingw81_64/include/QtCore/QTimer \
 		C:/Qt/5.15.2/mingw81_64/include/QtCore/qtimer.h \
 		C:/Qt/5.15.2/mingw81_64/include/QtCore/qbasictimer.h \
-		../VideoPlayer_2/src/videoplayer/videoplayer.h \
+		../VideoPlayer_2/src/hwplayer/hwplayer.h \
 		C:/Qt/5.15.2/mingw81_64/include/QtCore/QMutex \
 		C:/Qt/5.15.2/mingw81_64/include/QtGui/QPixmap \
 		../VideoPlayer_2/ffmpeg/include/libavcodec/avcodec.h \
@@ -3053,24 +2207,10 @@ release/mainwindow.o: ../VideoPlayer_2/src/mainwindow.cpp ../VideoPlayer_2/src/m
 		../VideoPlayer_2/ffmpeg/include/libavutil/avassert.h \
 		../VideoPlayer_2/ffmpeg/include/libavutil/imgutils.h \
 		ui_mainwindow.h \
-		C:/Qt/5.15.2/mingw81_64/include/QtWidgets/QMenuBar \
-		C:/Qt/5.15.2/mingw81_64/include/QtWidgets/qmenubar.h \
-		C:/Qt/5.15.2/mingw81_64/include/QtWidgets/qmenu.h \
-		C:/Qt/5.15.2/mingw81_64/include/QtWidgets/qaction.h \
-		C:/Qt/5.15.2/mingw81_64/include/QtWidgets/qactiongroup.h \
-		C:/Qt/5.15.2/mingw81_64/include/QtWidgets/QStatusBar \
-		C:/Qt/5.15.2/mingw81_64/include/QtWidgets/qstatusbar.h \
-		C:/Qt/5.15.2/mingw81_64/include/QtWidgets/QVBoxLayout \
-		C:/Qt/5.15.2/mingw81_64/include/QtWidgets/qboxlayout.h \
-		C:/Qt/5.15.2/mingw81_64/include/QtWidgets/qlayout.h \
-		C:/Qt/5.15.2/mingw81_64/include/QtWidgets/qlayoutitem.h \
-		C:/Qt/5.15.2/mingw81_64/include/QtWidgets/qgridlayout.h \
-		C:/Qt/5.15.2/mingw81_64/include/QtWidgets/QWidget \
 		C:/Qt/5.15.2/mingw81_64/include/QtGui/QPainter \
 		C:/Qt/5.15.2/mingw81_64/include/QtGui/qpainter.h \
 		C:/Qt/5.15.2/mingw81_64/include/QtGui/qtextoption.h \
-		C:/Qt/5.15.2/mingw81_64/include/QtGui/qpen.h \
-		../VideoPlayer_2/src/hwplayer/hwplayer.h
+		C:/Qt/5.15.2/mingw81_64/include/QtGui/qpen.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o release\mainwindow.o ..\VideoPlayer_2\src\mainwindow.cpp
 
 release/moc_hwplayer.o: release/moc_hwplayer.cpp 
@@ -3081,9 +2221,6 @@ release/moc_downloadtool.o: release/moc_downloadtool.cpp
 
 release/moc_networkrequest.o: release/moc_networkrequest.cpp 
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o release\moc_networkrequest.o release\moc_networkrequest.cpp
-
-release/moc_videoplayer.o: release/moc_videoplayer.cpp 
-	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o release\moc_videoplayer.o release\moc_videoplayer.cpp
 
 release/moc_mainwindow.o: release/moc_mainwindow.cpp 
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o release\moc_mainwindow.o release\moc_mainwindow.cpp

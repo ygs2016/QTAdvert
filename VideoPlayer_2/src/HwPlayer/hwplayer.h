@@ -44,7 +44,7 @@ private:
     QString curPath;
     QMutex mMutex;
     Advert curAd;
-    NetworkRequest *mRequest;
+    NetworkRequest mRequest;
     QString mFileName;
     std::thread m_decodecThread;
     int iVideoIndex = -1;

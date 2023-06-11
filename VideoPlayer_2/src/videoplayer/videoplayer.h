@@ -47,7 +47,7 @@ signals:
     void sig_GetOneFrame(int,int,QImage); //没获取到一帧图像 就发送此信号
     void sig_GetOneImage(int,int, int, int,QPixmap); //没获取到一帧图像 就发送此信号
 private slots:
-        void slotGetNetworkReply(QString Path);
+    void slotGetNetworkReply(QString Path);
 
 private:
     QString curPath;

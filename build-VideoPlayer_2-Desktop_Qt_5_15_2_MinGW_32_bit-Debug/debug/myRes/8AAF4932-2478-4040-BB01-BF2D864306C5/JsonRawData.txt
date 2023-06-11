@@ -1,0 +1,32 @@
+{
+    "Id": "8AAF4932-2478-4040-BB01-BF2D864306C5",
+    "ItemCode": "10001",
+    "ItemName": "???",
+    "LabelPicture": {
+        "Height": 440,
+        "PictureName": "8AAF4932-2478-4040-BB01-BF2D864306C5.jpg",
+        "PictureUrl": "http://114.215.83.240:6366/Files/8AAF4932-2478-4040-BB01-BF2D864306C5.jpg",
+        "Width": 650,
+        "X": 0,
+        "Y": 360
+    },
+    "LabelVideo": {
+        "Height": 360,
+        "VideoList": [
+            {
+                "VideoName": "8AAF4932-2478-4040-BB01-BF2D864306C5.mp4",
+                "VideoNo": 1,
+                "VideoUrl": "http://114.215.83.240:6366/Files/8AAF4932-2478-4040-BB01-BF2D864306C5.mp4"
+            },
+            {
+                "VideoName": "8AAF4932-2478-4040-BB01-BF2D864306C6.mp4",
+                "VideoNo": 2,
+                "VideoUrl": "http://114.215.83.240:6366/Files/8AAF4932-2478-4040-BB01-BF2D864306C6.mp4"
+            }
+        ],
+        "Width": 650,
+        "X": 0,
+        "Y": 0
+    },
+    "Nlast": 1
+}

@@ -4,8 +4,9 @@
 
 VideoObject::VideoObject()
 {
-
+    printf("test VideoObject\n");
 }
+
 
 
 VideoObject& VideoObject::operator=(const QJsonObject &A) {

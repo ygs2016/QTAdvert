@@ -30,7 +30,6 @@ public:
 
 protected:
     void paintEvent(QPaintEvent *event);
-    void showEvent(QShowEvent *event);
 
 private:
     Ui::MainWindow *ui;
@@ -41,7 +40,7 @@ private:
     QPixmap map;
     int xImage = 0;
     int yImage = 0;
-    hwplayer *mPlayer; //播放线程
+    hwplayer mPlayer; //播放线程
     QLabel mLabel;
     QImage mImage; //记录当前的图像
     bool updateImage = false;

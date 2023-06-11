@@ -18,12 +18,10 @@ NetworkRequest::NetworkRequest(QObject *parent)
 NetworkRequest::~NetworkRequest()
 {
     isRunning = false;
-    if(manager){
-        delete manager;
-    }
-    mTime->stop();
-    if(mTime){
-        delete mTime;
+    if(dT){
+        dT->cancelDownload();
+        delete dT;
+        dT = NULL;
     }
 }
 
@@ -31,11 +29,9 @@ void NetworkRequest::run(){
     //qDebug() << "NetworkReques is --> " <<QThread::currentThreadId() << QThread::currentThread();
 
     isRunning = true;
-    manager = new QNetworkAccessManager;
-    mTime = new QTimer;
-    connect(manager,SIGNAL(finished(QNetworkReply *)),this,SLOT(getBack(QNetworkReply *)),Qt::DirectConnection);//通信完成后，自动执行getBack
-    connect(mTime,SIGNAL(timeout()),this,SLOT(slotTime()),Qt::DirectConnection);
-    mTime->start(2000);
+    connect(&manager,SIGNAL(finished(QNetworkReply *)),this,SLOT(getBack(QNetworkReply *)),Qt::DirectConnection);//通信完成后，自动执行getBack
+    connect(&mTime,SIGNAL(timeout()),this,SLOT(slotTime()),Qt::DirectConnection);
+    mTime.start(2000);
     checkAndDownloadFiles();
     exec();
 
@@ -52,12 +48,12 @@ void NetworkRequest::slotDownloadFinished(){
     if( ++videoDownloadCount < curAd.labelVideo.VideoList.count()){
         dT = new DownloadTool(curAd.labelVideo.VideoList[videoDownloadCount].videoUrl, pathName + "/" + subPathName + "/Video/");
         dT->startDownload();
-        dT->sigDownloadFinished();
+        //dT->sigDownloadFinished();
         connect(dT,SIGNAL(sigDownloadFinished()),this,SLOT(slotDownloadFinished()));
     }else if(imageDownloadCount++ < 1){
         dT = new DownloadTool(curAd.labelPicture.pictureUrl, pathName + "/" + subPathName + "/Picture/");
         dT->startDownload();
-        dT->sigDownloadFinished();
+        //dT->sigDownloadFinished();
         connect(dT,SIGNAL(sigDownloadFinished()),this,SLOT(slotDownloadFinished()));
     }else{
         imageDownloadCount = 0;
@@ -66,6 +62,7 @@ void NetworkRequest::slotDownloadFinished(){
         file.open(QIODevice::WriteOnly|QIODevice::Text);
         file.write(curAd.getJson().toLatin1());
         file.close();
+        emit sig_GetNetworkReply(pathName + "/" + subPathName);
         isBusy = false;
 
     }
@@ -81,10 +78,8 @@ void NetworkRequest::slotTime()
 
 void NetworkRequest::get()
 {
-    QNetworkRequest request;
     request.setUrl(QUrl("http://114.215.83.240:6366/ItemService/GetItemLabel?Token=123&ClientId=‎74-D4-35-65-5A-22&UserID=Admin&Nlast=0"));
-    manager->get(request); //发出get请求
-
+    manager.get(request); //发出get请求
 }
 
 
@@ -140,11 +135,13 @@ bool NetworkRequest::checkAndDownloadFiles(){
         imageDownloadCount = 0;
         if(dT != NULL){
             dT->disconnect(dT,0,0,0);
+            printf("Free DT ....\n");
             delete dT;
         }
+        printf("New DT ....\n");
         dT = new DownloadTool(curAd.labelVideo.VideoList[videoDownloadCount].videoUrl, pathName +"/"+ subPathName+ "/Video/");
         dT->startDownload();
-        dT->sigDownloadFinished();
+        //dT->sigDownloadFinished();
         connect(dT,SIGNAL(sigDownloadFinished()),this,SLOT(slotDownloadFinished()));
         //delete dT;
         //dT = NULL;
@@ -189,5 +186,4 @@ void NetworkRequest::Parse_Data_Json(QString jsonStr)
 void NetworkRequest::getBack(QNetworkReply * reply)
 {
     Parse_Data_Json(reply->readAll().data());
-
 }

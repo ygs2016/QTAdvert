@@ -17,7 +17,7 @@ class NetworkRequest : public QThread
 public:
     explicit NetworkRequest(QObject *parent = nullptr);
     ~NetworkRequest();
-
+    QNetworkRequest request;
     void stop();
     void get();
     void run();
@@ -35,11 +35,11 @@ private:
     QString mLastUUID;
     QString curPathName;
     bool isRunning = false;
-    QTimer *mTime;
+    QTimer mTime;
     int videoDownloadCount = 0;
     int imageDownloadCount = 0;
     Advert curAd;
-    QNetworkAccessManager * manager;
+    QNetworkAccessManager manager;
     void Parse_Data_Json(QString jsonStr);
 };
 

@@ -29,9 +29,10 @@ SOURCES += src/main.cpp \
     src/videoplayer/labelpicture.cpp \
     src/videoplayer/labelvideo.cpp \
     src/videoplayer/networkrequest.cpp \
+    src/videoplayer/uartctrl.cpp \
     src/videoplayer/videoobject.cpp \
-    src/videoplayer/videoplayer.cpp \
-    #src/videoplayer/videoplayerhw.cpp \
+#    src/videoplayer/videoplayer.cpp \
+    src/videoplayer/videoplayerhw.cpp \
     src/mainwindow.cpp
 
 HEADERS  += \
@@ -53,9 +54,10 @@ HEADERS  += \
     src/videoplayer/labelpicture.h \
     src/videoplayer/labelvideo.h \
     src/videoplayer/networkrequest.h \
+    src/videoplayer/uartctrl.h \
     src/videoplayer/videoobject.h \
-    src/videoplayer/videoplayer.h \
-    #src/videoplayer/videoplayerhw.h \
+#    src/videoplayer/videoplayer.h \
+    src/videoplayer/videoplayerhw.h \
     src/mainwindow.h
 
 FORMS    += \

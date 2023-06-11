@@ -17,14 +17,13 @@ MainWindow::MainWindow(QWidget *parent) :
 {
     ui->setupUi(this);
     setAttribute(Qt::WA_TranslucentBackground);
-    setWindowFlags(Qt::FramelessWindowHint);
+    //setWindowFlags(Qt::FramelessWindowHint);
 
     //mRequest->start();
 
-    mPlayer = new hwplayer;
-    connect(mPlayer,SIGNAL(sig_GetOneFrame(int, int ,int, int )),this,SLOT(slotGetOneFrame(int,int,int , int)));
-    connect(mPlayer,SIGNAL(sig_GetOneImage(int, int,int,int ,QPixmap)),this,SLOT(slotGetOneImage(int,int,int,int,QPixmap)));
-    mPlayer->start();
+    connect(&mPlayer,SIGNAL(sig_GetOneFrame(int, int ,int, int )),this,SLOT(slotGetOneFrame(int,int,int , int)));
+    connect(&mPlayer,SIGNAL(sig_GetOneImage(int, int,int,int ,QPixmap)),this,SLOT(slotGetOneImage(int,int,int,int,QPixmap)));
+    mPlayer.start();
     //qDebug() << "main is --> " <<QThread::currentThreadId() << QThread::currentThread();
 
 }
@@ -33,15 +32,11 @@ MainWindow::MainWindow(QWidget *parent) :
 MainWindow::~MainWindow()
 {
     delete ui;
-    delete mPlayer;
-}
-
-void MainWindow::showEvent(QShowEvent *event){
-    //mRequest->init();
 }
 
 void MainWindow::paintEvent(QPaintEvent *event)
 {
+    //printf("Painting................\n");
         QPainter videoPainter(this);
         videoPainter.setBrush(Qt::black);
         videoPainter.drawRect(0, 0, this->width(), this->height()); //先画成黑色
