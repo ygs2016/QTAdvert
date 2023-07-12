@@ -31,5 +31,12 @@ VideoObject& VideoObject::operator=(const QJsonObject &A) {
             this->videoName = val.toString();
         }
     }
+
+    if(A.contains("VideoMD5")){
+        QJsonValue val = A.value("VideoMD5");
+        if(val.isString()){
+            this->videoMD5 = val.toString();
+        }
+    }
     return *this;
 }

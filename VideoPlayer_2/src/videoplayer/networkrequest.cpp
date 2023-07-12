@@ -23,16 +23,23 @@ NetworkRequest::~NetworkRequest()
         delete dT;
         dT = NULL;
     }
+//    if(manager != NULL){
+//        delete manager;
+//        manager = NULL;
+//    }
 }
 
 void NetworkRequest::run(){
     //qDebug() << "NetworkReques is --> " <<QThread::currentThreadId() << QThread::currentThread();
 
     isRunning = true;
-    connect(&manager,SIGNAL(finished(QNetworkReply *)),this,SLOT(getBack(QNetworkReply *)),Qt::DirectConnection);//通信完成后，自动执行getBack
-    connect(&mTime,SIGNAL(timeout()),this,SLOT(slotTime()),Qt::DirectConnection);
-    mTime.start(2000);
+//    manager = new QNetworkAccessManager();
+//    connect(manager,SIGNAL(finished(QNetworkReply *)),this,SLOT(getBack(QNetworkReply *)),Qt::DirectConnection);//通信完成后，自动执行getBack
+//    connect(&mTime,SIGNAL(timeout()),this,SLOT(slotTime()),Qt::DirectConnection);
+//    mTime.start(2000);
     checkAndDownloadFiles();
+    connect(&mqttManager,SIGNAL(sig_NeedGetLabelAd(Advert)),this,SLOT(slotGetDataAd(Advert)));
+    mqttManager.start();
     exec();
 
 }
@@ -68,19 +75,19 @@ void NetworkRequest::slotDownloadFinished(){
     }
 }
 
-void NetworkRequest::slotTime()
-{
-    //qDebug() << "tiemr is --> " <<QThread::currentThreadId() << QThread::currentThread();
-    if(isRunning){
-        get();
-    }
-}
+//void NetworkRequest::slotTime()
+//{
+//    //qDebug() << "tiemr is --> " <<QThread::currentThreadId() << QThread::currentThread();
+//    if(isRunning){
+//        get();
+//    }
+//}
 
-void NetworkRequest::get()
-{
-    request.setUrl(QUrl("http://114.215.83.240:6366/ItemService/GetItemLabel?Token=123&ClientId=‎74-D4-35-65-5A-22&UserID=Admin&Nlast=0"));
-    manager.get(request); //发出get请求
-}
+//void NetworkRequest::get()
+//{
+//    request.setUrl(QUrl("http://114.215.83.240:6366/ItemService/GetItemLabel?Token=123&ClientId=‎74-D4-35-65-5A-22&UserID=Admin&Nlast=0"));
+//    manager->get(request); //发出get请求
+//}
 
 
 
@@ -164,7 +171,7 @@ void NetworkRequest::Parse_Data_Json(QString jsonStr)
         if(jsonRootDoc.isObject()){
             QJsonObject obj_root = jsonRootDoc.object();
             QJsonValue stateValue = obj_root.value("State");
-            if(stateValue != NULL && stateValue.toString() == QString::fromLocal8Bit("Done")){
+            if(stateValue.isString() && stateValue.toString() == QString::fromLocal8Bit("Done")){
                 QJsonValue dataValue = obj_root.value("Data");
                 if(!dataValue.isNull() && dataValue.isString()){
                     QJsonDocument jsonDataDoc = QJsonDocument::fromJson(dataValue.toString().toLatin1(),&err_rpt);
@@ -181,6 +188,22 @@ void NetworkRequest::Parse_Data_Json(QString jsonStr)
             }
         }
     }
+}
+
+void NetworkRequest::praseDataStr(QString dataStr){
+    QJsonParseError err_rpt;
+    QJsonDocument jsonDataDoc = QJsonDocument::fromJson(dataStr.toLatin1(),&err_rpt);
+    if (!jsonDataDoc.isNull() && err_rpt.error == QJsonParseError::NoError){
+        if(jsonDataDoc.isObject()){
+            curAd = jsonDataDoc.object();
+            checkAndDownloadFiles();
+        }
+    }
+}
+
+void NetworkRequest::slotGetDataAd(Advert ad){
+    curAd = ad;
+    checkAndDownloadFiles();
 }
 
 void NetworkRequest::getBack(QNetworkReply * reply)

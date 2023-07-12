@@ -1,0 +1,30 @@
+{
+    "Id": "e97ff7d861bc462689bd9bb7930015ce",
+    "ItemCode": "00001",
+    "ItemName": "??",
+    "LabelPicture": {
+        "Height": 800,
+        "PictureMD5": "A2FC40868B4FACE4196E22B608C61BCC",
+        "PictureName": "e97ff7d861bc462689bd9bb7930015ce.jpg",
+        "PictureUrl": "http://esl.ttdh.cc/POS/TemplateFiles/e97ff7d861bc462689bd9bb7930015ce.jpg",
+        "Width": 800,
+        "X": 0,
+        "Y": 480
+    },
+    "LabelVideo": {
+        "Height": 480,
+        "VideoList": [
+            {
+                "VideoMD5": "CC9FDBEF199DA41FB8E41B6C4154FBF0",
+                "VideoName": "2305169900000027_20230516164203982.mp4",
+                "VideoNo": 1,
+                "VideoUrl": "http://esl.ttdh.cc/UpLoad/0/Goods/video/2305169900000027_20230516164203982.mp4"
+            }
+        ],
+        "Width": 800,
+        "X": 0,
+        "Y": 0
+    },
+    "Nlast": 113768469,
+    "upgrade": null
+}

@@ -4,7 +4,13 @@
 
 LabelPicture::LabelPicture()
 {
-
+    x = 0;
+    y = 0;
+    width = 0;
+    height = 0;
+    pictureUrl = nullptr;
+    pictureName = nullptr;
+    pictureMD5 = nullptr;
 }
 
 
@@ -50,6 +56,13 @@ LabelPicture& LabelPicture::operator=(const QJsonObject &A) {
         QJsonValue val = A.value("PictureName");
         if(val.isString()){
             this->pictureName = val.toString();
+        }
+    }
+
+    if(A.contains("PictureMD5")){
+        QJsonValue val = A.value("PictureMD5");
+        if(val.isString()){
+            this->pictureMD5 = val.toString();
         }
     }
     return *this;

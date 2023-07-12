@@ -11,7 +11,9 @@ extern "C"
 
 hwplayer::hwplayer(QObject *parent)
 {
+#ifndef PC_TEST
     play_video_init_hw();
+#endif
     connect(&mRequest,SIGNAL(sig_GetNetworkReply(QString)),this,SLOT(slotGetNetworkReply(QString )));
     mRequest.start();
 }
@@ -21,7 +23,9 @@ hwplayer::~hwplayer()
 //    if(mRequest != NULL){
 //        delete mRequest;
 //    }
+#ifndef PC_TEST
     play_video_uninit_hw();
+#endif
 }
 
 
@@ -105,7 +109,9 @@ void hwplayer::run(){
             //decodec(x,y);
             emit sig_GetOneFrame(x,y,width,heigh);
             //sleep(1);
+#ifndef PC_TEST
             play_video_play_hw(QString(curPath + "/Video/" + vObj.videoName).toLatin1().data(),x, y, width, heigh);
+#endif
         }else{
             std::this_thread::sleep_for(std::chrono::seconds(1));
         }

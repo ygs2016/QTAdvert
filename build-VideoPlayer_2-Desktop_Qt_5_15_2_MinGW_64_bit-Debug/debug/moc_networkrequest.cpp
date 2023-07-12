@@ -22,8 +22,8 @@ QT_BEGIN_MOC_NAMESPACE
 QT_WARNING_PUSH
 QT_WARNING_DISABLE_DEPRECATED
 struct qt_meta_stringdata_NetworkRequest_t {
-    QByteArrayData data[9];
-    char stringdata0[100];
+    QByteArrayData data[11];
+    char stringdata0[115];
 };
 #define QT_MOC_LITERAL(idx, ofs, len) \
     Q_STATIC_BYTE_ARRAY_DATA_HEADER_INITIALIZER_WITH_OFFSET(len, \
@@ -39,13 +39,16 @@ QT_MOC_LITERAL(3, 36, 4), // "Path"
 QT_MOC_LITERAL(4, 41, 7), // "getBack"
 QT_MOC_LITERAL(5, 49, 14), // "QNetworkReply*"
 QT_MOC_LITERAL(6, 64, 5), // "reply"
-QT_MOC_LITERAL(7, 70, 8), // "slotTime"
-QT_MOC_LITERAL(8, 79, 20) // "slotDownloadFinished"
+QT_MOC_LITERAL(7, 70, 20), // "slotDownloadFinished"
+QT_MOC_LITERAL(8, 91, 13), // "slotGetDataAd"
+QT_MOC_LITERAL(9, 105, 6), // "Advert"
+QT_MOC_LITERAL(10, 112, 2) // "ad"
 
     },
     "NetworkRequest\0sig_GetNetworkReply\0\0"
     "Path\0getBack\0QNetworkReply*\0reply\0"
-    "slotTime\0slotDownloadFinished"
+    "slotDownloadFinished\0slotGetDataAd\0"
+    "Advert\0ad"
 };
 #undef QT_MOC_LITERAL
 
@@ -68,7 +71,7 @@ static const uint qt_meta_data_NetworkRequest[] = {
  // slots: name, argc, parameters, tag, flags
        4,    1,   37,    2, 0x08 /* Private */,
        7,    0,   40,    2, 0x08 /* Private */,
-       8,    0,   41,    2, 0x08 /* Private */,
+       8,    1,   41,    2, 0x08 /* Private */,
 
  // signals: parameters
     QMetaType::Void, QMetaType::QString,    3,
@@ -76,7 +79,7 @@ static const uint qt_meta_data_NetworkRequest[] = {
  // slots: parameters
     QMetaType::Void, 0x80000000 | 5,    6,
     QMetaType::Void,
-    QMetaType::Void,
+    QMetaType::Void, 0x80000000 | 9,   10,
 
        0        // eod
 };
@@ -89,8 +92,8 @@ void NetworkRequest::qt_static_metacall(QObject *_o, QMetaObject::Call _c, int _
         switch (_id) {
         case 0: _t->sig_GetNetworkReply((*reinterpret_cast< QString(*)>(_a[1]))); break;
         case 1: _t->getBack((*reinterpret_cast< QNetworkReply*(*)>(_a[1]))); break;
-        case 2: _t->slotTime(); break;
-        case 3: _t->slotDownloadFinished(); break;
+        case 2: _t->slotDownloadFinished(); break;
+        case 3: _t->slotGetDataAd((*reinterpret_cast< Advert(*)>(_a[1]))); break;
         default: ;
         }
     } else if (_c == QMetaObject::RegisterMethodArgumentMetaType) {

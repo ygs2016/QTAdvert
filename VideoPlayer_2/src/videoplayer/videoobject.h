@@ -15,6 +15,7 @@ public:
     int videoNo;
     QString videoUrl;
     QString videoName;
+    QString videoMD5;
 };
 
 #endif // VIDEOOBJECT_H

@@ -6,7 +6,12 @@
 
 Advert::Advert()
 {
-
+    rawJson = nullptr;
+    id = nullptr;
+    itemCode = nullptr;
+    itemName = nullptr;
+    nlast = 0;
+    CurrentDir = nullptr;
 }
 
 

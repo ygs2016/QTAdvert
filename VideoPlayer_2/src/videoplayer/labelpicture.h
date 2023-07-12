@@ -16,5 +16,6 @@ public:
     int height;
     QString pictureUrl;
     QString pictureName;
+    QString pictureMD5;
 };
 #endif // LABELPICTURE_H

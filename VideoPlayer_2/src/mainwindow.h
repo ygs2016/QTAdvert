@@ -12,6 +12,8 @@
 #include <QLabel>
 #include <QPaintEvent>
 
+#include <videoplayer/uartctrl.h>
+
 #include <videoplayer/networkrequest.h>
 #include "hwplayer/hwplayer.h"
 //#include "videoplayer/videoplayerhw.h"
@@ -45,7 +47,6 @@ private:
     QImage mImage; //记录当前的图像
     bool updateImage = false;
     bool updateVedio = false;
-
 private slots:
     void slotGetOneFrame(int x, int y,int width, int heigh);
     void slotGetOneImage(int x, int y, int width, int heigh, QPixmap img);

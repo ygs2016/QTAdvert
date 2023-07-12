@@ -7,9 +7,12 @@
 
 #include "mainwindow.h"
 #include "ui_mainwindow.h"
+#include "videoplayer/uartctrl.h"
 #include <QPainter>
+#include <videoplayer/mqttrequest.h>
 #include <hwplayer/hwplayer.h>
 //#include <videoplayer/videoplayerhw.h>
+
 
 MainWindow::MainWindow(QWidget *parent) :
     QMainWindow(parent),
@@ -19,11 +22,13 @@ MainWindow::MainWindow(QWidget *parent) :
     setAttribute(Qt::WA_TranslucentBackground);
     //setWindowFlags(Qt::FramelessWindowHint);
 
-    //mRequest->start();
+    uartctrl::Instantialize()->start();
 
+    //mRequest->start();
     connect(&mPlayer,SIGNAL(sig_GetOneFrame(int, int ,int, int )),this,SLOT(slotGetOneFrame(int,int,int , int)));
     connect(&mPlayer,SIGNAL(sig_GetOneImage(int, int,int,int ,QPixmap)),this,SLOT(slotGetOneImage(int,int,int,int,QPixmap)));
     mPlayer.start();
+
     //qDebug() << "main is --> " <<QThread::currentThreadId() << QThread::currentThread();
 
 }
