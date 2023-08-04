@@ -1,12 +1,12 @@
 {
-    "Id": "e97ff7d861bc462689bd9bb7930015ce",
+    "Id": "c5db726eb8b3496daf8cd222336703f8",
     "ItemCode": "00001",
     "ItemName": "??",
     "LabelPicture": {
         "Height": 800,
         "PictureMD5": "A2FC40868B4FACE4196E22B608C61BCC",
-        "PictureName": "e97ff7d861bc462689bd9bb7930015ce.jpg",
-        "PictureUrl": "http://esl.ttdh.cc/POS/TemplateFiles/e97ff7d861bc462689bd9bb7930015ce.jpg",
+        "PictureName": "c5db726eb8b3496daf8cd222336703f8.jpg",
+        "PictureUrl": "http://esl.ttdh.cc/POS/TemplateFiles/c5db726eb8b3496daf8cd222336703f8.jpg",
         "Width": 800,
         "X": 0,
         "Y": 480
@@ -25,6 +25,6 @@
         "X": 0,
         "Y": 0
     },
-    "Nlast": 113768469,
+    "Nlast": 115328403,
     "upgrade": null
 }

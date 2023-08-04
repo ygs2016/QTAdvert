@@ -5,12 +5,16 @@
 #-------------------------------------------------
 
 
-QT       += core gui network
+QT       += core network serialport
+QT	 -= gui
 
-greaterThan(QT_MAJOR_VERSION, 4): QT += widgets
+CONFIG += c++17 cmdline
+#DEFINES += QT_DISABLE_DEPRECATED_BEFORE=0x060000
+
+#greaterThan(QT_MAJOR_VERSION, 4): QT += widgets
 
 TARGET = VideoPlayer_2
-TEMPLATE = app
+#TEMPLATE = app
 
 
 SOURCES += src/main.cpp \
@@ -25,18 +29,32 @@ SOURCES += src/main.cpp \
     src/hwplayer/player.c \
     src/hwplayer/sd20xpanel.c \
     src/hwplayer/video.c \
+    src/mqtt/qmqtt_client.cpp \
+    src/mqtt/qmqtt_client_p.cpp \
+    src/mqtt/qmqtt_frame.cpp \
+    src/mqtt/qmqtt_message.cpp \
+    src/mqtt/qmqtt_network.cpp \
+    src/mqtt/qmqtt_router.cpp \
+    src/mqtt/qmqtt_routesubscription.cpp \
+    src/mqtt/qmqtt_socket.cpp \
+    src/mqtt/qmqtt_ssl_socket.cpp \
+    src/mqtt/qmqtt_timer.cpp \
+    src/mqtt/qmqtt_websocket.cpp \
+    src/mqtt/qmqtt_websocketiodevice.cpp \
     src/videoplayer/advert.cpp \
     src/videoplayer/downloadtool.cpp \
     src/videoplayer/labelpicture.cpp \
     src/videoplayer/labelvideo.cpp \
+    src/videoplayer/mqttrequest.cpp \
     src/videoplayer/networkrequest.cpp \
+    src/videoplayer/uartctrl.cpp \
     src/videoplayer/videoobject.cpp \
-    src/videoplayer/videoplayer.cpp \
+    #src/videoplayer/videoplayer.cpp \
     #src/videoplayer/videoplayerhw.cpp \
-    src/mainwindow.cpp
+    #src/mainwindow.cpp
 
 HEADERS  += \
-    src/hwplayer/CC0702I50R_1024x600.h \
+    src/hwplayer/MYTEST_800x1280.h \
     src/hwplayer/audio.h \
     src/hwplayer/blitutil.h \
     src/hwplayer/demux.h \
@@ -48,23 +66,45 @@ HEADERS  += \
     src/hwplayer/player.h \
     src/hwplayer/sd20xpanel.h \
     src/hwplayer/video.h \
+    src/mqtt/qmqtt.h \
+    src/mqtt/qmqtt_client.h \
+    src/mqtt/qmqtt_client_p.h \
+    src/mqtt/qmqtt_frame.h \
+    src/mqtt/qmqtt_global.h \
+    src/mqtt/qmqtt_message.h \
+    src/mqtt/qmqtt_message_p.h \
+    src/mqtt/qmqtt_network_p.h \
+    src/mqtt/qmqtt_networkinterface.h \
+    src/mqtt/qmqtt_routedmessage.h \
+    src/mqtt/qmqtt_router.h \
+    src/mqtt/qmqtt_routesubscription.h \
+    src/mqtt/qmqtt_socket_p.h \
+    src/mqtt/qmqtt_socketinterface.h \
+    src/mqtt/qmqtt_ssl_socket_p.h \
+    src/mqtt/qmqtt_timer_p.h \
+    src/mqtt/qmqtt_timerinterface.h \
+    src/mqtt/qmqtt_websocket_p.h \
+    src/mqtt/qmqtt_websocketiodevice_p.h \
     src/videoplayer/advert.h \
     src/videoplayer/downloadtool.h \
     src/videoplayer/labelpicture.h \
     src/videoplayer/labelvideo.h \
+    src/videoplayer/mqttrequest.h \
     src/videoplayer/networkrequest.h \
+    src/videoplayer/uartctrl.h \
     src/videoplayer/videoobject.h \
-    src/videoplayer/videoplayer.h \
+    #src/videoplayer/videoplayer.h \
     #src/videoplayer/videoplayerhw.h \
-    src/mainwindow.h
+    #src/mainwindow.h
 
-FORMS    += \
-    src/mainwindow.ui
+#FORMS    += \
+#    src/mainwindow.ui
 
 
 INCLUDEPATH +=  /home/industio/ssd20xxx/ffmpeg/ffmpeg-4.1.3/host/include \
 		/home/industio/ssd20xxx/project/release/include \
-                $$PWD/src
+                $$PWD/src \
+		$$PWD/src/mqtt
 
 LIBS += -L/home/industio/ssd20xxx/ffmpeg/ffmpeg-4.1.3/host/static/libavcodec.a \
 	-L/home/industio/ssd20xxx/ffmpeg/ffmpeg-4.1.3/host/static/libavformat.a \
