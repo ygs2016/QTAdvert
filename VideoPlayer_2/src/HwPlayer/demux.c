@@ -499,6 +499,7 @@ static int demux_init(player_stat_t *is)
     prctl(PR_SET_NAME, "demux_read");
     ret = pthread_create(&is->read_tid, NULL, demux_thread, (void *)is);
     if (ret != 0) {
+		perror("create thread");
         av_log(NULL, AV_LOG_ERROR, "demux_thread create failed!\n");
         ret = -1;
         is->read_tid = 0;

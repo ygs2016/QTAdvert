@@ -27,6 +27,7 @@ public:
     void clientMqtt(QString host, int port, QString userName, QString pwd, QString clientId);
     QString getLabelMqtt(QString appid,QString clientId,QString nlast, QString ts);
 private:
+    bool isRunning = false;
     int requestStep = 0; //1,request mqtt 2, request label
     QString curPostBody = NULL;
     QString curClientId = NULL;

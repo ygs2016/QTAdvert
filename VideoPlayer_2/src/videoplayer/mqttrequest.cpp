@@ -13,6 +13,8 @@ mqttrequest::mqttrequest(QObject *parent)
 
 mqttrequest::~mqttrequest()
 {
+    qDebug() << "mqttrequest bye!";
+    isRunning = false;
     if(client != NULL){
         delete client;
         client = NULL;
@@ -74,22 +76,30 @@ QString mqttrequest::getBodyStr(QString rawStr, QString sign){
 }
 
 void mqttrequest::run(){
-#if 0
+#if 1
     uartctrl::Instantialize()->appId = "36e5d767-92f9-46b0-b34f-dc5a6d0f9c62_2306151600000066";
     uartctrl::Instantialize()->appKey = "4026b2b26b8a48948c1e2a5e3037ee04";
     uartctrl::Instantialize()->labelSn = "4e6eb56ee04b";
 #else
 
 #endif
-    while(1){
+
+    isRunning = true;
+
+    while(isRunning){
         if(uartctrl::Instantialize()->appId.isEmpty() || uartctrl::Instantialize()->appKey.isEmpty() || uartctrl::Instantialize()->labelSn.isEmpty()){
             qDebug() << "uart config param is error !!!";
             sleep(3);
         }else{
+            qDebug() << "uart scan param success break";
             break;
         }
     }
     manager = new QNetworkAccessManager();
+
+    QStringList strList = manager->supportedSchemes();
+    qDebug() << strList.join(",");
+
     connect(manager,SIGNAL(finished(QNetworkReply *)),this,SLOT(getBack(QNetworkReply *)),Qt::DirectConnection);
     QDateTime timeDate = QDateTime::currentDateTime();  // 获取当前时间
     int timeStr = timeDate .toTime_t();
@@ -98,11 +108,19 @@ void mqttrequest::run(){
     QString httpPostUrl = "https://esl.ttdh.cc/MQTTService/RegisterTag";
     qDebug() << "Http post message url ==> " << httpPostUrl;
     qDebug() << "Http post body ==> " << curPostBody;
+
+
+    QSslConfiguration config = QSslConfiguration::defaultConfiguration();
+    config.setProtocol(QSsl::AnyProtocol);
+    config.setPeerVerifyMode(QSslSocket::VerifyNone);
+    request.setSslConfiguration(config);
+
     request.setUrl(QUrl::fromUserInput(httpPostUrl));
     request.setRawHeader("Host", "esl.ttdh.cc");
     request.setRawHeader("Accept", "*/*");
     request.setRawHeader("Content-Type", "application/x-www-form-urlencoded; charset=UTF-8");
     requestStep = 1;
+    qDebug() << "Send post request ";
     manager->post(request,curPostBody.toLatin1()); //发出post请求
     exec();
 }
@@ -182,12 +200,14 @@ void mqttrequest::getBack(QNetworkReply * reply)
     }
 
     sleep(3);
-    if(requestStep == 1){
+    if(isRunning && requestStep == 1){
+        qDebug() << "retry request requestStep 1" ;
         manager->post(request,curPostBody.toLatin1());
-    }else if(requestStep == 2){
+    }else if(isRunning && requestStep == 2){
+        qDebug() << "retry request requestStep 2";
         manager->get(request); //发出get请求
     }
-
+    qDebug() << "recv done! " << "isRuning == " << isRunning << " requestStep == " << requestStep;
 }
 
 
@@ -227,6 +247,7 @@ void mqttrequest::getDataStrByNetwork(){
     QString httpGetUrl = "https://esl.ttdh.cc/ItemService/GetItemLabel?" + getBody;
     qDebug() << "Http get message url ==> " << httpGetUrl;
     request.setUrl(QUrl(httpGetUrl));
+    qDebug() << "Send get request ";
     requestStep = 2;
     manager->get(request); //发出get请求
 }

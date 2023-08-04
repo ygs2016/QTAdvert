@@ -795,6 +795,7 @@ static int open_video_playing(void *arg)
     prctl(PR_SET_NAME, "video_play");
     ret = pthread_create(&is->video_play_tid, NULL, video_playing_thread, (void *)is);
     if (ret != 0) {
+	perror("pthread_create!");
         av_log(NULL, AV_LOG_ERROR, "video_playing_thread create failed!\n");
         is->video_play_tid = 0;
         return -1;
@@ -953,6 +954,7 @@ static int open_video_stream(player_stat_t *is)
     prctl(PR_SET_NAME, "video_decode");
     ret = pthread_create(&is->video_decode_tid, NULL, video_decode_thread, (void *)is);
     if (ret != 0) {
+		perror("pthread_create!");
         av_log(NULL, AV_LOG_ERROR, "video_decode_thread create failed!\n");
         is->video_decode_tid = 0;
         return -1;

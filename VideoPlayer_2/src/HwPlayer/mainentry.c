@@ -192,6 +192,7 @@ int play_video_play_hw(char *my_file_name,int my_x, int my_y, int my_width,int m
     int ret = 1;
     char url[128];
     b_exit = false;
+    printf("Start the ssplaying thread!!!\n");
     pthread_t mm_thread = NULL;
     if (!my_file_name) {
         printf("invalid input file, please retey!\n");
@@ -213,6 +214,7 @@ int play_video_play_hw(char *my_file_name,int my_x, int my_y, int my_width,int m
 
     if (mm_thread)
         pthread_join(mm_thread, NULL);
+    printf("Exit the ssplaying thread!!!\n");
 }
 
 

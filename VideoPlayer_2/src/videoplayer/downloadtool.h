@@ -7,7 +7,7 @@
 #include <QFile>          // QFile类用于对文件进行读写操作
 #include <QDir>           // QDir类用于操作路径名及底层文件系统
 #include <QPointer>       // QPointer指针引用的对象被销毁时候,会自动指向NULL,解决指针悬挂问题
-#include <QApplication>   // 此处用于获取当前程序绝对路径
+#include <QCoreApplication>   // 此处用于获取当前程序绝对路径
 
 #include <QNetworkReply>  // QNetworkReply类封装了使用QNetworkAccessManager发布的请求相关的回复信息。
 #include <QNetworkAccessManager>  // QNetworkAccessManager类为应用提供发送网络请求和接收答复的API接口

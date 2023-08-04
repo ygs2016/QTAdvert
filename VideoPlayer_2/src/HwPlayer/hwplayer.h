@@ -2,10 +2,8 @@
 #define HWPLAYER_H
 
 #include <QThread>
-#include <QImage>
 #include <QDebug>
 #include <QMutex>
-#include <QPixmap>
 #include "videoplayer/advert.h"
 #include "videoplayer/networkrequest.h"
 
@@ -35,12 +33,13 @@ public:
     void setFileName(QString path){mFileName = path;}
     void run();
 signals:
-    void sig_GetOneFrame(int,int, int, int); //没获取到一帧图像 就发送此信号
-    void sig_GetOneImage(int,int, int, int,QPixmap); //没获取到一帧图像 就发送此信号
+//    void sig_GetOneFrame(int,int, int, int); //没获取到一帧图像 就发送此信号
+//    void sig_GetOneImage(int,int, int, int,QPixmap); //没获取到一帧图像 就发送此信号
 private slots:
     void slotGetNetworkReply(QString Path);
 
 private:
+    bool isRunning = false;
     QString curPath;
     QMutex mMutex;
     Advert curAd;
@@ -48,7 +47,7 @@ private:
     QString mFileName;
     std::thread m_decodecThread;
     int iVideoIndex = -1;
-    QImage m_image;
+ // QImage m_image;
     bool isFinish  =false;
 };
 

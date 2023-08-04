@@ -122,6 +122,7 @@ bool NetworkRequest::checkAndDownloadFiles(){
             }
         }
     }else{
+	qDebug() << "Create path ==> " << pathName;
         QDir().mkpath(pathName);
         //QDir().mkpath(pathName + "/Picture");
         //QDir().mkpath(pathName + "/Video");
@@ -145,7 +146,9 @@ bool NetworkRequest::checkAndDownloadFiles(){
             printf("Free DT ....\n");
             delete dT;
         }
+
         printf("New DT ....\n");
+	qDebug() << "url is ==> " << curAd.labelVideo.VideoList[videoDownloadCount].videoUrl;
         dT = new DownloadTool(curAd.labelVideo.VideoList[videoDownloadCount].videoUrl, pathName +"/"+ subPathName+ "/Video/");
         dT->startDownload();
         //dT->sigDownloadFinished();
@@ -203,6 +206,7 @@ void NetworkRequest::praseDataStr(QString dataStr){
 
 void NetworkRequest::slotGetDataAd(Advert ad){
     curAd = ad;
+    qDebug() << "slot get ad data !!!";
     checkAndDownloadFiles();
 }
 

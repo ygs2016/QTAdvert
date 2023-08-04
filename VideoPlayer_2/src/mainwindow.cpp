@@ -21,7 +21,6 @@ MainWindow::MainWindow(QWidget *parent) :
     ui->setupUi(this);
     setAttribute(Qt::WA_TranslucentBackground);
     //setWindowFlags(Qt::FramelessWindowHint);
-
     uartctrl::Instantialize()->start();
 
     //mRequest->start();

@@ -3,7 +3,6 @@
 #include <QJsonDocument>
 #include <QFile>
 #include <stdio.h>
-#include <QPixmap>
 extern "C"
 {
 #include "hwplayer/mainentry.h"
@@ -20,6 +19,7 @@ hwplayer::hwplayer(QObject *parent)
 
 hwplayer::~hwplayer()
 {
+    isRunning = false;
 //    if(mRequest != NULL){
 //        delete mRequest;
 //    }
@@ -77,7 +77,9 @@ void hwplayer::run(){
     int index;
     bool canPlay = false;
     VideoObject vObj;
-    while(1){
+    isRunning = true;
+    while(isRunning){
+	qDebug() << "Start new playing task~~~~!!!!! ";
         mMutex.lock();
         canPlay = false;
         //printf("curAd.id.isNull() ==> %d, curAd.id.isEmpty() ==> %d\n",curAd.id.isNull(), curAd.id.isEmpty() );
@@ -90,9 +92,17 @@ void hwplayer::run(){
                 heigh = curAd.labelVideo.height;
                 width = curAd.labelVideo.width;
                 index = 0;
-                QPixmap map = QPixmap(curPath + "/Picture/" + curAd.labelPicture.pictureName);
-                map.scaled(curAd.labelPicture.width,curAd.labelPicture.height,Qt::IgnoreAspectRatio);
-                emit sig_GetOneImage(curAd.labelPicture.x,curAd.labelPicture.y,curAd.labelPicture.width,curAd.labelPicture.height,map);
+                //QPixmap map = QPixmap(curPath + "/Picture/" + curAd.labelPicture.pictureName);
+                //map.scaled(curAd.labelPicture.width,curAd.labelPicture.height,Qt::IgnoreAspectRatio);
+                //emit sig_GetOneImage(curAd.labelPicture.x,curAd.labelPicture.y,curAd.labelPicture.width,curAd.labelPicture.height,map);
+
+                QString cmd = "DisplayJpeg ";
+                cmd += curPath + "/Picture/" + curAd.labelPicture.pictureName + " ";
+                cmd += QString::number(x) + " " + QString::number(y) + " " + QString::number(width) + " " + QString::number(heigh) + " ";
+                cmd += QString::number(curAd.labelPicture.x) + " " +  QString::number(curAd.labelPicture.y);
+                qDebug() << "cmd ==> " << cmd;
+                system(cmd.toLatin1().data());
+
             }
 
             if(index >= curAd.labelVideo.VideoList.count()){
@@ -107,10 +117,12 @@ void hwplayer::run(){
         if(canPlay){
             //init(curPath + "/Video/" + vObj.videoName, width, heigh);
             //decodec(x,y);
-            emit sig_GetOneFrame(x,y,width,heigh);
+            //emit sig_GetOneFrame(x,y,width,heigh);
             //sleep(1);
 #ifndef PC_TEST
+	    qDebug() << "Start new play video --->>> " << QString(curPath + "/Video/" + vObj.videoName) << " x ==> " << x << " y ==> " << y << " width ==> " << width << " heigh ==> " << heigh ;
             play_video_play_hw(QString(curPath + "/Video/" + vObj.videoName).toLatin1().data(),x, y, width, heigh);
+	    qDebug() << "End the play video --->>> " << QString(curPath + "/Video/" + vObj.videoName) << "  canPlay is --> " << canPlay;
 #endif
         }else{
             std::this_thread::sleep_for(std::chrono::seconds(1));

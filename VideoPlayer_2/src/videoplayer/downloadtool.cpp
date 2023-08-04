@@ -1,4 +1,5 @@
 #include "downloadtool.h"
+#define DOWNLOAD_DEBUG
 
 DownloadTool::DownloadTool(const QString& downloadUrl, const QString& savePath, QObject* parent)
     : QObject(parent)
@@ -23,7 +24,7 @@ void DownloadTool::startDownload()
     fileName = newUrl.fileName();
 
     if (fileName.isEmpty()) fileName = defaultFileName;
-    if (m_savePath.isEmpty()) { m_savePath = QApplication::applicationDirPath() + "/tmp"; }
+    if (m_savePath.isEmpty()) { m_savePath = QCoreApplication::applicationDirPath() + "/tmp"; }
     if (!QFileInfo(m_savePath).isDir()) {
         QDir dir;
         dir.mkpath(m_savePath);
@@ -33,7 +34,7 @@ void DownloadTool::startDownload()
     if (QFile::exists(fileName)) { QFile::remove(fileName); }
     file = openFileForWrite(fileName);
     if (!file) return;
-
+    qDebug() << "start request url ::: " << newUrl;
     startRequest(newUrl);
 }
 
@@ -108,7 +109,13 @@ void DownloadTool::startRequest(const QUrl& requestedUrl)
     url = requestedUrl;
     httpRequestAborted = false;
 
-    reply = qnam.get(QNetworkRequest(url));
+    QSslConfiguration config = QSslConfiguration::defaultConfiguration();
+    config.setProtocol(QSsl::AnyProtocol);
+    config.setPeerVerifyMode(QSslSocket::VerifyNone);
+    QNetworkRequest request = QNetworkRequest(url);
+    request.setSslConfiguration(config);
+    qDebug() << "qnam get ==> " << url;
+    reply = qnam.get(request);
     connect(reply, &QNetworkReply::finished, this, &DownloadTool::httpFinished);
     connect(reply, &QIODevice::readyRead, this, &DownloadTool::httpReadyRead);
     connect(reply, &QNetworkReply::downloadProgress, this, &DownloadTool::networkReplyProgress);

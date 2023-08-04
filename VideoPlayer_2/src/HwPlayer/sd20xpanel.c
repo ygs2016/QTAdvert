@@ -28,8 +28,11 @@ static MI_S32 Hdmi_callback_impl(MI_HDMI_DeviceId_e eHdmi, MI_HDMI_EventType_e E
 
 #if DISPLAY_1024_600
 //#include "SAT070CP50_1024x600.h"
-#include "CC0702I50R_1024x600.h"
+//#include "CC0702I50R_1024x600.h"
+#else
+#include "MYTEST_800x1280.h"
 #endif
+
 
 #endif
 

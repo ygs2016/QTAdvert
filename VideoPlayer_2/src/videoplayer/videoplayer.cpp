@@ -8,7 +8,6 @@
 #include <QJsonDocument>
 #include <QFile>
 #include <stdio.h>
-#include <QPixmap>
 
 VideoPlayer::VideoPlayer(QObject *parent)
 {
@@ -83,9 +82,9 @@ void VideoPlayer::run(){
                 heigh = curAd.labelVideo.height;
                 width = curAd.labelVideo.width;
                 index = 0;
-                QPixmap map = QPixmap(curPath + "/Picture/" + curAd.labelPicture.pictureName);
-                map.scaled(curAd.labelPicture.width,curAd.labelPicture.height,Qt::IgnoreAspectRatio);
-                emit sig_GetOneImage(curAd.labelPicture.x,curAd.labelPicture.y,curAd.labelPicture.width,curAd.labelPicture.height,map);
+                //QPixmap map = QPixmap(curPath + "/Picture/" + curAd.labelPicture.pictureName);
+                //map.scaled(curAd.labelPicture.width,curAd.labelPicture.height,Qt::IgnoreAspectRatio);
+                //emit sig_GetOneImage(curAd.labelPicture.x,curAd.labelPicture.y,curAd.labelPicture.width,curAd.labelPicture.height,map);
             }
 
             if(index >= curAd.labelVideo.VideoList.count()){
@@ -237,10 +236,10 @@ void VideoPlayer::decodec(int myX, int myY)
             sws_scale(pSwsCtx, (uint8_t const * const *)pAVFrame->data, pAVFrame->linesize, 0, pAVCodecCtx->height, pAVFrameRGB->data, pAVFrameRGB->linesize);
 
             //构造QImage
-            QImage img(pRgbBuffer, pAVCodecCtx->width, pAVCodecCtx->height, QImage::Format_RGB32);
+            //QImage img(pRgbBuffer, pAVCodecCtx->width, pAVCodecCtx->height, QImage::Format_RGB32);
             //qDebug()<<"decode img";
-            m_image = img;
-            emit sig_GetOneFrame(myX,myY,m_image);
+            //m_image = img;
+            //emit sig_GetOneFrame(myX,myY,m_image);
         }else {
            qDebug()<<"decode error";
         }

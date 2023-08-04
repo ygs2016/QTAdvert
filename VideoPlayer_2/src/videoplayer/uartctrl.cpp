@@ -137,7 +137,7 @@ bool uartctrl::openPort(){
     /*设置接收缓冲区大小*/
     port->setReadBufferSize(2048);
     /*绑定接受槽函数，但收到信息是将调用MainSerialRecvMsgEvent函数*/
-    QObject::connect(port, &QSerialPort::readyRead, this, &uartctrl::slot_SerialRecvMsgEvent);
+    QObject::connect(port, &QSerialPort::readyRead, this, &uartctrl::slot_SerialRecvMsgEvent,Qt::DirectConnection);
     return true;
 }
 
@@ -145,15 +145,19 @@ bool uartctrl::openPort(){
 void uartctrl::slot_SerialRecvMsgEvent(void)
 {
     QByteArray MainSerialRecvData;//保存串口数据的数组
-    QString recvData;
     if(port->bytesAvailable()>0)//判断等到读取的数据大小
     {
         MainSerialRecvData = port->readAll();//读取所有的接收数据
         if(!MainSerialRecvData.isEmpty()){
             qDebug() <<MainSerialRecvData.size();//打印数据大小
-            recvData = MainSerialRecvData;
-            qDebug() << "recv ==>" << recvData;
-            DoSomeCtrl(recvData);
+            recvData += MainSerialRecvData;
+            qDebug() << "serial recv ==>" << recvData;
+            sendData(recvData);
+            if(recvData.length() > 1024 || recvData.contains("\r\n")){
+                qDebug() << "serial handle ==>" << recvData;
+                DoSomeCtrl(recvData);
+                recvData.clear();
+            }
 //            for(int i = 0; i < MainSerialRecvData.size();i++)
 //            {
 //                qDebug() <<MainSerialRecvData.at(i);
@@ -184,6 +188,7 @@ void uartctrl::run(){
 
 QString uartctrl::DoSomeCtrl(QString str){
     QString ret = "";
+    bool isNeedReboot = false;;
     QJsonParseError jsonError;
     QJsonDocument doucment = QJsonDocument::fromJson(str.toLatin1(), &jsonError);  // 转化为 JSON 文档
     if (!doucment.isNull() && (jsonError.error == QJsonParseError::NoError)) {  // 解析未发生错误
@@ -200,19 +205,21 @@ QString uartctrl::DoSomeCtrl(QString str){
                         QString conf;
                         conf += "ctrl_interface=/tmp/wifi/run/wpa_supplicant\n";
                         conf += "update_config=1\n";
-                        conf += "network={\n scan_ssid=1 \n ssid=\"";
+                        conf += "network={\n scan_ssid=1 \n ssid=\\\"";
                         conf += ssid.toString();
-                        conf += "\"\n";
-                        conf += "psk=\"";
+                        conf += "\\\"\n";
+                        conf += "psk=\\\"";
                         conf += pwd.toString();
-                        conf += "\"\n";
+                        conf += "\\\"\n";
                         conf += "}";
-                        system("/config/wifi/ssw01bInit.sh");
-                        system("ifconfig wlan0 up");
-                        system("echo " + conf.toLatin1() + ">/appconfigs/wpa_supplicant.conf" );
-                        system("killall wpa_supplicant");
-                        system("/config/wifi/wpa_supplicant -D nl80211 -i wlan0 -c /appconfigs/wpa_supplicant.conf -B &");
+                        //system("/config/wifi/ssw01bInit.sh");
+                        //system("ifconfig wlan0 up");
+                        system("echo \"" + conf.toLatin1() + "\">/appconfigs/wpa_supplicant.conf" );
+                        //system("echo \"" + conf.toLatin1() + "\">/customer/wpa_supplicant.conf" );
+                        //system("killall wpa_supplicant");
+                        //system("/config/wifi/wpa_supplicant -D nl80211 -i wlan0 -c /appconfigs/wpa_supplicant.conf -B &");
                         ret += "wifi set finish!\n";
+			isNeedReboot = true;
                     }
                 }
             }
@@ -247,9 +254,22 @@ QString uartctrl::DoSomeCtrl(QString str){
                     labelSn = value.toString();
                 }
             }
-
+	    qDebug() << "Save config to file ";
             saveConfigToFile();
 
         }
     }
+    if(isNeedReboot){
+	qDebug() << "Need to reboot !!!";
+	int pid = qApp->applicationPid();
+       QString killCmd;
+        killCmd = QString("kill -9 %1;reboot;").arg(pid);
+	system(killCmd.toLatin1());
+	//system("reboot");
+//	int pid = qApp->applicationPid();
+//       QString killCmd;
+//        killCmd = QString("kill -9 %1; reboot;").arg(pid);
+//       QProcess::startDetached(killCmd);
+    }
+    return QString("");
 }

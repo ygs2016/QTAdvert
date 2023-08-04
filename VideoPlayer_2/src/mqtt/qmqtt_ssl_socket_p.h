@@ -32,7 +32,7 @@
  */
 #ifndef QMQTT_SSL_SOCKET_P_H
 #define QMQTT_SSL_SOCKET_P_H
-
+#include "qtnetwork-config.h"
 #ifndef QT_NO_SSL
 
 #include <qmqtt_socketinterface.h>

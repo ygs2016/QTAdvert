@@ -5,7 +5,7 @@
 #include <QImage>
 #include <QDebug>
 #include <QMutex>
-#include <QPixmap>>
+#include <QPixmap>
 #include "advert.h"
 #include "videoplayer/networkrequest.h"
 

@@ -19,6 +19,8 @@ public:
     void run();
     static uartctrl *Instantialize();
 private:
+    QString recvData;
+    bool isRunning = false;
     void getConfigFromFile();
     void saveConfigToFile();
     bool isFileExist(QString fullFileName);
